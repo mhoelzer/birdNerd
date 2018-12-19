@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Menu, Sticky } from "semantic-ui-react";
-import logo from "../Images/birdNerd.png";
+import logo from "../Images/birdNerd.jpg";
+import { Link } from "react-router-dom";
 
 export default class NavBarSecondary extends Component {
   state = {};
@@ -18,35 +19,54 @@ export default class NavBarSecondary extends Component {
           </Menu.Item>
 
           <Menu.Item
+            name="=composeEntry"
+            active={activeItem === "composeEntry"}
+            onClick={this.handleItemClick}
+          >
+            <Link to="/composeEntry" id="composeEntry">
+              Compose Entry
+            </Link>
+          </Menu.Item>
+
+          <Menu.Item
+            name="profile"
+            active={activeItem === "profile"}
+            onClick={this.handleItemClick}
+          >
+            <Link to="/profile" id="profile">
+              Profile
+            </Link>
+          </Menu.Item>
+
+          <Menu.Item
+            name="birdidex"
+            active={activeItem === "birdidex"}
+            onClick={this.handleItemClick}
+          >
+            <Link to="/birdidex" id="birdidex">
+              Birdy-Dex
+            </Link>
+          </Menu.Item>
+
+          <Menu.Item
+            name="notebook"
+            active={activeItem === "notebook"}
+            onClick={this.handleItemClick}
+          >
+            <Link to="/notebook" id="notebook">
+              Notebook
+            </Link>
+          </Menu.Item>
+
+          <Menu.Item
             name="home"
             active={activeItem === "home"}
             onClick={this.handleItemClick}
           >
-            Home
+            <Link to="/" id="home">
+              Search
+            </Link>
           </Menu.Item>
-
-          <Menu.Item
-            name="identify"
-            active={activeItem === "identify"}
-            onClick={this.handleItemClick}
-          >
-            Identify
-          </Menu.Item>
-
-          <Menu.Item
-            name="birdy-dex"
-            active={activeItem === "birdy-dex"}
-            onClick={this.handleItemClick}
-          >
-            Birdy-Dex
-          </Menu.Item>
-
-          <Menu.Item
-            name="login"
-            active={activeItem === "login"}
-            onClick={this.handleItemClick}
-            // position={"right"}
-          />
 
           <Menu.Item
             name="username"
@@ -54,7 +74,9 @@ export default class NavBarSecondary extends Component {
             onClick={this.handleItemClick}
             position={"right"}
           >
-            Username
+            <Link to="/username" id="username">
+              Username
+            </Link>
           </Menu.Item>
         </Menu>
       </Sticky>
