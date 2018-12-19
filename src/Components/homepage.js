@@ -1,5 +1,3 @@
-import _ from 'lodash'
-import faker from 'faker'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import {
@@ -18,8 +16,11 @@ import {
   Sidebar,
   Visibility,
 } from 'semantic-ui-react'
+import { homepage } from "../Actions/action.js"
 
-const Homepage = ({ mobile }) => (
+
+
+const homepage = ({ mobile }) => (
     <Container text>
     <Header
     as='h1'
