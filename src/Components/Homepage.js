@@ -7,7 +7,7 @@ import {
   Grid,
   Header,
   Icon,
-  Image,
+  Image, 
   List,
   Menu,
   Responsive,
@@ -19,7 +19,7 @@ import { Homepage } from "../Actions/action.js";
 import NavBarSecondary from "./NavBarSecondary";
 import SearchBar from "./SearchBar"
 
-class Homepage extends Component {
+class Homepage extends Component { 
   homepage = ({ mobile }) => (
     <Container text>
       <Header
