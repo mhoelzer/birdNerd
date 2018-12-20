@@ -3,7 +3,7 @@ import { Menu, Sticky } from "semantic-ui-react";
 import logo from "../Images/birdNerd.jpg";
 import { Link } from "react-router-dom";
 
-export default class NavBarSecondary extends Component {
+export default class Navbar extends Component {
   state = {};
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
@@ -17,6 +17,17 @@ export default class NavBarSecondary extends Component {
           <Menu.Item>
             <img src={logo} alt="Logo" />
           </Menu.Item>
+
+          <Menu.Item
+            name="=login"
+            active={activeItem === "login"}
+            onClick={this.handleItemClick}
+          >
+            <Link to="/Login" id="login">
+              Login
+            </Link>
+            </Menu.Item>
+
 
           <Menu.Item
             name="=composeEntry"
