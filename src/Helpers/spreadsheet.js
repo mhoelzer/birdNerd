@@ -8,7 +8,7 @@ export default function load(callback) {
     window.gapi.client.sheets.spreadsheets.values
       .get({
         spreadsheetId: config.spreadsheetId,
-        range: "Sheet1!A3:I"
+        range: "Sheet1!A3:J"
       })
       .then(
         response => {
@@ -18,7 +18,13 @@ export default function load(callback) {
               species: bird[0],
               color: bird[1],
               size: bird[2],
-              image: bird[3]
+              image: bird[3],
+              specificSize: bird[4],
+              type: bird[5],
+              location: bird[6],
+              characteristics: bird[7],
+              site: bird[8],
+              description: bird[9]
             })) || [];
           callback({
             bird
