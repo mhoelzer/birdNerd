@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import Navbar from "./Navbar.js";
 import SearchBar from "./SearchBar";
-import ComposeEntry from "./ComposeEntry";
 import Profile from "./Profile";
 import Notebook from "./Notebook";
+import EditProfile from "./EditProfile";
 // import Register from "./Register";
 
 class App extends Component {
@@ -14,11 +14,13 @@ class App extends Component {
         <Route component={Navbar} />
         <Switch>
           <Route exact path="/" render={() => <SearchBar />} />
-          <Route path="/composeEntry" render={() => <ComposeEntry />} />
           <Route path="/notebook" render={() => <Notebook />} />
           <Route path="/profile" render={() => <Profile />} />
+          <Route path="/edit" render={() => <EditProfile />} />
+          {/* <Route path="/login" render={() => <Login />} /> */}
           {/* <Route path="/register" render={() => <Register />} /> */}
-          {/* <Route path="/identifier" render={() => <Identifier />} /> */}
+          {/* <Route path="/advanced" render={() => <Identifier />} /> */}
+          {/* <Route path="/birdidex" render={() => <Identifier />} /> */}
         </Switch>
       </div>
     );
