@@ -6,7 +6,7 @@ class Login extends Component {
     render() {
         return (
             
-          <div className="login" style={{ margin: "auto", width: '50%', border: '2px solid lightblue', padding: '20px', margin-top: '50px' }}>
+          <div className="login" style={{ margin: "auto", width: '50%', border: '2px solid lightblue', padding: '20px', marginTop: '50px' }}>
           
             <Header className="header" as="h2">
               Sign In
