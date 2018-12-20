@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 class ComposeEntry extends Component {
   render() {
     return (

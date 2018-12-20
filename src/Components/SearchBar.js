@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Search, Grid, Header, Segment } from "semantic-ui-react";
-import faker from "faker";
 import _ from "lodash";
 
 const source = _.times(1, () => ({
