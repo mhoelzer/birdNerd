@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 import config from "../Constants/config.js";
 import load from "../Helpers/spreadsheet.js";
+import { Button, Header, Image, Modal, Grid, Card } from "semantic-ui-react";
+
+const styles = {
+  cardPosition: {
+    margin: "40px",
+    padding: "20px"
+  }
+};
 
 export default class Birdydex extends Component {
   state = {
@@ -42,14 +50,35 @@ export default class Birdydex extends Component {
       return <div>{this.state.error.message}</div>;
     }
     return (
-      <ul>
+      <Card.Group>
         {bird.map((bird, i) => (
-          <li key={i}>
-            <img src={bird.image} />
-            {bird.species} {bird.color} {bird.size}
-          </li>
+          <Card style={styles.cardPosition}>
+            <Card.Content>
+              {/* <img src={bird.image} /> */}
+              <h2>{bird.species}</h2>
+              <br />
+              <p>Color: {bird.color}</p>
+              <br />
+              <p>Size: {bird.size}</p>
+              <br />
+              <Modal size={"tiny"} trigger={<Button>More Info!</Button>}>
+                <Modal.Header>{bird.species}</Modal.Header>
+                <Modal.Content image>
+                  <Image wrapped size="medium" src={bird.image} />
+                  <Modal.Description>
+                    <Header>{bird.species}</Header>
+                    <p>State(s) I reside in: {bird.location}</p>
+                    <p>Description: {bird.description}</p>
+                    <a href={bird.site}>
+                      Click here to research more about {bird.species}!
+                    </a>
+                  </Modal.Description>
+                </Modal.Content>
+              </Modal>
+            </Card.Content>
+          </Card>
         ))}
-      </ul>
+      </Card.Group>
     );
   }
 }
