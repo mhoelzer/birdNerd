@@ -10,6 +10,7 @@ import {
   Menu,
   Segment
 } from "semantic-ui-react";
+import birdNerd from "../Images/birdNerd.jpg";
 import GridRow from "../Styling/GridRow";
 import ComposeEntry from "./ComposeEntry";
 import Notebook from "./Notebook";
@@ -20,7 +21,7 @@ class Profile extends Component {
       <GridRow>
         <Grid.Column width={6}>
           <Card
-            color="green"
+            color="grey"
             as={Menu}
             animation="overlay"
             Icon="labeled"
@@ -30,8 +31,8 @@ class Profile extends Component {
             fluid
           >
             <Card.Content>
-              {/* <Image src={logo} /> */}
-              <Segment style={{ padding: "1em 0em" }} inverted color="green">
+              <Image src={birdNerd} />
+              <Segment style={{ padding: "1em 0em" }} inverted color="blue">
                 <Card.Header as="h2" textAlign="center">
                   {this.props.username}
                 </Card.Header>
