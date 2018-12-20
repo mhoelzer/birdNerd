@@ -1,17 +1,15 @@
-import React, { Component } from 'react'
-import { Checkbox } from 'semantic-ui-react'
+import React, {Component} from 'react'
+import { Dropdown } from 'semantic-ui-react'
+import { stateOptions, colorOptions  } from '../common'
 
-class Checkbox1 extends Component{
+class dropdown extends Component {
     render(){
         return(
-            <Checkbox>
-                <Checkbox label= "color" />
-                <Checkbox label= "size" />
-                <Checkbox label= "U.S. State" />
-                <Checkbox label= "type" />
-                <Checkbox label= "Characteristics" />
-            </Checkbox>
-        );
+            <Dropdown>
+<Dropdown placeholder='State' search selection options={stateOptions} />
+<Dropdown placeholder='color' search selection options={colorOptions} />
+            </Dropdown>
+        )
     }
 }
-export default Checkbox1;
+export default dropdown;
