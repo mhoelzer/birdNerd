@@ -33,8 +33,8 @@ export default class Navbar extends Component {
   render() {
     return (
       <Sticky>
-        <Menu>
-          <Menu.Item>
+        <Menu style={{ position: "sticky" }}>
+          <Menu.Item as={Link} to="/">
             <img src={logo} alt="Logo" />
           </Menu.Item>
 
@@ -42,37 +42,29 @@ export default class Navbar extends Component {
             {this.state.navbarItems.name}
           </NavbarItems> */}
 
-          <Menu.Item>
-            <Link to="/profile">Profile</Link>
+          <Menu.Item as={Link} to="/birdidex">
+            Birdidex
           </Menu.Item>
 
-          <Menu.Item>
-            <Link to="/edit">Edit Profile</Link>
+          <Menu.Item as={Link} to="/advanced">
+            Advanced Search
           </Menu.Item>
 
-          <Menu.Item>
-            <Link to="/birdidex">Birdidex</Link>
-          </Menu.Item>
-
-          <Menu.Item>
-            <Link to="/notebook">Notebook</Link>
-          </Menu.Item>
-
-          <Menu.Item>
-            <Link to="/">Search</Link>
-          </Menu.Item>
-
-          <Menu.Item position={"right"}>
+          {/* <Menu.Item position={"right"}>
             <Link to="/username">Username</Link>
           </Menu.Item>
-
-          <Menu.Item>
-            <Link to="/login">Login</Link>
+ */}
+          <Menu.Item position={"right"} as={Link} to="/login">
+            Login
           </Menu.Item>
 
-          <Menu.Item>
+          <Menu.Item as={Link} to="/register">
+            Register
+          </Menu.Item>
+
+          {/* <Menu.Item>
             <Link to="/login">Logout</Link>
-          </Menu.Item>
+          </Menu.Item> */}
         </Menu>
       </Sticky>
     );
