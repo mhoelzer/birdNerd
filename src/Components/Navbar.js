@@ -3,92 +3,68 @@ import { Menu, Sticky } from "semantic-ui-react";
 import logo from "../Images/birdNerd.jpg";
 import { Link } from "react-router-dom";
 
+const NavbarItems = props => {
+  return (
+    <React.Fragment>
+      <Menu.Item>
+        <Link to={props.pathname}>{props.name}</Link>
+      </Menu.Item>
+      {props.children}
+    </React.Fragment>
+  );
+};
+
 export default class Navbar extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-
+    this.state = {
+      navbarItems: [
+        { name: "Compose Entry", pathname: "/composeEntry" },
+        { name: "Login", pathname: "/login" },
+        { name: "Register", pathname: "/register" },
+        { name: "Search", pathname: "/" },
+        { name: "Advanced Search", pathname: "/advancedSearch" },
+        { name: "Birdidex", pathname: "/birdidex" },
+        { name: "Profile", pathname: "/profile" }
+      ]
+    };
+  }
   render() {
-    const { activeItem } = this.state;
-
     return (
       <Sticky>
-        <Menu>
-          <Menu.Item>
+        <Menu style={{ position: "sticky" }}>
+          <Menu.Item as={Link} to="/">
             <img src={logo} alt="Logo" />
           </Menu.Item>
 
-          <Menu.Item
-            name="=login"
-            active={activeItem === "login"}
-            onClick={this.handleItemClick}
-          >
-            <Link to="/Login" id="login">
-              Login
-            </Link>
-            </Menu.Item>
+          {/* <NavbarItems to={this.state.navbarItems.pathname}>
+            {this.state.navbarItems.name}
+          </NavbarItems> */}
 
-
-          <Menu.Item
-            name="=composeEntry"
-            active={activeItem === "composeEntry"}
-            onClick={this.handleItemClick}
-          >
-            <Link to="/composeEntry" id="composeEntry">
-              Compose Entry
-            </Link>
+          <Menu.Item as={Link} to="/birdidex">
+            Birdidex
           </Menu.Item>
 
-          <Menu.Item
-            name="profile"
-            active={activeItem === "profile"}
-            onClick={this.handleItemClick}
-          >
-            <Link to="/profile" id="profile">
-              Profile
-            </Link>
+          <Menu.Item as={Link} to="/advanced">
+            Advanced Search
           </Menu.Item>
 
-          <Menu.Item
-            name="birdidex"
-            active={activeItem === "birdidex"}
-            onClick={this.handleItemClick}
-          >
-            <Link to="/birdidex" id="birdidex">
-              Birdy-Dex
-            </Link>
+          {/* <Menu.Item position={"right"}>
+            <Link to="/username">Username</Link>
+          </Menu.Item>
+ */}
+          <Menu.Item position={"right"} as={Link} to="/login">
+            Login
           </Menu.Item>
 
-          <Menu.Item
-            name="notebook"
-            active={activeItem === "notebook"}
-            onClick={this.handleItemClick}
-          >
-            <Link to="/notebook" id="notebook">
-              Notebook
-            </Link>
+          <Menu.Item as={Link} to="/register">
+            Register
           </Menu.Item>
 
-          <Menu.Item
-            name="home"
-            active={activeItem === "home"}
-            onClick={this.handleItemClick}
-          >
-            <Link to="/" id="home">
-              Search
-            </Link>
-          </Menu.Item>
-
-          <Menu.Item
-            name="username"
-            active={activeItem === "username"}
-            onClick={this.handleItemClick}
-            position={"right"}
-          >
-            <Link to="/username" id="username">
-              Username
-            </Link>
-          </Menu.Item>
+          {/* <Menu.Item>
+            <Link to="/login">Logout</Link>
+          </Menu.Item> */}
         </Menu>
       </Sticky>
     );
