@@ -15,14 +15,14 @@ export default class EditProfile extends Component {
       //   style={{ display: "table" }}
       >
         <Form style={{ width: "40%", padding: "1.5%" }}>
-          <Form.Field>
+          {/* <Form.Field>
             <label>First Name</label>
             <input placeholder="First Name" />
           </Form.Field>
           <Form.Field>
             <label>Last Name</label>
             <input placeholder="Last Name" />
-          </Form.Field>
+          </Form.Field> */}
           <Form.Field>
             <label>About Me</label>
             <textarea
