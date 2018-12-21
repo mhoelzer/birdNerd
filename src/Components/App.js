@@ -5,6 +5,7 @@ import SearchBar from "./SearchBar";
 import Profile from "./Profile";
 import Notebook from "./Notebook";
 import EditProfile from "./EditProfile";
+import Login from "./Login";
 // import Register from "./Register";
 
 class App extends Component {
@@ -17,7 +18,7 @@ class App extends Component {
           <Route path="/notebook" render={() => <Notebook />} />
           <Route path="/profile" render={() => <Profile />} />
           <Route path="/edit" render={() => <EditProfile />} />
-          {/* <Route path="/login" render={() => <Login />} /> */}
+          <Route path="/Login" render={() => <Login />} />
           {/* <Route path="/register" render={() => <Register />} /> */}
           {/* <Route path="/advanced" render={() => <Identifier />} /> */}
           {/* <Route path="/birdidex" render={() => <Identifier />} /> */}
