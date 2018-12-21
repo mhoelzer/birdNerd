@@ -50,11 +50,11 @@ export default class Navbar extends Component {
           </Menu.Item>
 
           <Menu.Item
-            name="birdidex"
-            active={activeItem === "birdidex"}
+            name="birdydex"
+            active={activeItem === "birdydex"}
             onClick={this.handleItemClick}
           >
-            <Link to="/birdidex" id="birdidex">
+            <Link to="/birdydex" id="birdydex">
               Birdy-Dex
             </Link>
           </Menu.Item>

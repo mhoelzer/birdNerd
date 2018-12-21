@@ -6,6 +6,7 @@ import ComposeEntry from "./ComposeEntry";
 import Profile from "./Profile";
 import Notebook from "./Notebook";
 import Login from "./Login";
+import Birdydex from "./Birdydex.js";
 // import Register from "./Register";
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
           <Route path="/notebook" render={() => <Notebook />} />
           <Route path="/profile" render={() => <Profile />} />
           <Route path="/Login" render={() => <Login />} />
+          <Route path="/birdydex" render={() => <Birdydex />} />
           {/* <Route path="/register" render={() => <Register />} /> */}
           {/* <Route path="/identifier" render={() => <Identifier />} /> */}
         </Switch>
