@@ -37,15 +37,12 @@ export default class Navbar extends Component {
           <Menu.Item as={Link} to="/">
             <img src={logo} alt="Logo" />
           </Menu.Item>
-
           {/* <NavbarItems to={this.state.navbarItems.pathname}>
             {this.state.navbarItems.name}
           </NavbarItems> */}
-
           <Menu.Item as={Link} to="/birdidex">
             Birdidex
           </Menu.Item>
-
           <Menu.Item as={Link} to="/advanced">
             Advanced Search
           </Menu.Item>
@@ -57,11 +54,9 @@ export default class Navbar extends Component {
           <Menu.Item position={"right"} as={Link} to="/login">
             Login
           </Menu.Item>
-
           <Menu.Item as={Link} to="/register">
             Register
           </Menu.Item>
-
           {/* <Menu.Item>
             <Link to="/login">Logout</Link>
           </Menu.Item> */}
