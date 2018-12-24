@@ -21,13 +21,9 @@ class App extends Component {
           <Route path="/edit" render={() => <EditProfile />} />
           <Route path="/login" render={() => <Login />} />
           <Route path="/register" render={() => <Register />} />
+          <Route path="/birdidex" render={() => <Birdydex />} />
           {/* <Route path="/advanced" render={() => <Identifier />} /> */}
-          {/* <Route path="/birdidex" render={() => <Identifier />} /> */}
         </Switch>
-        
-        <div className="birdydex">
-          <Birdydex />
-        </div>
       </div>
     );
   }
