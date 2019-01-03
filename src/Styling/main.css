@@ -22,3 +22,10 @@
     background-color: #506A5F !important;
     color: white !important;
 }
+
+.stickyMenu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
