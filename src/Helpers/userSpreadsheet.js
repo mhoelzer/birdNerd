@@ -16,7 +16,8 @@ export default function loadUser(callback) {
           const users =
             data.map(user => ({
               username: user[0],
-              password: user[1]
+              password: user[1],
+              imageURL: user[2]
             })) || [];
           callback({
             users
