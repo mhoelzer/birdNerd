@@ -8,6 +8,7 @@ import {
   Segment,
   TextArea
 } from "semantic-ui-react";
+import { composeEntry } from "../Actions/composeEntryAction";
 
 class ComposeEntry extends Component {
   state = {
@@ -16,26 +17,26 @@ class ComposeEntry extends Component {
     date: "",
     theDeets: "",
     location: "",
-    modalOpen: false
+    modalOpen: false,
+    closeOnDimmerClick: true
   };
 
-  // handleMessageSubmit = event => {
-  //   this.setState({ theDeets: event.target.value });
-  // };
+  // action/reducers
+  handleChangeComposeEntry = (e, { value }) =>
+    this.setState({ [e.target.name]: value });
 
-  // handleComposeMessageProfileButton = event => {
-  //   this.props.composeMessage(this.state.theDeets);
-  //   this.setState({ theDeets: "" });
-  // };
-
-  handleChange = (e, { value }) => this.setState({ [e.target.name]: value });
   handleSubmit = (e, { value }) => {
-    this.props.updateUser({ ...this.state });
+    this.props.composeEntry({ ...this.state });
   };
-  handleOpen = () => this.setState({ modalOpen: true });
+
+  // modal
+  handleOpen = () =>
+    this.setState({ closeOnDimmerClick: false, modalOpen: true });
   handleClose = () => this.setState({ modalOpen: false });
 
   render() {
+    const { closeOnDimmerClick, modalOpen } = this.state;
+
     return (
       <Modal
         trigger={
@@ -43,7 +44,8 @@ class ComposeEntry extends Component {
             <Icon name="sticky note " /> Add Entry
           </Button>
         }
-        open={this.state.modalOpen}
+        open={modalOpen}
+        closeOnDimmerClick={closeOnDimmerClick}
         onClose={this.handleClose}
         size="tiny"
       >
@@ -58,28 +60,28 @@ class ComposeEntry extends Component {
         <Form size="large">
           <Segment color="grey">
             <Form.Input
-              onChange={this.handleChange}
-              name="birdNAme"
+              onChange={this.handleChangeComposeEntry}
+              name="birdName"
               fluid
               label="Bird Name"
               placeholder="Bird Name"
             />
             <Form.Input
-              onChange={this.handleChange}
+              onChange={this.handleChangeComposeEntry}
               name="date"
               fluid
               label="Date"
               placeholder="Date of Discovery"
             />
             <Form.Input
-              onChange={this.handleChange}
+              onChange={this.handleChangeComposeEntry}
               name="location"
               fluid
               label="Location"
               placeholder="Where did you see this bird?"
             />
             <Form.TextArea
-              onChange={this.handleChange}
+              onChange={this.handleChangeComposeEntry}
               name="theDeets"
               label="Details"
               placeholder="What happened when you met this bird?"
@@ -95,7 +97,11 @@ class ComposeEntry extends Component {
               <Icon name="sticky note " /> Add Entry
             </Button>
             <Button.Or />
-            <Button color="red" className="cancel-button" onClick={this.handleClose}>
+            <Button
+              color="red"
+              className="cancel-button"
+              onClick={this.handleClose}
+            >
               <Icon name="remove" /> Nevermind!
             </Button>
           </Button.Group>
@@ -113,8 +119,8 @@ class ComposeEntry extends Component {
 
 // const mapDispatchToProps = dispatch => {
 //   return {
-//     composeMessage: theDeets => {
-//       dispatch(composeMessage(theDeets));
+//     composeEntry: (birdName, date, theDeets, location) => {
+//       dispatch(composeEntry(birdName, date, theDeets, location));
 //     }
 //   };
 // };
