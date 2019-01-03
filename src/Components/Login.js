@@ -86,8 +86,8 @@ class Login extends Component {
           {username}
           {password}
         </Card.Group>
-        <Form size="small" onSubmit={this.handleLogin}>
-          <Form.Field width="6">
+        <Form size="large" onSubmit={this.handleLogin}>
+          <Form.Field>
             <input
               className="input"
               placeholder="Username"
@@ -96,7 +96,7 @@ class Login extends Component {
               onChange={this.handleUsernameChange}
             />
           </Form.Field>
-          <Form.Field width="6">
+          <Form.Field>
             <input
               className="input"
               placeholder="Password"
