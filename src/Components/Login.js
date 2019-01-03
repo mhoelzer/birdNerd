@@ -1,19 +1,37 @@
 import React, { Component } from "react";
-import { Button, Form, Header, Message } from "semantic-ui-react";
+import { Button, Form, Header, Message, Card } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import config from "../Constants/config.js";
-import load from "../Helpers/spreadsheet.js";
+import load from "../Helpers/userSpreadsheet.js";
 
 class Login extends Component {
   state = {
-    user: [],
+    username: "",
+    password: "",
     error: null
   };
 
-  componentDidMount() {
-    // 1. Load the JavaScript client library.
+  // componentDidMount() {
+  //   // 1. Load the JavaScript client library.
+  // }
+
+  handleLogin = event => {
+    // Handle Login
+    event.preventDefault();
     window.gapi.load("client", this.initClient);
-  }
+  };
+
+  handleUsernameChange = event => {
+    this.setState({
+      username: event.target.value
+    });
+  };
+
+  handlePasswordChange = event => {
+    this.setState({
+      password: event.target.value
+    });
+  };
 
   initClient = () => {
     // 2. Initialize the JavaScript client library.
@@ -31,14 +49,25 @@ class Login extends Component {
 
   onLoad = (data, error) => {
     if (data) {
-      const user = data.user;
-      this.setState({ user });
+      const users = data.users;
+      console.log(data.users);
+      const user = users.find(users => users.username === this.state.username);
+      if (user === undefined) {
+        this.setState({ error: { message: "User does not exist." } });
+      } else if (user.password === this.state.password) {
+        // do something man - like route to different page
+        console.log("hell yea?");
+      }
     } else {
       this.setState({ error });
     }
   };
 
   render() {
+    const { username, password, error } = this.state;
+    if (error) {
+      return <div>{this.state.error.message}</div>;
+    }
     return (
       <div
         className="login"
@@ -53,13 +82,18 @@ class Login extends Component {
         <Header className="header" as="h2">
           Sign In
         </Header>
-        <Form size="small">
+        <Card.Group>
+          {username}
+          {password}
+        </Card.Group>
+        <Form size="small" onSubmit={this.handleLogin}>
           <Form.Field width="6">
             <input
               className="input"
               placeholder="Username"
               required
               autoFocus
+              onChange={this.handleUsernameChange}
             />
           </Form.Field>
           <Form.Field width="6">
@@ -68,6 +102,7 @@ class Login extends Component {
               placeholder="Password"
               type="password"
               required
+              onChange={this.handlePasswordChange}
             />
           </Form.Field>
           <Button className="submit-button" type="submit">
