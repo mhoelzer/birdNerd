@@ -11,70 +11,91 @@ import bird5 from "../Images/5.jpg";
 export default class EditProfile extends Component {
   render() {
     return (
-      <div
-      //   style={{ display: "table" }}
-      >
-        <Form style={{ width: "40%", padding: "1.5%" }}>
-          {/* <Form.Field>
-            <label>First Name</label>
-            <input placeholder="First Name" />
-          </Form.Field>
-          <Form.Field>
-            <label>Last Name</label>
-            <input placeholder="Last Name" />
-          </Form.Field> */}
-          <Form.Field>
-            <label>About Me</label>
-            <textarea
-              style={{ height: "10%" }}
-              className="editAboutMe"
-              placeholder="Share your experiences!"
-            />
-          </Form.Field>
-          <Form.Field>
-            <label>Password</label>
-            <input placeholder="Password" />
-          </Form.Field>
-          <Form.Field>
-            <label>Re-Enter Password</label>
-            <input placeholder="Re-Enter Password" />
-          </Form.Field>
-          <Button type="submit">Update Profile</Button>
-          <Button type="reset">Reset Form</Button>
-          <Button color="red">Delete Account</Button>
-        </Form>
-        <Grid
-        // style={{ textAlign: "center", verticalAlign: "middle" }}
-        >
-          <Container
-          //   style={{ padding: "5%" }}
-          >
+      <div className="editParentContainer" style={{ textAlign: "center" }}>
+        <center>
+          <div className="editUserDetails">
+            <Form style={{ width: "40%", padding: "1.5%" }}>
+              <Form.Field>
+                <label>About Me</label>
+                <textarea
+                  style={{ height: "10%" }}
+                  className="editAboutMe"
+                  placeholder="Share your experiences!"
+                />
+              </Form.Field>
+              <Form.Field>
+                <label>Password</label>
+                <input placeholder="Password" />
+              </Form.Field>
+              <Form.Field>
+                <label>Re-Enter Password</label>
+                <input placeholder="Re-Enter Password" />
+              </Form.Field>
+              <Button style={{ margin: "2%" }} type="submit">
+                Update Profile
+              </Button>
+              <Button style={{ margin: "2%" }} type="reset">
+                Reset Form
+              </Button>
+              <Button style={{ margin: "2%" }} color="red">
+                Delete Account
+              </Button>
+            </Form>
+          </div>
+        </center>
+        <Grid>
+          <Container>
             <Header textAlign="center" style={{ padding: "2%" }} as="h2">
               Choose your Bird Icon
             </Header>
             <div>
               <img
-                style={{ width: "20vw", height: "40vh" }}
+                style={{
+                  margin: "2%",
+                  width: "30%",
+                  height: "30%",
+                  padding: "1.5%"
+                }}
                 src={bird1}
                 alt=""
               />
               <img
-                style={{ width: "20vw", height: "40vh" }}
+                style={{
+                  margin: "2%",
+                  width: "30%",
+                  height: "30%",
+                  padding: "1.5%"
+                }}
                 src={bird2}
                 alt=""
               />
               <img
-                style={{ width: "20vw", height: "40vh" }}
+                style={{
+                  margin: "2%",
+                  width: "30%",
+                  height: "30%",
+                  padding: "1.5%"
+                }}
                 src={bird3}
                 alt=""
               />
               <img
-                style={{ width: "20vw", height: "40vh" }}
+                style={{
+                  margin: "2%",
+                  width: "30%",
+                  height: "30%",
+                  padding: "1.5%"
+                }}
                 src={bird4}
                 alt=""
               />
               <img
-                style={{ width: "20vw", height: "40vh" }}
+                style={{
+                  margin: "2%",
+                  width: "30%",
+                  height: "30%",
+                  padding: "1.5%"
+                }}
                 src={bird5}
                 alt=""
               />

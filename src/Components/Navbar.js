@@ -3,33 +3,40 @@ import { Menu, Sticky } from "semantic-ui-react";
 import logo from "../Images/birdNerd.jpg";
 import { Link } from "react-router-dom";
 
-const NavbarItems = props => {
-  return (
-    <React.Fragment>
-      <Menu.Item>
-        <Link to={props.pathname}>{props.name}</Link>
-      </Menu.Item>
-      {props.children}
-    </React.Fragment>
-  );
-};
+// const NavbarItems = props => {
+//   return (
+//     <React.Fragment>
+//       <Menu.Item>
+//         <Link to={props.pathname}>{props.name}</Link>
+//       </Menu.Item>
+//       {props.children}
+//     </React.Fragment>
+//   );
+// };
 
 export default class Navbar extends Component {
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
 
-    this.state = {
-      navbarItems: [
-        { name: "Compose Entry", pathname: "/composeEntry" },
-        { name: "Login", pathname: "/login" },
-        { name: "Register", pathname: "/register" },
-        { name: "Search", pathname: "/" },
-        { name: "Advanced Search", pathname: "/advancedSearch" },
-        { name: "Birdidex", pathname: "/birdidex" },
-        { name: "Profile", pathname: "/profile" }
-      ]
-    };
-  }
+  //   this.state = {
+  //     navbarItems: [
+  //       { name: "Compose Entry", pathname: "/composeEntry" },
+  //       { name: "Login", pathname: "/login" },
+  //       { name: "Register", pathname: "/register" },
+  //       { name: "Search", pathname: "/" },
+  //       { name: "Advanced Search", pathname: "/advancedSearch" },
+  //       { name: "Birdidex", pathname: "/birdidex" },
+  //       { name: "Profile", pathname: "/profile" }
+  //     ],
+  //     currentItem: null
+  //   };
+  //   this.setCurrentItem = this.setCurrentItem.bind(this);
+  // }
+
+  // setCurrentItem(name) {
+  //   this.setState({ currentItem: name });
+  // }
+
   render() {
     return (
       <Sticky>
@@ -37,9 +44,11 @@ export default class Navbar extends Component {
           <Menu.Item as={Link} to="/">
             <img src={logo} alt="Logo" />
           </Menu.Item>
+
           {/* <NavbarItems to={this.state.navbarItems.pathname}>
             {this.state.navbarItems.name}
           </NavbarItems> */}
+
           <Menu.Item as={Link} to="/birdidex">
             Birdidex
           </Menu.Item>
@@ -59,6 +68,10 @@ export default class Navbar extends Component {
           </Menu.Item>
           {/* <Menu.Item>
             <Link to="/login">Logout</Link>
+          </Menu.Item> */}
+
+          {/* <Menu.Item as={Link} to="/edit">
+            Edit Profile
           </Menu.Item> */}
         </Menu>
       </Sticky>
