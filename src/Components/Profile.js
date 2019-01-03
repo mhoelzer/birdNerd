@@ -14,6 +14,7 @@ import birdNerd from "../Images/birdNerd.jpg";
 import GridRow from "../Styling/GridRow";
 import ComposeEntry from "./ComposeEntry";
 import Notebook from "./Notebook";
+import { connect } from "react-redux";
 
 class Profile extends Component {
   render() {
@@ -32,7 +33,7 @@ class Profile extends Component {
           >
             <Card.Content>
               <Image src={birdNerd} />
-              <Segment style={{ padding: "1em 0em" }} inverted color="blue">
+              <Segment style={{ padding: "1em 0em" }} inverted className="usernameBox">
                 <Card.Header as="h2" textAlign="center">
                   {this.props.username}
                 </Card.Header>
@@ -44,7 +45,7 @@ class Profile extends Component {
             </Card.Content>
             <Card.Content extra>
               <Link to="/editprofile">
-                <Button size="large" color="black" fluid>
+                <Button className="submit-button" size="large" fluid>
                   Edit Profile
                 </Button>
               </Link>
@@ -66,4 +67,16 @@ class Profile extends Component {
   }
 }
 
-export default Profile;
+
+const mapStateToProps = state => {
+  return {
+    about: state.loggedInUser.about,
+    username: state.loggedInUser.username
+  };
+};
+export default connect(
+  mapStateToProps,
+  null
+)(Profile);
+
+// export default Profile;

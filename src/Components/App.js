@@ -18,7 +18,7 @@ class App extends Component {
           <Route exact path="/" render={() => <SearchBar />} />
           <Route path="/notebook" render={() => <Notebook />} />
           <Route path="/profile" render={() => <Profile />} />
-          <Route path="/edit" render={() => <EditProfile />} />
+          <Route path="/editprofile" render={() => <EditProfile />} />
           <Route path="/login" render={() => <Login />} />
           <Route path="/register" render={() => <Register />} />
           <Route path="/birdidex" render={() => <Birdydex />} />

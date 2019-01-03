@@ -17,3 +17,8 @@
     display: flex !important;
     justify-content: center !important;
 }
+
+.usernameBox {
+    background-color: #506A5F !important;
+    color: white !important;
+}
