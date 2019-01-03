@@ -29,3 +29,8 @@
     width: 100%;
     z-index: 1;
 }
+
+.navMenu {
+    display: block;
+    margin-bottom: 10%;
+}
