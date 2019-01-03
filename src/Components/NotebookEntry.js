@@ -5,7 +5,7 @@ class NotebookEntry extends Component {
   render() {
     return (
       <Card
-        color="green"
+        color="blue"
         animation="overlay"
         Icon="labeled"
         Inverted
