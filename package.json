@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://mhoelzer.github.io/birdNerd/",
   "dependencies": {
+    "@lourd/react-google-sheet": "^0.4.0",
     "connected-react-router": "^6.0.0",
     "faker": "^4.1.0",
     "gh-pages": "^2.0.1",
