@@ -80,9 +80,9 @@ class ComposeEntry extends Component {
               rows={5}
             />
             <div>this si wehere the image uploader will go</div>
-            <Form.Button color="blue" onClick={this.handleSubmit}>
+            <Button className="submit-button" onClick={this.handleSubmit}>
               <Icon name="sticky note " /> Add Entry
-            </Form.Button>
+            </Button>
             {/* <DeleteUser /> */}
           </Segment>
         </Form>
