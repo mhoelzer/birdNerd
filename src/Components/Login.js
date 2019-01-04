@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import { Button, Form, Header, Message, Card } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import config from "../Constants/config.js";
 import load from "../Helpers/userSpreadsheet.js";
+import {withRouter} from "react-router-dom";
+
+
 
 class Login extends Component {
   state = {
@@ -56,7 +59,8 @@ class Login extends Component {
         this.setState({ error: { message: "User does not exist." } });
       } else if (user.password === this.state.password) {
         // do something man - like route to different page
-        console.log("hell yea?");
+        this.props.history.push("/")
+        console.log("hell yea?");        
       }
     } else {
       this.setState({ error });
@@ -82,10 +86,6 @@ class Login extends Component {
         <Header className="header" as="h2">
           Sign In
         </Header>
-        <Card.Group>
-          {username}
-          {password}
-        </Card.Group>
         <Form size="large" onSubmit={this.handleLogin}>
           <Form.Field>
             <input
@@ -122,4 +122,5 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login)
+
