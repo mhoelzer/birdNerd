@@ -18,6 +18,16 @@
     justify-content: center !important;
 }
 
+.cancel-button {
+    font-size: 16px !important;
+    margin: auto !important;
+    text-align: center !important;
+    height: 40px;
+    width: 50%;
+    display: flex !important;
+    justify-content: center !important;
+}
+
 .usernameBox {
     background-color: #506A5F !important;
     color: white !important;
