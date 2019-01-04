@@ -50,9 +50,9 @@ export default class Birdydex extends Component {
       return <div>{this.state.error.message}</div>;
     }
     return (
-      <Card.Group>
+      <Card.Group className="birdydex">
         {bird.map((bird, i) => (
-          <Card style={styles.cardPosition}>
+          <Card style={styles.cardPosition} className="bird-card">
             <Card.Content>
               {/* <img src={bird.image} /> */}
               <h2>{bird.species}</h2>
@@ -61,13 +61,14 @@ export default class Birdydex extends Component {
               <br />
               <p>Size: {bird.size}</p>
               <br />
-              <Modal size={"tiny"} trigger={<Button>More Info!</Button>}>
+              <Modal size={"tiny"} trigger={<Button className="more-info">More Info</Button>}>
                 <Modal.Header>{bird.species}</Modal.Header>
                 <Modal.Content image>
                   <Image wrapped size="medium" src={bird.image} />
                   <Modal.Description>
                     <Header>{bird.species}</Header>
-                    <p>State(s) I reside in: {bird.location}</p>
+                    <p>State(s): {bird.location}</p>
+                    <p>Type: {bird.type}</p>
                     <p>Description: {bird.description}</p>
                     <a href={bird.site}>
                       Click here to research more about {bird.species}!
