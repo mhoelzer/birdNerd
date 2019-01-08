@@ -91,3 +91,18 @@
     display: flex !important;
     justify-content: center !important;
 }
+
+.bird-image {
+    width: 400px;
+}
+
+.bird-map {
+    margin: 10px;
+}
+
+.thumbnail {
+    width: 220px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
