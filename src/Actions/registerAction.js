@@ -1,15 +1,10 @@
-import {
-    REGISTER,
-    REGISTER_SUCCESS,
-    REGISTER_FAIL,
-    TO_LOGIN
-  } from "../Redux/types";
-import { push } from "connected-react-router";
-import axios from "axios";
-import { store } from "../Redux/store";
 
-export const GET_MESSAGES = "GET_MESSAGES";
-export const ADD_TWEET = "ADD_TWEET";
+import { push } from "connected-react-router";
+
+export const REGISTER = "REGISTER"
+export const REGISTER_SUCCESS = "REGISTER_SUCCESS"
+export const REGISTER_FAIL = "REGISTER_FAIL"
+export const TO_LOGIN = "TO_LOGIN"
 // const api = "https://jhoelzer-kwitter.herokuapp.com";
 
 export const register = registerData => dispatch => {
@@ -17,7 +12,7 @@ dispatch({
     type: REGISTER
 });
 
-fetch("", {
+fetch("https://shrouded-tundra-68436.herokuapp.com/register", {
     method: "POST",
     headers: {
     "Content-Type": "application/json"
