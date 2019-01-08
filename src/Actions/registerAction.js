@@ -7,7 +7,7 @@ export const REGISTER_FAIL = "REGISTER_FAIL"
 export const TO_LOGIN = "TO_LOGIN"
 // const api = "https://jhoelzer-kwitter.herokuapp.com";
 
-export const register = registerData => dispatch => {
+export const registerAction = registerData => dispatch => {
 dispatch({
     type: REGISTER
 });

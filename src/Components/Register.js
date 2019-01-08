@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Button, Form, Header, Message, Segment } from "semantic-ui-react";
-//import { connect } from "react-redux";
+import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
-//import { register, loginLink } from "../Actions/action.js";
+import { registerAction } from "../Actions/registerAction"
 import "../Styling/main.css";
  
 class Register extends Component {
@@ -55,9 +55,10 @@ class Register extends Component {
         ) {
           this.setState({ passwordMatches: true });
           console.log("handle was called");
-          this.props.register({
+          registerAction({
             username: this.state.username,
-            password: this.state.password
+            password: this.state.password,
+            displayName: this.state.displayName
           });
         }
     
@@ -132,23 +133,23 @@ class Register extends Component {
     }
 }
 
-export default Register;
 
-// const mapStateToProps = state => {
-//   return {
-//     result: state.registerResult
-//   };
-// };
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     register: registerData => dispatch(register(registerData))
-//   };
-// };
+const mapStateToProps = state => {
+  return {
+    result: state.registerResult
+  };
+};
 
-// export default withRouter(
-//   connect(
-//     mapStateToProps,
-//     mapDispatchToProps
-//   )(Register)
-// );
+const mapDispatchToProps = dispatch => {
+  return {
+    register: registerData => dispatch(registerAction(registerData))
+  };
+};
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Register)
+);
