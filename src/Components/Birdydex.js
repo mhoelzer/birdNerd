@@ -26,12 +26,12 @@ class Birdydex extends Component {
         {bird.map((bird, i) => (
           <Card style={styles.cardPosition} className="bird-card">
             <Card.Content>
-              {/* <img src={bird.image} /> */}
               <h2>{bird.species}</h2>
               <br />
-              <p>Color: {bird.color}</p>
+              <img src={bird.image} className="thumbnail" />
+              {/* <p>Color: {bird.color}</p>
               <br />
-              <p>Size: {bird.size}</p>
+              <p>Size: {bird.size}</p> */}
               <br />
               <Modal
                 size={"tiny"}
@@ -42,6 +42,7 @@ class Birdydex extends Component {
                   <Image wrapped size="medium" src={bird.image} />
                   <Modal.Description>
                     <Header>{bird.species}</Header>
+                    <p>Scientific Name: <i>{bird.scientificName}</i></p>
                     <p>State(s): {bird.location}</p>
                     <p>Type: {bird.type}</p>
 
