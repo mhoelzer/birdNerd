@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Search, Grid, Header, Segment } from "semantic-ui-react";
+import { Search, Grid, Header, Segment, Modal, Image } from "semantic-ui-react";
 import _ from "lodash";
 import load from "../Helpers/spreadsheet.js";
 import { connect } from "react-redux";
@@ -25,7 +25,7 @@ class SearchBar extends Component {
     this.setState({ isLoading: false, results: [], value: "" });
 
   handleResultSelect = (e, { result }) =>
-    this.setState({ value: result.species });
+    this.setState({ value: result.species, showModal: true });
 
   handleSearchChange = (e, { value }) => {
     this.setState({ isLoading: true, value });
@@ -43,29 +43,61 @@ class SearchBar extends Component {
     }, 300);
   };
   render() {
-    const { isLoading, value, results } = this.state;
+    const bird = {};
+    const { isLoading, value, results, showModal } = this.state;
 
     return (
-      <div
-        style={{
-          position: "absolute",
-          left: "50%",
-          top: "30%",
-          transform: "translate(-50%, -50%)"
-        }}
-      >
-        <Search
-          loading={isLoading}
-          size={"massive"}
-          onResultSelect={this.handleResultSelect}
-          onSearchChange={_.debounce(this.handleSearchChange, 500, {
-            leading: true
-          })}
-          results={results}
-          value={value}
-          {...this.props}
-        />
-      </div>
+      <React.Fragment>
+        <Modal
+          size={"tiny"}
+          open={this.state.showModal}
+          closeOnDimmerClick={true}
+          closeIcon
+          onClose={() =>
+            this.setState({
+              showModal: false
+            })
+          }
+        >
+          <Modal.Header>{bird.species}</Modal.Header>
+          <Modal.Content image>
+            <Image wrapped size="medium" src={bird.image} />
+            <Modal.Description>
+              <Header>{bird.species}</Header>
+              <p>
+                Scientific Name: <i>{bird.scientificName}</i>
+              </p>
+              <p>State(s): {bird.location}</p>
+              <p>Type: {bird.type}</p>
+
+              <a href={bird.site} target="_blank">
+                Click here to research more about {bird.species}!
+              </a>
+            </Modal.Description>
+          </Modal.Content>
+        </Modal>
+
+        <div
+          style={{
+            position: "absolute",
+            left: "50%",
+            top: "30%",
+            transform: "translate(-50%, -50%)"
+          }}
+        >
+          <Search
+            loading={isLoading}
+            size={"massive"}
+            onResultSelect={this.handleResultSelect}
+            onSearchChange={_.debounce(this.handleSearchChange, 500, {
+              leading: true
+            })}
+            results={results}
+            value={value}
+            {...this.props}
+          />
+        </div>
+      </React.Fragment>
     );
   }
 }
