@@ -4,6 +4,7 @@ import GridRow from "../Styling/GridRow";
 import { Grid } from "semantic-ui-react";
 
 class Notebook extends Component {
+  // puts in redux state after running action crreator 
   //   componentDidMount() {
   //     this.props.getMessages();
   //   }
@@ -15,11 +16,11 @@ class Notebook extends Component {
           {/* {this.props.messages.map(message => (
             <NotebookEntry
               key={message.id}
-              text={message.text}
-              username={message.username}
-              toggleLike={() => this.props.toggleLike(message.id)}
-              numOfLikes={message.likes.length}
-              isLiked={message.isLiked}
+              // username={message.username}
+              birdName={message.birdName}
+              date={message.date}
+              location={message.location}
+              location={message.location}
             />
           ))} */}
         </Grid.Column>
@@ -58,13 +59,13 @@ class Notebook extends Component {
 //   return {
 //     getMessages: () => {
 //       dispatch(getMessages());
-//     },
-//     toggleLike: messageId => dispatch(toggleLike(messageId))
+//     }
 //   };
 // };
 
 // export default connect(
 //   mapStateToProps,
 //   mapDispatchToProps
-// )(MessagesList);
+// )(Notebook);
+
 export default Notebook;

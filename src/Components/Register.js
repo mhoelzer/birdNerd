@@ -121,7 +121,7 @@ class Register extends Component {
         <div>
           <Message className="message">
             Already signed up?
-            <Link className="link" to="/Login" onClick={this.handleLoginLink}>
+            <Link className="link" to="/login" onClick={this.handleLoginLink}>
               {" "}
               Login
             </Link>

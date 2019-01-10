@@ -33,7 +33,11 @@ class Profile extends Component {
           >
             <Card.Content>
               <Image src={birdNerd} />
-              <Segment style={{ padding: "1em 0em" }} inverted className="usernameBox">
+              <Segment
+                style={{ padding: "1em 0em" }}
+                inverted
+                className="usernameBox"
+              >
                 <Card.Header as="h2" textAlign="center">
                   {this.props.username}
                 </Card.Header>
@@ -67,16 +71,15 @@ class Profile extends Component {
   }
 }
 
+// const mapStateToProps = state => {
+//   return {
+//     about: state.loggedInUser.about,
+//     username: state.loggedInUser.username
+//   };
+// };
+// export default connect(
+//   mapStateToProps,
+//   null
+// )(Profile);
 
-const mapStateToProps = state => {
-  return {
-    about: state.loggedInUser.about,
-    username: state.loggedInUser.username
-  };
-};
-export default connect(
-  mapStateToProps,
-  null
-)(Profile);
-
-// export default Profile;
+export default Profile;

@@ -18,6 +18,16 @@
     justify-content: center !important;
 }
 
+.cancel-button {
+    font-size: 16px !important;
+    margin: auto !important;
+    text-align: center !important;
+    height: 40px;
+    width: 50%;
+    display: flex !important;
+    justify-content: center !important;
+}
+
 .usernameBox {
     background-color: #506A5F !important;
     color: white !important;
@@ -33,4 +43,66 @@
 .navMenu {
     display: block;
     margin-bottom: 10%;
+}
+
+.line {
+    background-color: transparent !important;
+    border: solid 1px transparent !important;
+    display: flex;
+    justify-content: center;
+}
+
+.message {
+    background-color: transparent !important;
+    border: solid 1px transparent !important;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 15px !important;
+}
+
+.link, .link:hover {
+    font-weight: bold;
+    color: #6FB0CE;
+    text-decoration: none;
+    background-color: transparent !important;
+    padding-top: 0;
+    padding-bottom: 0;
+    border: solid 1px transparent !important;
+    margin-left: 7px !important;
+}
+
+.birdydex {
+    display: flex;
+    justify-content: center;
+}
+
+.bird-card {
+    border: solid 1px #6FB0CE !important;
+}
+
+.more-info {
+    background-color: #6FB0CE !important;
+    color: white !important;
+    font-size: 16px !important;
+    margin: auto !important;
+    text-align: center !important;
+    height: 40px;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.bird-image {
+    width: 400px;
+}
+
+.bird-map {
+    margin: 10px;
+}
+
+.thumbnail {
+    width: 220px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
