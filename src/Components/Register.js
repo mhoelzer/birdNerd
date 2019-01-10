@@ -7,6 +7,10 @@ import "../Styling/main.css";
  
 class Register extends Component {
 
+  componentDidMount() {
+    
+  }
+
     state = {
         username: "",
         password: "",
@@ -55,6 +59,7 @@ class Register extends Component {
         ) {
           this.setState({ passwordMatches: true });
           console.log("handle was called");
+          console.log(this.props)
           registerAction({
             username: this.state.username,
             password: this.state.password,

@@ -7,17 +7,17 @@ export const REGISTER_FAIL = "REGISTER_FAIL"
 export const TO_LOGIN = "TO_LOGIN"
 // const api = "https://jhoelzer-kwitter.herokuapp.com";
 
-export const registerAction = registerData => dispatch => {
+export const registerAction = (username, password) => dispatch => {
 dispatch({
     type: REGISTER
 });
 
-fetch("https://shrouded-tundra-68436.herokuapp.com/register", {
+fetch("localhost:8000/Authorize/register", {
     method: "POST",
     headers: {
     "Content-Type": "application/json"
     },
-    body: JSON.stringify(registerData)
+    body: JSON.stringify({username: username, password: password})
 })
     .then(res => {
     if (!res.ok) {
