@@ -21,6 +21,7 @@ class SearchBar extends Component {
     this.setState({
       showModal: false
     });
+    document.getElementById("search").focus();
   };
 
   state = { result: {} };
@@ -89,6 +90,7 @@ class SearchBar extends Component {
           }}
         >
           <Search
+            id="search"
             loading={isLoading}
             size={"massive"}
             onResultSelect={this.handleResultSelect}
@@ -98,7 +100,7 @@ class SearchBar extends Component {
             results={results}
             value={value}
             ref={this.searchBar}
-            {...this.props}
+            // {...this.props}
           />
         </div>
       </React.Fragment>
