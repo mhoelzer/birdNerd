@@ -8,6 +8,7 @@ import EditProfile from "./EditProfile";
 import Login from "./Login";
 import Register from "./Register";
 import Birdydex from "./Birdydex";
+import AdvancedSearch from "./AdvancedSearch"
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" render={() => <SearchBar />} />
           <Route path="/notebook" render={() => <Notebook />} />
+          <Route path="/advanced" render={() => <AdvancedSearch />} />
           <Route path="/profile" render={() => <Profile />} />
           <Route path="/editprofile" render={() => <EditProfile />} />
           <Route path="/login" render={() => <Login />} />

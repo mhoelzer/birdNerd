@@ -10,20 +10,17 @@ const styles = {
   }
 };
 
-class Birdydex extends Component {
-  componentDidMount() {
-    this.props.getBirdData();
-  }
+export default class Birdydex extends Component {
 
   render() {
     console.log(this.props.bird);
-    const { bird, error } = this.props;
+    const { birds, error } = this.props;
     // if (error) {
     //   return <div>{error.message}</div>;
     // }
     return (
       <Card.Group className="birdydex">
-        {bird.map((bird, i) => (
+        {birds.map((bird, i) => (
           <Card style={styles.cardPosition} className="bird-card">
             <Card.Content>
               <h2>{bird.species}</h2>
@@ -65,15 +62,3 @@ class Birdydex extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return { getBirdData: () => dispatch(getBirdData()) };
-};
-
-const mapStateToProps = state => {
-  return { bird: state.bird, error: state.error };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Birdydex);
