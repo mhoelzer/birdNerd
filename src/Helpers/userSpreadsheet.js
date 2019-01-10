@@ -4,7 +4,7 @@ import config from "../Constants/config.js";
  * Get the right values from it and assign.
  */
 export default function loadUser(callback) {
-  window.gapi.client.loadUser("sheets", "v4", () => {
+  window.gapi.client.load("sheets", "v4", () => {
     window.gapi.client.sheets.spreadsheets.values
       .get({
         spreadsheetId: config.spreadsheetId,
@@ -13,13 +13,14 @@ export default function loadUser(callback) {
       .then(
         response => {
           const data = response.result.values;
-          const user =
+          const users =
             data.map(user => ({
               username: user[0],
-              password: user[1]
+              password: user[1],
+              imageURL: user[2]
             })) || [];
           callback({
-            user
+            users
           });
         },
         response => {
