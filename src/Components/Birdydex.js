@@ -36,15 +36,20 @@ class Birdydex extends Component {
               <Modal
                 size={"tiny"}
                 trigger={<Button className="more-info">More Info</Button>}
+                closeIcon
               >
                 <Modal.Header>{bird.species}</Modal.Header>
                 <Modal.Content image>
                   <Image wrapped size="medium" src={bird.image} />
                   <Modal.Description>
                     <Header>{bird.species}</Header>
-                    <p>Scientific Name: <i>{bird.scientificName}</i></p>
+                    <p>
+                      Scientific Name: <i>{bird.scientificName}</i>
+                    </p>
                     <p>State(s): {bird.location}</p>
                     <p>Type: {bird.type}</p>
+                    <p>Size: {bird.size}</p>
+                    <p>Characteristics: {bird.characteristics}</p>
 
                     <a href={bird.site} target="_blank">
                       Click here to research more about {bird.species}!
