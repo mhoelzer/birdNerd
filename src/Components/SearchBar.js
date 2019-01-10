@@ -17,6 +17,14 @@ class SearchBar extends Component {
     this.resetComponent();
   }
 
+  handleCloseModal = () => {
+    this.setState({
+      showModal: false
+    });
+  };
+
+  state = { result: {} };
+
   componentDidMount() {
     this.props.getBirdData();
   }
@@ -25,7 +33,7 @@ class SearchBar extends Component {
     this.setState({ isLoading: false, results: [], value: "" });
 
   handleResultSelect = (e, { result }) =>
-    this.setState({ value: result.species, showModal: true });
+    this.setState({ result: result, showModal: true });
 
   handleSearchChange = (e, { value }) => {
     this.setState({ isLoading: true, value });
@@ -43,8 +51,7 @@ class SearchBar extends Component {
     }, 300);
   };
   render() {
-    const bird = {};
-    const { isLoading, value, results, showModal } = this.state;
+    const { isLoading, value, results, showModal, result } = this.state;
 
     return (
       <React.Fragment>
@@ -53,25 +60,21 @@ class SearchBar extends Component {
           open={this.state.showModal}
           closeOnDimmerClick={true}
           closeIcon
-          onClose={() =>
-            this.setState({
-              showModal: false
-            })
-          }
+          onClose={this.handleCloseModal}
         >
-          <Modal.Header>{bird.species}</Modal.Header>
+          <Modal.Header>{result.species}</Modal.Header>
           <Modal.Content image>
-            <Image wrapped size="medium" src={bird.image} />
+            <Image wrapped size="medium" src={result.image} />
             <Modal.Description>
-              <Header>{bird.species}</Header>
+              <Header>{result.species}</Header>
               <p>
-                Scientific Name: <i>{bird.scientificName}</i>
+                Scientific Name: <i>{result.scientificName}</i>
               </p>
-              <p>State(s): {bird.location}</p>
-              <p>Type: {bird.type}</p>
+              <p>State(s): {result.location}</p>
+              <p>Type: {result.type}</p>
 
-              <a href={bird.site} target="_blank">
-                Click here to research more about {bird.species}!
+              <a href={result.site} target="_blank">
+                Click here to research more about {result.species}!
               </a>
             </Modal.Description>
           </Modal.Content>
@@ -94,6 +97,7 @@ class SearchBar extends Component {
             })}
             results={results}
             value={value}
+            ref={this.searchBar}
             {...this.props}
           />
         </div>
