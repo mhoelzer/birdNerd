@@ -111,7 +111,7 @@ class ComposeEntry extends Component {
   }
 }
 
-// function mapStateToProps(state) {
+// const mapStateToProps = state => {
 //   return {
 //     userID: state.userID
 //   };

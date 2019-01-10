@@ -4,6 +4,7 @@ import GridRow from "../Styling/GridRow";
 import { Grid } from "semantic-ui-react";
 
 class Notebook extends Component {
+  // puts in redux state after running action crreator 
   //   componentDidMount() {
   //     this.props.getMessages();
   //   }

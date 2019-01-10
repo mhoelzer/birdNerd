@@ -112,7 +112,7 @@ class Login extends Component {
 
         <Message className="message" size="small">
           Not a member?
-          <Link className="link" to="/Register">
+          <Link className="link" to="/register">
             {" "}
             Sign up
           </Link>
