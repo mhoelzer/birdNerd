@@ -1,87 +1,70 @@
 import React, { Component } from "react";
-import { Button, Form, Container, Header, Grid } from "semantic-ui-react";
+import { Button, Form, Grid, Header, Icon, Segment } from "semantic-ui-react";
 import bird1 from "../Images/1.jpg";
 import bird2 from "../Images/2.jpg";
 import bird3 from "../Images/3.jpg";
 import bird4 from "../Images/4.jpg";
 import bird5 from "../Images/5.jpg";
-
-// This component will be used as a button in the Profile Component
+import DeleteUser from "./DeleteUser";
 
 export default class EditProfile extends Component {
+  state = { password: "", about: "" };
+
+  handleChange = (e, { value }) => this.setState({ [e.target.name]: value });
+  handleSubmit = (e, { value }) => {
+    this.props.updateUser({ ...this.state });
+  };
+
   render() {
     return (
-      <div
-      //   style={{ display: "table" }}
+      <Grid
+        textAlign="center"
+        style={{ height: "100%" }}
+        verticalAlign="middle"
       >
-        <Form style={{ width: "40%", padding: "1.5%" }}>
-          {/* <Form.Field>
-            <label>First Name</label>
-            <input placeholder="First Name" />
-          </Form.Field>
-          <Form.Field>
-            <label>Last Name</label>
-            <input placeholder="Last Name" />
-          </Form.Field> */}
-          <Form.Field>
-            <label>About Me</label>
-            <textarea
-              style={{ height: "10%" }}
-              className="editAboutMe"
-              placeholder="Share your experiences!"
-            />
-          </Form.Field>
-          <Form.Field>
-            <label>Password</label>
-            <input placeholder="Password" />
-          </Form.Field>
-          <Form.Field>
-            <label>Re-Enter Password</label>
-            <input placeholder="Re-Enter Password" />
-          </Form.Field>
-          <Button type="submit">Update Profile</Button>
-          <Button type="reset">Reset Form</Button>
-          <Button color="red">Delete Account</Button>
-        </Form>
-        <Grid
-        // style={{ textAlign: "center", verticalAlign: "middle" }}
-        >
-          <Container
-          //   style={{ padding: "5%" }}
-          >
-            <Header textAlign="center" style={{ padding: "2%" }} as="h2">
-              Choose your Bird Icon
-            </Header>
-            <div>
-              <img
-                style={{ width: "20vw", height: "40vh" }}
-                src={bird1}
-                alt=""
+        <Grid.Column style={{ maxWidth: 600 }}>
+          <Header textAlign="center" verticalAlign="middle" as="h1" icon>
+            <Icon name="settings" />
+            Edit Profile
+          </Header>
+          <Form size="large">
+            <Segment stacked color="grey">
+              <Form.TextArea
+                onChange={this.handleChange}
+                name="about"
+                className="editAboutMe"
+                label="About Me"
+                placeholder={
+                  this.props.about === ""
+                    ? "Tell us more about you! Share your birding experiences!"
+                    : this.props.about
+                }
               />
-              <img
-                style={{ width: "20vw", height: "40vh" }}
-                src={bird2}
-                alt=""
+              <Form.Input
+                onChange={this.handleChange}
+                name="password"
+                fluid
+                label="New Password"
+                placeholder="New Password"
               />
-              <img
-                style={{ width: "20vw", height: "40vh" }}
-                src={bird3}
-                alt=""
+              <Form.Input
+                onChange={this.handleChange}
+                name="password"
+                fluid
+                label="Re-Enter New Password"
+                placeholder="Re-Enter New Password"
               />
-              <img
-                style={{ width: "20vw", height: "40vh" }}
-                src={bird4}
-                alt=""
-              />
-              <img
-                style={{ width: "20vw", height: "40vh" }}
-                src={bird5}
-                alt=""
-              />
-            </div>
-          </Container>
-        </Grid>
-      </div>
+              <Button color="green" type="submit" onClick={this.handleSubmit} className="accept-delete-or-update">
+                <Icon name="checkmark" /> Update Profile
+              </Button>
+              <Button color="green" type="reset" className="reset">
+                <Icon name="refresh" /> Reset Form
+              </Button>
+              <DeleteUser />
+            </Segment>
+          </Form>
+        </Grid.Column>
+      </Grid>
     );
   }
 }

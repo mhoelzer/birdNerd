@@ -49,12 +49,7 @@ class ComposeEntry extends Component {
         onClose={this.handleClose}
         size="tiny"
       >
-        <Header
-          textAlign="center"
-          verticalAlign="middle"
-          icon="trash alternate outline"
-          as="h1"
-        >
+        <Header textAlign="center" verticalAlign="middle" as="h1">
           What's the Word on the Birds?
         </Header>
         <Form size="large">

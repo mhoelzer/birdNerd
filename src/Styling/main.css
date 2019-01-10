@@ -1,7 +1,7 @@
 .register, .login {
     margin: auto;
     width: 50%;
-    border: 2px solid lightblue;
+    border: 2px solid #6FB0CE;
     padding: 20px;
     margin-top: 50px;
 }
@@ -105,4 +105,24 @@
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+}
+
+.accept-delete-or-update {
+    background-color: #6FB0CE !important;
+    color: white !important;
+    font-size: 16px !important;
+    height: 40px;
+}
+
+.reset {
+    background-color: #C2BDB8 !important;
+    color: white !important;
+    font-size: 16px !important;
+    height: 40px;
+}
+
+.cancel-delete {
+    color: white !important;
+    font-size: 16px !important;
+    height: 40px;
 }
