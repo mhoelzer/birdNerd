@@ -21,8 +21,15 @@ import SearchBar from "./SearchBar";
 import "../Styling/main.css";
 
 class Homepage extends Component {
-  render() {
+  componentWillMount = () => {
     document.body.classList.add("background");
+  };
+
+  componentWillUnmount = () => {
+    document.body.classList.remove("background");
+  };
+  
+  render() {
     return (
       <div>
         <div className="headers">

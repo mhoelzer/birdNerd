@@ -67,8 +67,15 @@ class Register extends Component {
     }
   };
 
-  render() {
+  componentWillMount = () => {
     document.body.classList.add("background");
+  };
+
+  componentWillUnmount = () => {
+    document.body.classList.remove("background");
+  };
+
+  render() {
     return (
       <div className="register">
         <Header className="header" as="h2">

@@ -65,12 +65,19 @@ class Login extends Component {
     }
   };
 
+  componentWillMount = () => {
+    document.body.classList.add("background");
+  };
+
+  componentWillUnmount = () => {
+    document.body.classList.remove("background");
+  };
+
   render() {
     const { username, password, error } = this.state;
     if (error) {
       return <div>{this.state.error.message}</div>;
     }
-    document.body.classList.add("background");
     return (
       <div
         className="login"
