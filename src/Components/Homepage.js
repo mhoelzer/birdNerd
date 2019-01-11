@@ -21,18 +21,17 @@ import SearchBar from "./SearchBar";
 import "../Styling/main.css";
 
 class Homepage extends Component {
-  
   render() {
     document.body.classList.add("background");
     return (
-      <div >
+      <div>
         <div className="headers">
           <h1>Welcome to Bird Nerd</h1>
           <h2>Where nerds of a feather bird together</h2>
         </div>
 
         <SearchBar className="search" />
-        <p className="para">
+        <div className="para">
           We had two goals in mind when creating Bird Nerd:
           <ol>
             <li>Give users an easy way to identify birds they have see</li>
@@ -46,8 +45,8 @@ class Homepage extends Component {
           should browse at their own risk. Creating a profile allows a user
           access to a notebook where they can store information on sightings,
           such as the species and the time and date of the sighting.
-        </p>
-        <h2 className="sub-header">Happy birding!</h2>
+          <h2 className="sub-header">Happy birding!</h2>
+        </div>
       </div>
     );
   }
