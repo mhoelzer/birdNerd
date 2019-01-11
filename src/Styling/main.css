@@ -126,3 +126,42 @@
     font-size: 16px !important;
     height: 40px;
 }
+
+.home, .headers, h1 {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    flex-direction: column;
+    color: white;
+}
+
+.para {
+    margin-top: 150px !important;
+    margin-left: 7%;
+    margin-right: 7%;
+    padding: 2% 5% !important;
+    font-size: 18px;
+    border: #506A5F solid 1px;
+}
+
+.search {
+    margin-top: 150px;
+}
+
+h2 {
+    margin-top: 10px;
+}
+
+.background {
+    background-image: url(../Images/heron-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-attachment: fixed; */
+}
+
+.home {
+    margin-top: -90px !important;
+    padding-top: 20px;
+    height: 100%;
+}
