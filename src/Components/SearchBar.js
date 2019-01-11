@@ -73,6 +73,9 @@ class SearchBar extends Component {
               </p>
               <p>State(s): {result.location}</p>
               <p>Type: {result.type}</p>
+              <p>Group: {result.vSType} ({result.sType})</p>
+              <p>Size: {result.specificSize}</p>
+              <p>Characteristics: {result.characteristics}</p>
 
               <a href={result.site} target="_blank">
                 Click here to research more about {result.species}!
