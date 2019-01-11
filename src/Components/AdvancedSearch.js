@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { Dropdown, Menu, Checkbox, Accordion, Icon, Form } from 'semantic-ui-react'
-import Birdydex from './Birdydex'
+import BirdCards from './BirdCards'
 import {connect} from 'react-redux'
 import { getBirdData } from "../Actions/action";
 
@@ -357,7 +357,7 @@ class AdvancedSearch extends Component {
 
     //         </Menu.Item>
     //       </Accordion> */}
-    <Birdydex birds = {this.state.filterBirds} />
+    <BirdCards birds = {this.state.filterBirds} />
     </React.Fragment>
         )
       }

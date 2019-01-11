@@ -1,11 +1,4 @@
-.register, .login {
-    margin: auto;
-    width: 50%;
-    border: 2px solid #6FB0CE;
-    padding: 20px;
-    margin-top: 50px;
-}
-
+/* BUTTONS */
 .submit-button {
     background-color: #6FB0CE !important;
     color: white !important;
@@ -18,6 +11,26 @@
     justify-content: center !important;
 }
 
+.accept-delete-or-update {
+    background-color: #6FB0CE !important;
+    color: white !important;
+    font-size: 16px !important;
+    height: 40px;
+}
+
+.reset {
+    background-color: #C2BDB8 !important;
+    color: white !important;
+    font-size: 16px !important;
+    height: 40px;
+}
+
+.cancel-delete {
+    color: white !important;
+    font-size: 16px !important;
+    height: 40px;
+}
+
 .cancel-button {
     font-size: 16px !important;
     margin: auto !important;
@@ -28,21 +41,14 @@
     justify-content: center !important;
 }
 
-.usernameBox {
-    background-color: #506A5F !important;
-    color: white !important;
-}
 
-.stickyMenu {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-}
-
-.navMenu {
-    display: block;
-    margin-bottom: 10%;
+/* LOGIN/REGISTER */
+.register, .login {
+    margin: auto;
+    width: 50%;
+    border: 2px solid #6FB0CE;
+    padding: 20px;
+    margin-top: 50px;
 }
 
 .line {
@@ -72,6 +78,28 @@
     margin-left: 7px !important;
 }
 
+/* PROFILE */
+.usernameBox {
+    background-color: #506A5F !important;
+    color: white !important;
+}
+
+
+/* NAVBAR */
+.stickyMenu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.navMenu {
+    display: block;
+    margin-bottom: 10%;
+}
+
+
+/* BIRDIDEX */
 .birdydex {
     display: flex;
     justify-content: center;
@@ -107,26 +135,8 @@
     margin-bottom: 20px;
 }
 
-.accept-delete-or-update {
-    background-color: #6FB0CE !important;
-    color: white !important;
-    font-size: 16px !important;
-    height: 40px;
-}
 
-.reset {
-    background-color: #C2BDB8 !important;
-    color: white !important;
-    font-size: 16px !important;
-    height: 40px;
-}
-
-.cancel-delete {
-    color: white !important;
-    font-size: 16px !important;
-    height: 40px;
-}
-
+/* HOMEPAGE */
 .home, .headers, h1 {
     display: flex;
     justify-content: center;
@@ -145,23 +155,25 @@
     border: #506A5F solid 1px;
 }
 
+.background {
+    background: url(../Images/heron-bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* .home {
+    margin-top: -90px !important;
+    padding-top: 20px;
+    height: 100%;
+} */
+
+
+/* SEARCH */
 .search {
     margin-top: 150px;
 }
 
+
+/* FONTS */
 h2 {
     margin-top: 10px;
-}
-
-.background {
-    background-image: url(../Images/heron-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* background-attachment: fixed; */
-}
-
-.home {
-    margin-top: -90px !important;
-    padding-top: 20px;
-    height: 100%;
 }

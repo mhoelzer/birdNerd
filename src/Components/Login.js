@@ -3,9 +3,7 @@ import { Button, Form, Header, Message, Card } from "semantic-ui-react";
 import { Link, Redirect } from "react-router-dom";
 import config from "../Constants/config.js";
 import load from "../Helpers/userSpreadsheet.js";
-import {withRouter} from "react-router-dom";
-
-
+import { withRouter } from "react-router-dom";
 
 class Login extends Component {
   state = {
@@ -59,8 +57,8 @@ class Login extends Component {
         this.setState({ error: { message: "User does not exist." } });
       } else if (user.password === this.state.password) {
         // do something man - like route to different page
-        this.props.history.push("/")
-        console.log("hell yea?");        
+        this.props.history.push("/");
+        console.log("hell yea?");
       }
     } else {
       this.setState({ error });
@@ -72,6 +70,7 @@ class Login extends Component {
     if (error) {
       return <div>{this.state.error.message}</div>;
     }
+    document.body.classList.add("background");
     return (
       <div
         className="login"
@@ -122,5 +121,4 @@ class Login extends Component {
   }
 }
 
-export default withRouter(Login)
-
+export default withRouter(Login);

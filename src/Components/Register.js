@@ -4,73 +4,73 @@ import { Button, Form, Header, Message, Segment } from "semantic-ui-react";
 import { Link, withRouter } from "react-router-dom";
 //import { register, loginLink } from "../Actions/action.js";
 import "../Styling/main.css";
- 
+
 class Register extends Component {
+  state = {
+    username: "",
+    password: "",
+    passwordRepeat: "",
+    passwordMatches: true
+  };
 
-    state = {
-        username: "",
-        password: "",
-        passwordRepeat: "",
-        passwordMatches: true
-      };
-    
-      handleChangeUsername = event => {
-        this.setState({
-          username: event.target.value
-        });
-      };
-    
-      handleChangePassword = event => {
-        this.setState({
-          password: event.target.value
-        });
-      };
-    
-      handleChangeMatch = event => {
-        this.setState({
-          passwordRepeat: event.target.value
-        });
-      };
-    
-      noMatch = () => {
-        return <Segment color="red">Entered passwords do not match.</Segment>;
-      };
-    
-      usernameFail = () => {
-        return (
-          <Segment color="red">
-            Username taken. Choose a different username.
-          </Segment>
-        );
-      };
-    
-      handleLoginLink = () => {
-        this.props.loginLink();
-      };
-    
-      handleRegister = event => {
-        if (
-          this.state.username &&
-          this.state.password === this.state.passwordRepeat
-        ) {
-          this.setState({ passwordMatches: true });
-          console.log("handle was called");
-          this.props.register({
-            username: this.state.username,
-            password: this.state.password
-          });
-        }
-    
-        if (this.state.password !== this.state.passwordRepeat) {
-          this.setState({ passwordMatches: false });
-        } else {
-          this.setState({ passwordMatches: true });
-        }
-      };
+  handleChangeUsername = event => {
+    this.setState({
+      username: event.target.value
+    });
+  };
 
-    render() {
-        return (
-            <div className="register">
+  handleChangePassword = event => {
+    this.setState({
+      password: event.target.value
+    });
+  };
+
+  handleChangeMatch = event => {
+    this.setState({
+      passwordRepeat: event.target.value
+    });
+  };
+
+  noMatch = () => {
+    return <Segment color="red">Entered passwords do not match.</Segment>;
+  };
+
+  usernameFail = () => {
+    return (
+      <Segment color="red">
+        Username taken. Choose a different username.
+      </Segment>
+    );
+  };
+
+  handleLoginLink = () => {
+    this.props.loginLink();
+  };
+
+  handleRegister = event => {
+    if (
+      this.state.username &&
+      this.state.password === this.state.passwordRepeat
+    ) {
+      this.setState({ passwordMatches: true });
+      console.log("handle was called");
+      this.props.register({
+        username: this.state.username,
+        password: this.state.password
+      });
+    }
+
+    if (this.state.password !== this.state.passwordRepeat) {
+      this.setState({ passwordMatches: false });
+    } else {
+      this.setState({ passwordMatches: true });
+    }
+  };
+
+  render() {
+    document.body.classList.add("background");
+    return (
+      <div className="register">
         <Header className="header" as="h2">
           Sign Up
         </Header>
@@ -105,10 +105,7 @@ class Register extends Component {
               required
             />
           </Form.Field>
-          <Button
-            className="submit-button"
-            onClick={this.handleRegister}
-          >
+          <Button className="submit-button" onClick={this.handleRegister}>
             Register
           </Button>
         </Form>
@@ -128,8 +125,8 @@ class Register extends Component {
           </Message>
         </div>
       </div>
-        );
-    }
+    );
+  }
 }
 
 export default Register;
