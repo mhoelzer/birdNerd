@@ -8,7 +8,7 @@ export default function load(callback) {
     window.gapi.client.sheets.spreadsheets.values
       .get({
         spreadsheetId: config.spreadsheetId,
-        range: "Birds!A3:L"
+        range: "Birds!A3:N"
       })
       .then(
         response => {
@@ -25,7 +25,9 @@ export default function load(callback) {
               characteristics: bird[7],
               site: bird[8],
               description: bird[9],
-              scientificName: bird[11]
+              scientificName: bird[11],
+              sType: bird[12],
+              vSType: bird[13]
             })) || [];
           callback({
             bird
