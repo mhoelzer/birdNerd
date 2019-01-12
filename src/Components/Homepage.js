@@ -34,10 +34,8 @@ class Homepage extends Component {
     return (
       <div>
         <div className="headers">
-          <h1>Welcome to Bird Nerd</h1>
-          <center>
-            <h2>Where nerds of a feather bird together</h2>
-          </center>
+          <h1 className="header">Welcome to Bird Nerd</h1>
+          <h2 className="header">Where nerds of a feather bird together</h2>
         </div>
 
         <SearchBar className="search" />

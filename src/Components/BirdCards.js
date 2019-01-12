@@ -45,7 +45,8 @@ export default class BirdCards extends Component {
                     </p>
                     <p>State(s): {bird.location}</p>
                     <p>Type: {bird.type}</p>
-                    <p>Size: {bird.size}</p>
+                    <p>Group: {bird.vSType} ({bird.sType})</p>
+                    <p>Size: {bird.specificSize}</p>
                     <p>Characteristics: {bird.characteristics}</p>
 
                     <a href={bird.site} target="_blank">
