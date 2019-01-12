@@ -1,4 +1,5 @@
 /* BUTTONS */
+
 .submit-button {
     background-color: #6FB0CE !important;
     color: white !important;
@@ -41,8 +42,8 @@
     justify-content: center !important;
 }
 
-
 /* LOGIN/REGISTER */
+
 .register, .login {
     margin: auto;
     width: 50%;
@@ -79,13 +80,14 @@
 }
 
 /* PROFILE */
+
 .usernameBox {
     background-color: #506A5F !important;
     color: white !important;
 }
 
-
 /* NAVBAR */
+
 .stickyMenu {
     position: fixed;
     top: 0;
@@ -98,8 +100,8 @@
     margin-bottom: 10%;
 }
 
-
 /* BIRDIDEX */
+
 .birdydex {
     display: flex;
     justify-content: center;
@@ -135,9 +137,8 @@
     margin-bottom: 20px;
 }
 
-
 /* HOMEPAGE */
-.home, .headers, .header, .sub-header {
+.home, .headers, .header, .sub-header, h1 {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -155,6 +156,16 @@
     color: white;
 }
 
+.about {
+    position: fixed;
+    top: 650px;
+    left: 1200px;
+    width: 240px;
+    height: 90px;
+    padding: 20px;
+    color: #fff;
+}
+
 .background {
     background: url(../Images/heron-bg.jpg) no-repeat center center fixed;
     background-size: cover;
@@ -166,14 +177,14 @@
     height: 100%;
 } */
 
-
 /* SEARCH */
+
 .search {
     margin-top: 150px;
 }
 
-
 /* FONTS */
+
 h2 {
     margin-top: 10px;
 }
