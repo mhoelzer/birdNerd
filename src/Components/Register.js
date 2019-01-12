@@ -7,9 +7,10 @@ import "../Styling/main.css";
  
 class Register extends Component {
 
-  componentDidMount() {
+  // componentDidMount() {
+  //   this.props.registerAction()
     
-  }
+  // }
 
     state = {
         username: "",
@@ -60,10 +61,9 @@ class Register extends Component {
           this.setState({ passwordMatches: true });
           console.log("handle was called");
           console.log(this.props)
-          registerAction({
+          this.props.registerAction({
             username: this.state.username,
             password: this.state.password,
-            displayName: this.state.displayName
           });
         }
     
@@ -146,11 +146,11 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
+function mapDispatchToProps(dispatch) {
   return {
-    register: registerData => dispatch(registerAction(registerData))
-  };
-};
+    registerAction: (username, password) => {
+      dispatch(registerAction(username, password));
+    }, } }
 
 export default withRouter(
   connect(
