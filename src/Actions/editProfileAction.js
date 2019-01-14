@@ -1,3 +1,4 @@
+import { push } from "connected-react-router";
 export const EDIT_PROFILE = "EDIT_PROFILE";
 export const EDIT_PROFILE_SUCCESS = "EDIT_PROFILE_SUCCESS";
 export const EDIT_PROFILE_FAIL = "EDIT_PROFILE_FAIL";
