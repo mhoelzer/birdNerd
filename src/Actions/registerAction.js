@@ -3,18 +3,22 @@ import { push } from "connected-react-router";
 
 export const REGISTER = "REGISTER"
 
-export const registerAction = (username, password) => dispatch => {
+const URL = "http://localhost:8000/"
+
+export const registerAction = (credentials) => dispatch => {
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        username: username,
-        password: password
-      })
+      body: JSON.stringify(credentials)
     };
   
-    fetch("http://localhost:8000/Authorize/register", requestOptions)
-      .then(res => res.json())
+    fetch(URL + "Authorize/register", requestOptions)
+      .then(res => {
+        if (res.status === 200) {
+          return res.json()
+        }
+        return res.json().then(err => {throw err})
+      })
       .then(data => {
         dispatch({
           type: REGISTER,
@@ -22,7 +26,8 @@ export const registerAction = (username, password) => dispatch => {
         });
         alert("Success");
         dispatch(push("/login"));
-      });
+      })
+      .catch(err => alert("Username has been taken. Please choose another."))
     dispatch(push("/login"));
   };
 
