@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Button, Header, Image, Modal, Card } from "semantic-ui-react";
-import { connect } from "react-redux";
-import { getBirdData } from "../Actions/action";
+import config from "../Constants/config.js";
+import load from "../Helpers/spreadsheet.js";
+import { Button, Header, Image, Modal, Grid, Card } from "semantic-ui-react";
 
 const styles = {
   cardPosition: {
@@ -11,44 +11,65 @@ const styles = {
 };
 
 export default class Birdydex extends Component {
+  state = {
+    bird: [],
+    error: null
+  };
+
+  componentDidMount() {
+    // 1. Load the JavaScript client library.
+    window.gapi.load("client", this.initClient);
+  }
+
+  initClient = () => {
+    // 2. Initialize the JavaScript client library.
+    window.gapi.client
+      .init({
+        apiKey: config.apiKey,
+        // Your API key will be automatically added to the Discovery Document URLs.
+        discoveryDocs: config.discoveryDocs
+      })
+      .then(() => {
+        // 3. Initialize and make the API request.
+        load(this.onLoad);
+      });
+  };
+
+  onLoad = (data, error) => {
+    if (data) {
+      const bird = data.bird;
+      this.setState({ bird });
+    } else {
+      this.setState({ error });
+    }
+  };
 
   render() {
-    console.log(this.props.bird);
-    const { birds, error } = this.props;
-    // if (error) {
-    //   return <div>{error.message}</div>;
-    // }
+    const { bird, error } = this.state;
+    if (error) {
+      return <div>{this.state.error.message}</div>;
+    }
     return (
-      <Card.Group className="birdydex">
-        {birds.map((bird, i) => (
-          <Card style={styles.cardPosition} className="bird-card">
+      <Card.Group>
+        {bird.map((bird, i) => (
+          <Card style={styles.cardPosition}>
             <Card.Content>
+              {/* <img src={bird.image} /> */}
               <h2>{bird.species}</h2>
               <br />
-              <img src={bird.image} className="thumbnail" />
-              {/* <p>Color: {bird.color}</p>
+              <p>Color: {bird.color}</p>
               <br />
-              <p>Size: {bird.size}</p> */}
+              <p>Size: {bird.size}</p>
               <br />
-              <Modal
-                size={"tiny"}
-                trigger={<Button className="more-info">More Info</Button>}
-                closeIcon
-              >
+              <Modal size={"tiny"} trigger={<Button>More Info!</Button>}>
                 <Modal.Header>{bird.species}</Modal.Header>
                 <Modal.Content image>
                   <Image wrapped size="medium" src={bird.image} />
                   <Modal.Description>
                     <Header>{bird.species}</Header>
-                    <p>
-                      Scientific Name: <i>{bird.scientificName}</i>
-                    </p>
-                    <p>State(s): {bird.location}</p>
-                    <p>Type: {bird.type}</p>
-                    <p>Size: {bird.size}</p>
-                    <p>Characteristics: {bird.characteristics}</p>
-
-                    <a href={bird.site} target="_blank">
+                    <p>State(s) I reside in: {bird.location}</p>
+                    <p>Description: {bird.description}</p>
+                    <a href={bird.site}>
                       Click here to research more about {bird.species}!
                     </a>
                   </Modal.Description>
@@ -61,4 +82,3 @@ export default class Birdydex extends Component {
     );
   }
 }
-
