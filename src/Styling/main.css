@@ -1,77 +1,79 @@
 /* BUTTONS */
 .submit-button {
-    background-color: #6FB0CE !important;
-    color: white !important;
-    font-size: 18px !important;
-    margin: auto !important;
-    text-align: center !important;
-    height: 45px;
-    width: 50%;
-    display: flex !important;
-    justify-content: center !important;
+  background-color: #6fb0ce !important;
+  color: white !important;
+  font-size: 18px !important;
+  margin: auto !important;
+  text-align: center !important;
+  height: 45px;
+  width: 50%;
+  display: flex !important;
+  justify-content: center !important;
 }
 .accept-delete-or-update {
-    background-color: #6FB0CE !important;
-    color: white !important;
-    font-size: 18px !important;
-    height: 45px;
+  background-color: #6fb0ce !important;
+  color: white !important;
+  font-size: 18px !important;
+  height: 45px;
 }
 .reset {
-    background-color: #C2BDB8 !important;
-    color: white !important;
-    font-size: 18px !important;
-    height: 45px;
+  background-color: #c2bdb8 !important;
+  color: white !important;
+  font-size: 18px !important;
+  height: 45px;
 }
 .cancel-delete {
-    color: white !important;
-    font-size: 18px !important;
-    height: 45px;
+  color: white !important;
+  font-size: 18px !important;
+  height: 45px;
 }
 .cancel-button {
-    font-size: 18px !important;
-    margin: auto !important;
-    text-align: center !important;
-    height: 45px;
-    width: 50%;
-    display: flex !important;
-    justify-content: center !important;
+  font-size: 18px !important;
+  margin: auto !important;
+  text-align: center !important;
+  height: 45px;
+  width: 50%;
+  display: flex !important;
+  justify-content: center !important;
 }
 
 /* LOGIN/REGISTER */
 
-.register, .login {
-    margin: auto;
-    width: 50%;
-    border: 2px solid #6FB0CE;
-    padding: 20px;
-    margin-top: 50px;
-    background-color: white;
+.register,
+.login {
+  margin: auto;
+  width: 50%;
+  border: 2px solid #6fb0ce;
+  padding: 20px;
+  margin-top: 50px;
+  background-color: white;
 }
 .line {
-    background-color: transparent !important;
-    display: flex;
-    justify-content: center;
-    box-shadow: none !important;
+  background-color: transparent !important;
+  display: flex;
+  justify-content: center;
+  box-shadow: none !important;
 }
 .message {
-    background-color: transparent !important;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    margin-top: 15px !important;
-    box-shadow: none !important;
-    font-size: 18px !important;
+  background-color: transparent !important;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 15px !important;
+  box-shadow: none !important;
+  font-size: 18px !important;
 }
 
-.link, .link:hover {
-    font-weight: bold;
-    color: #6FB0CE;
-    text-decoration: none;
-    background-color: transparent !important;
-    padding-top: 0;
-    padding-bottom: 0;
-    border: solid 1px transparent !important;
-    margin-left: 7px !important;
+.link,
+.link:hover {
+  font-weight: bold;
+  color: #6fb0ce;
+  text-decoration: none;
+  background-color: transparent !important;
+  padding-top: 0;
+  padding-bottom: 0;
+  border: solid 1px transparent !important;
+  margin-left: 7px !important;
 }
 
 /* PROFILE */
@@ -124,7 +126,7 @@
 }
 
 .bird-photo {
-    max-width: 400px !important;
+  max-width: 400px !important;
 }
 
 /* HOMEPAGE */
@@ -149,32 +151,32 @@ h1 {
   color: white;
 }
 .about {
-    position: fixed;
-    margin-top: -13%;
-    width: 240px;
-    height: 90px;
-    padding: 20px;
-    color: #fff;
+  position: fixed;
+  margin-top: -13%;
+  width: 240px;
+  height: 90px;
+  padding: 20px;
+  color: #fff;
 }
 
-.info-header, .info-message {
-    border: solid 3px #6FB0CE !important;
-    /* color: #6FB0CE !important; */
+.info-header,
+.info-message {
+  border: solid 3px #6fb0ce !important;
+  /* color: #6FB0CE !important; */
 }
 
 .info-header {
-    font-size: 25px !important;
+  font-size: 25px !important;
 }
 
 .info-text {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .background {
-    background: url(../Images/heron-bg.jpg) no-repeat center center fixed;
-    background-size: cover;
-    max-height: 80%;
-
+  background: url(../Images/heron-bg.jpg) no-repeat center center fixed;
+  background-size: cover;
+  max-height: 80%;
 }
 /* .home {
     margin-top: -90px !important;
@@ -189,61 +191,62 @@ h1 {
 
 /* FONTS */
 h2 {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 /* MOBILE */
 @media only screen and (max-width: 500px) {
-    /* BUTTONS */
+  /* BUTTONS */
 
-    .submit-button {
-        width: 60%;
-    }
+  .submit-button {
+    width: 60%;
+  }
 
-    /* LOGIN/REGISTER */
+  /* LOGIN/REGISTER */
 
-    .register, .login {
-        width: 80% !important;
-        margin-top: 30% !important;
-    }
+  .register,
+  .login {
+    width: 80% !important;
+    margin-top: 30% !important;
+  }
 
-    /* HOMEPAGE */
+  /* HOMEPAGE */
 
-    #header1 {
-        margin-top: 10% !important;
-    }
+  #header1 {
+    margin-top: 10% !important;
+  }
 
-    #header2 {
-        margin-top: 0 !important;
-        font-size: 18px;
-    }
+  #header2 {
+    margin-top: 0 !important;
+    font-size: 18px;
+  }
 
-    .about {
-        margin: 109% auto auto 32% !important;
-        display: flex;
-        justify-content: flex-end;
-        color: white;
-    }
+  .about {
+    margin: 109% auto auto 32% !important;
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+  }
 
-    .background {
-        background: url(../Images/heron-bg.jpg) no-repeat center center fixed;
-        background-size: cover;
-        max-height: 80%;
-    }
+  .background {
+    background: url(../Images/heron-bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+    max-height: 80%;
+  }
 
-    /* SEARCH */
+  /* SEARCH */
 
-    .prompt {
-        width: 300px !important;
-    }
+  .prompt {
+    width: 300px !important;
+  }
 
-    .results.transition {
-        margin: auto;
-    }
+  .results.transition {
+    margin: auto;
+  }
 
-    /* FONTS */
+  /* FONTS */
 
-    h2 {
-        margin-top: 10px;
-    }
+  h2 {
+    margin-top: 10px;
+  }
 }
