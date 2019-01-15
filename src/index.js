@@ -5,11 +5,13 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./Components/App";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
-import { store } from "./Redux/store";
+import  store, {history} from "./Redux/store";
+import { ConnectedRouter } from "connected-react-router";
+
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter history={history}>
       <App />
     </BrowserRouter>
   </Provider>,

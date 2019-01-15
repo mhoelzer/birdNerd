@@ -28,6 +28,6 @@ export const registerAction = (credentials) => dispatch => {
         dispatch(push("/login"));
       })
       .catch(err => alert("Username has been taken. Please choose another."))
-    dispatch(push("/login"));
+    ;
   };
 

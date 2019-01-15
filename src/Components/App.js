@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 import Navbar from "./Navbar.js";
 import SearchBar from "./SearchBar";
 import Profile from "./Profile";
@@ -8,6 +8,7 @@ import EditProfile from "./EditProfile";
 import Login from "./Login";
 import Register from "./Register";
 import Birdydex from "./Birdydex";
+
 
 class App extends Component {
   render() {
@@ -29,4 +30,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
