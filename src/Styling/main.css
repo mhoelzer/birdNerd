@@ -42,6 +42,14 @@
     justify-content: center !important;
 }
 
+.scroll {
+    color: #6FB0CE !important;
+}
+
+path {
+    color: #6FB0CE !important;
+}
+
 /* LOGIN/REGISTER */
 
 .register, .login {
