@@ -13,7 +13,7 @@ const styles = {
 export default class BirdCards extends Component {
 
   render() {
-    console.log(this.props.bird);
+    // console.log(this.props.bird);
     const { birds, error } = this.props;
     // if (error) {
     //   return <div>{error.message}</div>;
