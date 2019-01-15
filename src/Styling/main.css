@@ -3,10 +3,10 @@
 .submit-button {
     background-color: #6FB0CE !important;
     color: white !important;
-    font-size: 16px !important;
+    font-size: 18px !important;
     margin: auto !important;
     text-align: center !important;
-    height: 40px;
+    height: 45px;
     width: 50%;
     display: flex !important;
     justify-content: center !important;
@@ -15,28 +15,28 @@
 .accept-delete-or-update {
     background-color: #6FB0CE !important;
     color: white !important;
-    font-size: 16px !important;
-    height: 40px;
+    font-size: 18px !important;
+    height: 45px;
 }
 
 .reset {
     background-color: #C2BDB8 !important;
     color: white !important;
-    font-size: 16px !important;
-    height: 40px;
+    font-size: 18px !important;
+    height: 45px;
 }
 
 .cancel-delete {
     color: white !important;
-    font-size: 16px !important;
-    height: 40px;
+    font-size: 18px !important;
+    height: 45px;
 }
 
 .cancel-button {
-    font-size: 16px !important;
+    font-size: 18px !important;
     margin: auto !important;
     text-align: center !important;
-    height: 40px;
+    height: 45px;
     width: 50%;
     display: flex !important;
     justify-content: center !important;
@@ -50,22 +50,24 @@
     border: 2px solid #6FB0CE;
     padding: 20px;
     margin-top: 50px;
+    background-color: white;
 }
 
 .line {
     background-color: transparent !important;
-    border: solid 1px transparent !important;
     display: flex;
     justify-content: center;
+    box-shadow: none !important;
 }
 
 .message {
     background-color: transparent !important;
-    border: solid 1px transparent !important;
     display: flex;
     justify-content: center;
     flex-direction: row;
     margin-top: 15px !important;
+    box-shadow: none !important;
+    font-size: 18px !important;
 }
 
 .link, .link:hover {
@@ -137,6 +139,10 @@
     margin-bottom: 20px;
 }
 
+.bird-photo {
+    max-width: 400px !important;
+}
+
 /* HOMEPAGE */
 .home, .headers, .header, .sub-header, h1 {
     display: flex;
@@ -158,17 +164,30 @@
 
 .about {
     position: fixed;
-    top: 650px;
-    left: 1200px;
+    margin-top: -13%;
     width: 240px;
     height: 90px;
     padding: 20px;
     color: #fff;
 }
 
+.info-header, .info-message {
+    border: solid 3px #6FB0CE !important;
+    /* color: #6FB0CE !important; */
+}
+
+.info-header {
+    font-size: 25px !important;
+}
+
+.info-text {
+    font-size: 16px;
+}
+
 .background {
     background: url(../Images/heron-bg.jpg) no-repeat center center fixed;
     background-size: cover;
+    max-height: 80%;
 }
 
 /* .home {
@@ -187,4 +206,60 @@
 
 h2 {
     margin-top: 10px;
+}
+
+/* MOBILE */
+@media only screen and (max-width: 500px) {
+    /* BUTTONS */
+
+    .submit-button {
+        width: 60%;
+    }
+
+    /* LOGIN/REGISTER */
+
+    .register, .login {
+        width: 80% !important;
+        margin-top: 30% !important;
+    }
+
+    /* HOMEPAGE */
+
+    #header1 {
+        margin-top: 10% !important;
+    }
+
+    #header2 {
+        margin-top: 0 !important;
+        font-size: 18px;
+    }
+
+    .about {
+        margin: 109% auto auto 32% !important;
+        display: flex;
+        justify-content: flex-end;
+        color: white;
+    }
+
+    .background {
+        background: url(../Images/heron-bg.jpg) no-repeat center center fixed;
+        background-size: cover;
+        max-height: 80%;
+    }
+
+    /* SEARCH */
+
+    .prompt {
+        width: 300px !important;
+    }
+
+    .results.transition {
+        margin: auto;
+    }
+
+    /* FONTS */
+
+    h2 {
+        margin-top: 10px;
+    }
 }

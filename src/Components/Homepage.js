@@ -34,26 +34,26 @@ class Homepage extends Component {
     return (
       <div>
         <div className="headers">
-          <h1 className="header">Welcome to Bird Nerd</h1>
-          <h2 className="header">Where nerds of a feather bird together</h2>
+          <h1 className="header" id="header1">Welcome to Bird Nerd</h1>
+          <h2 className="header" id="header2"><i>"Where nerds of a feather bird together"</i></h2>
         </div>
 
         <SearchBar className="search" />
 
         <div className="about">
-          <Modal trigger={<Icon name="massive question circle outline" />}>
-            <Modal.Header>Information</Modal.Header>
-            <Modal.Content>
+          <Modal trigger={<Icon name="huge question circle outline"/>} closeIcon >
+            <Modal.Header className="info-header">About Bird Nerd</Modal.Header>
+            <Modal.Content className="info-message">
               <Modal.Description>
                 <Header>Goals</Header>
-                <ol>
+                <ol className="info-text">
                   <li>
                     Give users an easy way to identify birds they have see
                   </li>
                   <li>Allow users to document their sightings</li>
                 </ol>
                 <Header>About</Header>
-                <p>
+                <p className="info-text">
                   On this site, users can both identify birds they have seen and
                   document their sightings in a personal notebook. Going to our
                   “Advanced Search” page allows the user to identify birds, with
