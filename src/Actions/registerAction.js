@@ -24,7 +24,7 @@ export const registerAction = (credentials) => dispatch => {
           type: REGISTER,
           payload: data
         });
-        alert("Success");
+        alert("Success. Login to continue.");
         dispatch(push("/login"));
       })
       .catch(err => alert("Username has been taken. Please choose another."))
