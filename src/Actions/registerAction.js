@@ -3,7 +3,7 @@ import { push } from "connected-react-router";
 
 export const REGISTER = "REGISTER"
 
-const URL = "http://localhost:8000/"
+const URL = "https://shrouded-tundra-68436.herokuapp.com/"
 
 export const registerAction = (credentials) => dispatch => {
     const requestOptions = {
@@ -27,7 +27,7 @@ export const registerAction = (credentials) => dispatch => {
         alert("Success. Login to continue.");
         dispatch(push("/login"));
       })
-      .catch(err => alert("Username has been taken. Please choose another."))
+      .catch(err => alert(err))
     ;
   };
 
