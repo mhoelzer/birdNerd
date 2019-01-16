@@ -29,16 +29,9 @@ class Login extends Component {
       this.props.registerLink();
     };
 
-  componentWillMount = () => {
-    document.body.classList.add("background");
-  };
-
-  componentWillUnmount = () => {
-    document.body.classList.remove("background");
-  };
-
   render() {
     return (
+      <div className="login-box">
       <div
         className="login"
         style={{
@@ -82,13 +75,14 @@ class Login extends Component {
           </Button>
         </Form>
 
-        <Message className="message" size="small">
-          Not a member?
-          <Link className="link" to="/register">
-            {" "}
-            Sign up
-          </Link>
-        </Message>
+          <Message className="message" size="small">
+            Not a member?
+            <Link className="link" to="/register">
+              {" "}
+              Sign up
+            </Link>
+          </Message>
+        </div>
       </div>
     );
   }
