@@ -10,23 +10,27 @@
   display: flex !important;
   justify-content: center !important;
 }
+
 .accept-delete-or-update {
   background-color: #6fb0ce !important;
   color: white !important;
   font-size: 18px !important;
   height: 45px;
 }
+
 .reset {
   background-color: #c2bdb8 !important;
   color: white !important;
   font-size: 18px !important;
   height: 45px;
 }
+
 .cancel-delete {
   color: white !important;
   font-size: 18px !important;
   height: 45px;
 }
+
 .cancel-button {
   font-size: 18px !important;
   margin: auto !important;
@@ -47,21 +51,24 @@ path {
 
 /* LOGIN/REGISTER */
 
-.register,
-.login {
-  margin: auto;
-  width: 50%;
-  border: 2px solid #6fb0ce;
-  padding: 20px;
-  margin-top: 50px;
-  background-color: white;
+.register, .login {
+    margin: auto;
+    width: 50%;
+    border: 3px solid #6FB0CE !important;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 50px;
+    background-color: white;
+    
 }
-.line {
-  background-color: transparent !important;
-  display: flex;
-  justify-content: center;
-  box-shadow: none !important;
+
+.register-box, .login-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
 }
+
 .message {
   background-color: transparent !important;
   display: flex;
@@ -72,16 +79,15 @@ path {
   font-size: 18px !important;
 }
 
-.link,
-.link:hover {
-  font-weight: bold;
-  color: #6fb0ce;
-  text-decoration: none;
-  background-color: transparent !important;
-  padding-top: 0;
-  padding-bottom: 0;
-  border: solid 1px transparent !important;
-  margin-left: 7px !important;
+.link, .link:hover {
+    font-weight: bold;
+    color: rgb(91, 158, 189);
+    text-decoration: none;
+    background-color: transparent !important;
+    padding-top: 0;
+    padding-bottom: 0;
+    border: solid 1px transparent !important;
+    margin-left: 7px !important;
 }
 
 /* PROFILE */
@@ -96,6 +102,7 @@ path {
   width: 100%;
   margin-bottom: 40px;
 }
+
 .navMenu {
   z-index: 10000000;
   top: 0;
@@ -111,9 +118,11 @@ path {
   display: flex;
   justify-content: center;
 }
+
 .bird-card {
   border: solid 1px #6fb0ce !important;
 }
+
 .more-info {
   background-color: #6fb0ce !important;
   color: white !important;
@@ -124,12 +133,15 @@ path {
   display: flex !important;
   justify-content: center !important;
 }
+
 .bird-image {
   width: 400px;
 }
+
 .bird-map {
   margin: 10px;
 }
+
 .thumbnail {
   width: 220px;
   display: flex;
@@ -154,6 +166,11 @@ h1 {
   flex-direction: column;
   color: white;
 }
+
+.header {
+    margin-top: 20px;
+}
+
 .para {
   margin-top: 150px !important;
   margin-left: 7%;
@@ -162,13 +179,14 @@ h1 {
   font-size: 18px;
   color: white;
 }
+
 .about {
-  position: fixed;
-  margin-top: -13%;
-  width: 240px;
-  height: 90px;
-  padding: 20px;
-  color: #fff;
+    position: fixed;
+    margin-top: -7%;
+    width: 240px;
+    height: 90px;
+    padding: 20px;
+    color: #fff;
 }
 
 .info-header,
@@ -186,10 +204,11 @@ h1 {
 }
 
 .background {
-  background: url(../Images/heron-bg.jpg) no-repeat center center fixed;
-  background-size: cover;
-  max-height: 80%;
+    background: url(../Images/heron-bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+    max-height: 80%;
 }
+
 /* .home {
     margin-top: -90px !important;
     padding-top: 20px;
@@ -216,11 +235,18 @@ h2 {
 
   /* LOGIN/REGISTER */
 
+<<<<<<< HEAD
   .register,
   .login {
     width: 80% !important;
     margin-top: 30% !important;
   }
+=======
+    .register, .login {
+        width: 90% !important;
+        margin-top: 30% !important;
+    }
+>>>>>>> 28832f3f784feeffe842eb5b5469e637b6527e22
 
   /* HOMEPAGE */
 

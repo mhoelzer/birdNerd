@@ -17,15 +17,15 @@ class Birdydex extends Component {
     this.props.getBirdData()
   }
   render() {
-    // console.log(this.props.bird);
+    console.log(this.props.bird);
     const { birds, error } = this.props;
     // if (error) {
     //   return <div>{error.message}</div>;
     // }
     return (
       <div>
-        <BirdCards birds={birds} />;
-        <ScrollUpButton className="scroll" style={{border: "5px solid #6FB0CE "}} />
+        <BirdCards birds={birds} />
+        <ScrollUpButton className="scroll" style={{border: "5px solid #6FB0CE"}} />
       </div>
       
     )
