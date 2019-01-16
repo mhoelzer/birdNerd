@@ -101,6 +101,10 @@ path {
   top: 0;
   position: sticky;
 }
+.dropdownItem {
+  font-size: 50px;
+  border: 20px dotted green
+}
 
 /* BIRDIDEX */
 .birdydex {
