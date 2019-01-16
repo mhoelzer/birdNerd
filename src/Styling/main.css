@@ -1,64 +1,74 @@
-.register, .login {
-    margin: auto;
-    width: 50%;
-    border: 2px solid lightblue;
-    padding: 20px;
-    margin-top: 50px;
-}
-
+/* BUTTONS */
 .submit-button {
     background-color: #6FB0CE !important;
     color: white !important;
-    font-size: 16px !important;
+    font-size: 18px !important;
     margin: auto !important;
     text-align: center !important;
-    height: 40px;
+    height: 45px;
     width: 50%;
     display: flex !important;
     justify-content: center !important;
 }
-
-.cancel-button {
-    font-size: 16px !important;
-    margin: auto !important;
-    text-align: center !important;
-    height: 40px;
-    width: 50%;
-    display: flex !important;
-    justify-content: center !important;
-}
-
-.usernameBox {
-    background-color: #506A5F !important;
+.accept-delete-or-update {
+    background-color: #6FB0CE !important;
     color: white !important;
+    font-size: 18px !important;
+    height: 45px;
+}
+.reset {
+    background-color: #C2BDB8 !important;
+    color: white !important;
+    font-size: 18px !important;
+    height: 45px;
+}
+.cancel-delete {
+    color: white !important;
+    font-size: 18px !important;
+    height: 45px;
+}
+.cancel-button {
+    font-size: 18px !important;
+    margin: auto !important;
+    text-align: center !important;
+    height: 45px;
+    width: 50%;
+    display: flex !important;
+    justify-content: center !important;
 }
 
-.stickyMenu {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
+.scroll {
+    color: #6FB0CE !important;
 }
 
-.navMenu {
-    display: block;
-    margin-bottom: 10%;
+path {
+    color: #6FB0CE !important;
 }
 
+/* LOGIN/REGISTER */
+
+.register, .login {
+    margin: auto;
+    width: 50%;
+    border: 2px solid #6FB0CE;
+    padding: 20px;
+    margin-top: 50px;
+    background-color: white;
+}
 .line {
     background-color: transparent !important;
-    border: solid 1px transparent !important;
     display: flex;
     justify-content: center;
+    box-shadow: none !important;
 }
-
 .message {
     background-color: transparent !important;
-    border: solid 1px transparent !important;
     display: flex;
     justify-content: center;
     flex-direction: row;
     margin-top: 15px !important;
+    box-shadow: none !important;
+    font-size: 18px !important;
 }
 
 .link, .link:hover {
@@ -72,37 +82,176 @@
     margin-left: 7px !important;
 }
 
+/* PROFILE */
+.usernameBox {
+  background-color: #506a5f !important;
+  color: white !important;
+}
+
+/* NAVBAR */
+.stickyMenu {
+  top: 0;
+  width: 100%;
+  margin-bottom: 40px;
+}
+.navMenu {
+  z-index: 10000000;
+  top: 0;
+  position: sticky;
+}
+
+/* BIRDIDEX */
 .birdydex {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
-
 .bird-card {
-    border: solid 1px #6FB0CE !important;
+  border: solid 1px #6fb0ce !important;
 }
-
 .more-info {
-    background-color: #6FB0CE !important;
-    color: white !important;
-    font-size: 16px !important;
-    margin: auto !important;
-    text-align: center !important;
-    height: 40px;
-    display: flex !important;
-    justify-content: center !important;
+  background-color: #6fb0ce !important;
+  color: white !important;
+  font-size: 16px !important;
+  margin: auto !important;
+  text-align: center !important;
+  height: 40px;
+  display: flex !important;
+  justify-content: center !important;
 }
-
 .bird-image {
-    width: 400px;
+  width: 400px;
 }
-
 .bird-map {
-    margin: 10px;
+  margin: 10px;
+}
+.thumbnail {
+  width: 220px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-.thumbnail {
-    width: 220px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+.bird-photo {
+    max-width: 400px !important;
+}
+
+/* HOMEPAGE */
+.home,
+.headers,
+.header,
+.sub-header,
+h1 {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  flex-direction: column;
+  color: white;
+}
+.para {
+  margin-top: 150px !important;
+  margin-left: 7%;
+  margin-right: 7%;
+  padding: 2% 5% !important;
+  font-size: 18px;
+  color: white;
+}
+.about {
+    position: fixed;
+    margin-top: -13%;
+    width: 240px;
+    height: 90px;
+    padding: 20px;
+    color: #fff;
+}
+
+.info-header, .info-message {
+    border: solid 3px #6FB0CE !important;
+    /* color: #6FB0CE !important; */
+}
+
+.info-header {
+    font-size: 25px !important;
+}
+
+.info-text {
+    font-size: 16px;
+}
+
+.background {
+    background: url(../Images/heron-bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+    max-height: 80%;
+
+}
+/* .home {
+    margin-top: -90px !important;
+    padding-top: 20px;
+    height: 100%;
+} */
+
+/* SEARCH */
+.search {
+  margin-top: 150px;
+}
+
+/* FONTS */
+h2 {
+    margin-top: 10px;
+}
+
+/* MOBILE */
+@media only screen and (max-width: 500px) {
+    /* BUTTONS */
+
+    .submit-button {
+        width: 60%;
+    }
+
+    /* LOGIN/REGISTER */
+
+    .register, .login {
+        width: 80% !important;
+        margin-top: 30% !important;
+    }
+
+    /* HOMEPAGE */
+
+    #header1 {
+        margin-top: 10% !important;
+    }
+
+    #header2 {
+        margin-top: 0 !important;
+        font-size: 18px;
+    }
+
+    .about {
+        margin: 109% auto auto 32% !important;
+        display: flex;
+        justify-content: flex-end;
+        color: white;
+    }
+
+    .background {
+        background: url(../Images/heron-bg.jpg) no-repeat center center fixed;
+        background-size: cover;
+        max-height: 80%;
+    }
+
+    /* SEARCH */
+
+    .prompt {
+        width: 300px !important;
+    }
+
+    .results.transition {
+        margin: auto;
+    }
+
+    /* FONTS */
+
+    h2 {
+        margin-top: 10px;
+    }
 }

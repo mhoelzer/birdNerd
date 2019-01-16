@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Button, Header, Image, Modal, Card } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { getBirdData } from "../Actions/action";
+import BirdCards from "./BirdCards";
+import { CircleArrow as ScrollUpButton } from "react-scroll-up-button";
 
 const styles = {
   cardPosition: {
@@ -12,62 +14,33 @@ const styles = {
 
 class Birdydex extends Component {
   componentDidMount() {
-    this.props.getBirdData();
+    this.props.getBirdData()
   }
-
   render() {
-    console.log(this.props.bird);
-    const { bird, error } = this.props;
+    // console.log(this.props.bird);
+    const { birds, error } = this.props;
     // if (error) {
     //   return <div>{error.message}</div>;
     // }
     return (
-      <Card.Group className="birdydex">
-        {bird.map((bird, i) => (
-          <Card style={styles.cardPosition} className="bird-card">
-            <Card.Content>
-              <h2>{bird.species}</h2>
-              <br />
-              <img src={bird.image} className="thumbnail" />
-              {/* <p>Color: {bird.color}</p>
-              <br />
-              <p>Size: {bird.size}</p> */}
-              <br />
-              <Modal
-                size={"tiny"}
-                trigger={<Button className="more-info">More Info</Button>}
-              >
-                <Modal.Header>{bird.species}</Modal.Header>
-                <Modal.Content image>
-                  <Image wrapped size="medium" src={bird.image} />
-                  <Modal.Description>
-                    <Header>{bird.species}</Header>
-                    <p>Scientific Name: <i>{bird.scientificName}</i></p>
-                    <p>State(s): {bird.location}</p>
-                    <p>Type: {bird.type}</p>
-
-                    <a href={bird.site} target="_blank">
-                      Click here to research more about {bird.species}!
-                    </a>
-                  </Modal.Description>
-                </Modal.Content>
-              </Modal>
-            </Card.Content>
-          </Card>
-        ))}
-      </Card.Group>
-    );
+      <div>
+        <BirdCards birds={birds} />;
+        <ScrollUpButton className="scroll" style={{border: "5px solid #6FB0CE "}} />
+      </div>
+      
+    )
+      
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = state => {
+  return {
+    birds: state.bird
+  };
+};
+const mapDispatchToProps = (dispatch) => {
   return { getBirdData: () => dispatch(getBirdData()) };
 };
-
-const mapStateToProps = state => {
-  return { bird: state.bird, error: state.error };
-};
-
 export default connect(
   mapStateToProps,
   mapDispatchToProps

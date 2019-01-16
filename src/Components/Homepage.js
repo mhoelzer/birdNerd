@@ -7,45 +7,70 @@ import {
   Grid,
   Header,
   Icon,
-  Image, 
+  Image,
   List,
   Menu,
   Responsive,
   Segment,
   Sidebar,
-  Visibility
+  Visibility,
+  Modal
 } from "semantic-ui-react";
-import { Homepage } from "../Actions/action.js";
-import NavBarSecondary from "./NavBarSecondary";
-import SearchBar from "./SearchBar"
+// import { Homepage } from "../Actions/action.js";
+// import NavBarSecondary from "./NavBarSecondary";
+import SearchBar from "./SearchBar";
+import "../Styling/main.css";
 
-class Homepage extends Component { 
-  homepage = ({ mobile }) => (
-    <Container text>
-      <Header
-        as="h1"
-        content="Bird Nerd"
-        inverted
-        style={{
-          fontSize: mobile ? "2em" : "4em",
-          fontWeight: "normal",
-          marginBottom: 0,
-          marginTop: mobile ? "0.5em" : "3em"
-        }}
-      />
-      <Header
-        as="h2"
-        content="search that bird you nerd."
-        inverted
-        style={{
-          fontSize: mobile ? "1.5em" : "1.7em",
-          fontWeight: "normal",
-          marginTop: mobile ? "0.5" : "1.5"
-        }}
-      />
-      <NavBarSecondary />
-      <SearchBar />
-    </Container>
-  );
+class Homepage extends Component {
+  componentWillMount = () => {
+    document.body.classList.add("background");
+  };
+
+  componentWillUnmount = () => {
+    document.body.classList.remove("background");
+  };
+
+  render() {
+    return (
+      <div>
+        <div className="headers">
+          <h1 className="header" id="header1">Welcome to Bird Nerd</h1>
+          <h2 className="header" id="header2"><i>"Where nerds of a feather bird together"</i></h2>
+        </div>
+
+        <SearchBar className="search" />
+
+        <div className="about">
+          <Modal trigger={<Icon name="huge question circle outline"/>} closeIcon >
+            <Modal.Header className="info-header">About Bird Nerd</Modal.Header>
+            <Modal.Content className="info-message">
+              <Modal.Description>
+                <Header>Goals</Header>
+                <ol className="info-text">
+                  <li>
+                    Give users an easy way to identify birds they have see
+                  </li>
+                  <li>Allow users to document their sightings</li>
+                </ol>
+                <Header>About</Header>
+                <p className="info-text">
+                  On this site, users can both identify birds they have seen and
+                  document their sightings in a personal notebook. Going to our
+                  “Advanced Search” page allows the user to identify birds, with
+                  our code filtering the results based on criteria such as
+                  color, size, and location. Our “Birdydex” contains information
+                  on all U.S. birds, users should browse at their own risk.
+                  Creating a profile allows a user access to a notebook where
+                  they can store information on sightings, such as the species
+                  and the time and date of the sighting.
+                </p>
+              </Modal.Description>
+            </Modal.Content>
+          </Modal>
+        </div>
+      </div>
+    );
+  }
 }
-export default Homepage
+
+export default Homepage;

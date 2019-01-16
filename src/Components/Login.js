@@ -5,8 +5,6 @@ import {connect} from "react-redux"
 import {withRouter} from "react-router-dom";
 import {userLogin} from "../Actions/loginAction"
 
-
-
 class Login extends Component {
   state = {
     username: "",
@@ -14,8 +12,6 @@ class Login extends Component {
   };
 
  
-
-
     handleSubmitLogin = () => {
       this.props.userLogin(this.state.username, this.state.password)
       ;
@@ -32,7 +28,14 @@ class Login extends Component {
     handleRegisterLink = () => {
       this.props.registerLink();
     };
-  
+
+  componentWillMount = () => {
+    document.body.classList.add("background");
+  };
+
+  componentWillUnmount = () => {
+    document.body.classList.remove("background");
+  };
 
   render() {
     return (
@@ -81,7 +84,7 @@ class Login extends Component {
 
         <Message className="message" size="small">
           Not a member?
-          <Link className="link" to="/Register">
+          <Link className="link" to="/register">
             {" "}
             Sign up
           </Link>
@@ -110,4 +113,3 @@ export default withRouter(
     mapDispatchToProps
   )(Login)
 );
-

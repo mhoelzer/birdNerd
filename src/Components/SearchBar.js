@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Search, Grid, Header, Segment } from "semantic-ui-react";
+import { Search, Grid, Header, Segment, Modal, Image } from "semantic-ui-react";
 import _ from "lodash";
 import load from "../Helpers/spreadsheet.js";
 import { connect } from "react-redux";
@@ -17,6 +17,15 @@ class SearchBar extends Component {
     this.resetComponent();
   }
 
+  handleCloseModal = () => {
+    this.setState({
+      showModal: false
+    });
+    document.getElementById("search").focus();
+  };
+
+  state = { result: {} };
+
   componentDidMount() {
     this.props.getBirdData();
   }
@@ -25,7 +34,7 @@ class SearchBar extends Component {
     this.setState({ isLoading: false, results: [], value: "" });
 
   handleResultSelect = (e, { result }) =>
-    this.setState({ value: result.species });
+    this.setState({ result: result, showModal: true });
 
   handleSearchChange = (e, { value }) => {
     this.setState({ isLoading: true, value });
@@ -43,29 +52,61 @@ class SearchBar extends Component {
     }, 300);
   };
   render() {
-    const { isLoading, value, results } = this.state;
+    const { isLoading, value, results, showModal, result } = this.state;
 
     return (
-      <div
-        style={{
-          position: "absolute",
-          left: "50%",
-          top: "30%",
-          transform: "translate(-50%, -50%)"
-        }}
-      >
-        <Search
-          loading={isLoading}
-          size={"massive"}
-          onResultSelect={this.handleResultSelect}
-          onSearchChange={_.debounce(this.handleSearchChange, 500, {
-            leading: true
-          })}
-          results={results}
-          value={value}
-          {...this.props}
-        />
-      </div>
+      <React.Fragment>
+        <Modal
+          size={"tiny"}
+          open={this.state.showModal}
+          closeOnDimmerClick={true}
+          closeIcon
+          onClose={this.handleCloseModal}
+        >
+          <Modal.Header>{result.species}</Modal.Header>
+          <Modal.Content image>
+            <Image wrapped size="medium" src={result.image} />
+            <Modal.Description>
+              <Header>{result.species}</Header>
+              <p>
+                Scientific Name: <i>{result.scientificName}</i>
+              </p>
+              <p>State(s): {result.location}</p>
+              <p>Type: {result.type}</p>
+              <p>Group: {result.vSType} ({result.sType})</p>
+              <p>Size: {result.specificSize}</p>
+              <p>Characteristics: {result.characteristics}</p>
+
+              <a href={result.site} target="_blank">
+                Click here to research more about {result.species}!
+              </a>
+            </Modal.Description>
+          </Modal.Content>
+        </Modal>
+
+        <div
+          style={{
+            position: "absolute",
+            left: "50%",
+            top: "30%",
+            transform: "translate(-50%, -50%)"
+          }}
+        >
+          <Search
+            id="search"
+            loading={isLoading}
+            size={"massive"}
+            onResultSelect={this.handleResultSelect}
+            onSearchChange={_.debounce(this.handleSearchChange, 500, {
+              leading: true
+            })}
+            results={results}
+            value={value}
+            ref={this.searchBar}
+            // {...this.props}
+          />
+        </div>
+      </React.Fragment>
     );
   }
 }
