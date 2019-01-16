@@ -1,8 +1,4 @@
-import {
-  DELETE_USER,
-  DELETE_USER_SUCCESS,
-  DELETE_USER_FAILURE,
-} from "../Actions/actions";
+import { LOGOUT, LOGOUT_SUCCESS, LOGOUT_FAILURE } from "../Actions/actions";
 
 const initialState = {
   authentication: {
@@ -34,16 +30,16 @@ const initialState = {
 
 const birdNerdReducer = (state = initialState, action) => {
   switch (action.type) {
-    case DELETE_USER:
+    case LOGOUT:
       return state;
-    case DELETE_USER_FAILURE:
-      return state;
-    case DELETE_USER_SUCCESS:
-      // do a slice and filter of based on the id or something based on all users?
+    case LOGOUT_SUCCESS:
       return {
         ...state,
-        initialState
+        loggedInUser: initialState.loggedInUser,
+        authentication: initialState.authentication
       };
+    case LOGOUT_FAILURE:
+      return state;
     default:
       return state;
   }
