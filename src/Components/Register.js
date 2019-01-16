@@ -1,71 +1,77 @@
 import React, { Component } from "react";
 import { Button, Form, Header, Message, Segment } from "semantic-ui-react";
-//import { connect } from "react-redux";
+import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
-//import { register, loginLink } from "../Actions/action.js";
+import { registerAction } from "../Actions/registerAction"
 import "../Styling/main.css";
 
 class Register extends Component {
-  state = {
-    username: "",
-    password: "",
-    passwordRepeat: "",
-    passwordMatches: true
-  };
+  // componentDidMount() {
+  //   this.props.registerAction()
+    
+  // }
 
-  handleChangeUsername = event => {
-    this.setState({
-      username: event.target.value
-    });
-  };
-
-  handleChangePassword = event => {
-    this.setState({
-      password: event.target.value
-    });
-  };
-
-  handleChangeMatch = event => {
-    this.setState({
-      passwordRepeat: event.target.value
-    });
-  };
-
-  noMatch = () => {
-    return <Segment color="red">Entered passwords do not match.</Segment>;
-  };
-
-  usernameFail = () => {
-    return (
-      <Segment color="red">
-        Username taken. Choose a different username.
-      </Segment>
-    );
-  };
-
-  handleLoginLink = () => {
-    this.props.loginLink();
-  };
-
-  handleRegister = event => {
-    if (
-      this.state.username &&
-      this.state.password === this.state.passwordRepeat
-    ) {
-      this.setState({ passwordMatches: true });
-      console.log("handle was called");
-      this.props.register({
-        username: this.state.username,
-        password: this.state.password
-      });
-    }
-
-    if (this.state.password !== this.state.passwordRepeat) {
-      this.setState({ passwordMatches: false });
-    } else {
-      this.setState({ passwordMatches: true });
-    }
-  };
+    state = {
+        username: "",
+        password: "",
+        passwordRepeat: "",
+        passwordMatches: true
+      };
+    
+      handleChangeUsername = event => {
+        this.setState({
+          username: event.target.value
+        });
+      };
+    
+      handleChangePassword = event => {
+        this.setState({
+          password: event.target.value
+        });
+      };
+    
+      handleChangeMatch = event => {
+        this.setState({
+          passwordRepeat: event.target.value
+        });
+      };
+    
+      noMatch = () => {
+        return <Segment color="red">Entered passwords do not match.</Segment>;
+      };
+    
+      usernameFail = () => {
+        return (
+          <Segment color="red">
+            Username taken. Choose a different username.
+          </Segment>
+        );
+      };
+    
+      handleLoginLink = () => {
+        this.props.loginLink();
+      };
+    
+      handleRegister = event => {
+        if (
+          this.state.username &&
+          this.state.password === this.state.passwordRepeat
+        ) {
+          this.setState({ passwordMatches: true });
+          console.log("handle was called");
+          console.log(this.props)
+          this.props.registerAction({
+            username: this.state.username,
+            password: this.state.password,
+          });
+        }
+    
+        if (this.state.password !== this.state.passwordRepeat) {
+          this.setState({ passwordMatches: false });
+        } else {
+          this.setState({ passwordMatches: true });
+        }
+      };
 
   render() {
     return (
@@ -128,4 +134,21 @@ class Register extends Component {
   }
 }
 
-export default Register;
+const mapStateToProps = state => {
+  return {
+    result: state.registerResult
+  };
+};
+
+function mapDispatchToProps(dispatch) {
+  return {
+    registerAction: (username, password) => {
+      dispatch(registerAction(username, password));
+    }, } }
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Register)
+);
