@@ -10,23 +10,27 @@
     display: flex !important;
     justify-content: center !important;
 }
+
 .accept-delete-or-update {
     background-color: #6FB0CE !important;
     color: white !important;
     font-size: 18px !important;
     height: 45px;
 }
+
 .reset {
     background-color: #C2BDB8 !important;
     color: white !important;
     font-size: 18px !important;
     height: 45px;
 }
+
 .cancel-delete {
     color: white !important;
     font-size: 18px !important;
     height: 45px;
 }
+
 .cancel-button {
     font-size: 18px !important;
     margin: auto !important;
@@ -50,17 +54,21 @@ path {
 .register, .login {
     margin: auto;
     width: 50%;
-    border: 2px solid #6FB0CE;
+    border: 3px solid #6FB0CE !important;
+    border-radius: 10px;
     padding: 20px;
     margin-top: 50px;
     background-color: white;
+    
 }
-.line {
-    background-color: transparent !important;
+
+.register-box, .login-box {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    box-shadow: none !important;
+    align-content: center;
 }
+
 .message {
     background-color: transparent !important;
     display: flex;
@@ -73,7 +81,7 @@ path {
 
 .link, .link:hover {
     font-weight: bold;
-    color: #6FB0CE;
+    color: rgb(91, 158, 189);
     text-decoration: none;
     background-color: transparent !important;
     padding-top: 0;
@@ -94,6 +102,7 @@ path {
   width: 100%;
   margin-bottom: 40px;
 }
+
 .navMenu {
   z-index: 10000000;
   top: 0;
@@ -105,9 +114,11 @@ path {
   display: flex;
   justify-content: center;
 }
+
 .bird-card {
   border: solid 1px #6fb0ce !important;
 }
+
 .more-info {
   background-color: #6fb0ce !important;
   color: white !important;
@@ -118,12 +129,15 @@ path {
   display: flex !important;
   justify-content: center !important;
 }
+
 .bird-image {
   width: 400px;
 }
+
 .bird-map {
   margin: 10px;
 }
+
 .thumbnail {
   width: 220px;
   display: flex;
@@ -148,6 +162,11 @@ h1 {
   flex-direction: column;
   color: white;
 }
+
+.header {
+    margin-top: 20px;
+}
+
 .para {
   margin-top: 150px !important;
   margin-left: 7%;
@@ -156,9 +175,10 @@ h1 {
   font-size: 18px;
   color: white;
 }
+
 .about {
     position: fixed;
-    margin-top: -13%;
+    margin-top: -7%;
     width: 240px;
     height: 90px;
     padding: 20px;
@@ -182,8 +202,8 @@ h1 {
     background: url(../Images/heron-bg.jpg) no-repeat center center fixed;
     background-size: cover;
     max-height: 80%;
-
 }
+
 /* .home {
     margin-top: -90px !important;
     padding-top: 20px;
@@ -211,7 +231,7 @@ h2 {
     /* LOGIN/REGISTER */
 
     .register, .login {
-        width: 80% !important;
+        width: 90% !important;
         margin-top: 30% !important;
     }
 

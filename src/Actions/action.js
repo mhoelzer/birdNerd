@@ -31,5 +31,5 @@ export const getBirdData = () => dispatch => {
     }
   };
 
-  window.gapi.load("client", initClient);
+  // window.gapi.load("client", initClient);
 };
