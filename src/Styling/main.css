@@ -6,7 +6,7 @@
   margin: auto !important;
   text-align: center !important;
   height: 45px;
-  width: 50%;
+  width: 200px !important;
   display: flex !important;
   justify-content: center !important;
 }
@@ -16,6 +16,7 @@
   color: white !important;
   font-size: 18px !important;
   height: 45px;
+  margin-bottom: 5px !important;
 }
 
 .reset {
@@ -23,12 +24,15 @@
   color: white !important;
   font-size: 18px !important;
   height: 45px;
+  width: 200px;
+  margin-bottom: 5px !important;
 }
 
 .cancel-delete {
   color: white !important;
   font-size: 18px !important;
   height: 45px;
+  width: 200px;
 }
 
 .cancel-button {
@@ -112,6 +116,16 @@ path {
   border: 20px dotted green
 }
 
+i.icon.sidebar::before {
+  color: white;
+  /* color: #6FB0CE; */
+  background-color: #6FB0CE !important;
+  /* background-color: white !important; */
+  padding-left: 6px;
+  padding-right: 6px;
+  border-radius: 3px;
+}
+
 /* BIRDIDEX */
 .birdydex {
   display: flex;
@@ -188,14 +202,20 @@ h1 {
     color: #fff;
 }
 
-.info-header,
 .info-message {
   border: solid 3px #6fb0ce !important;
-  /* color: #6FB0CE !important; */
+  box-shadow: none !important;
 }
 
 .info-header {
   font-size: 25px !important;
+  background-color: #6FB0CE !important;
+  color: white !important;
+  box-shadow: none !important;
+}
+
+.close.icon {
+  color: white !important;
 }
 
 .info-text {
@@ -251,7 +271,7 @@ h2 {
   }
 
   .about {
-    margin: 109% auto auto 32% !important;
+    margin: 95% auto auto 32% !important;
     display: flex;
     justify-content: flex-end;
     color: white;
