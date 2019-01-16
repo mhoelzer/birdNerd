@@ -1,16 +1,21 @@
 export const CREATE_ENTRY = "CREATE_ENTRY";
 export const CREATE_ENTRY_SUCCESS = "CREATE_ENTRY_SUCCESS";
+export const GET_USER = "GET_USER";
+export const GET_USER_SUCCESS = "GET_USER_SUCCESS";
+export const GET_USER_FAILURE = "GET_USER_FAILURE";
 
 // const birdNerdURL = "https://kwitter-api.herokuapp.com";
-const birdNerdURL = "";
+const URL = "https://shrouded-tundra-68436.herokuapp.com"
 
-export const composeEntry = text => (dispatch, getState) => {
-  const token = getState().authentication.token;
+export const composeEntry = (text) => (dispatch, getState) => {
+  // const token = getState().authentication.token;
+  console.log(getState())
+  const username = getState().bird;
   dispatch({ type: CREATE_ENTRY });
-  return fetch(`${birdNerdURL}/messages`, {
+  return fetch(`${URL}/:username/notebook`, {
     method: "POST",
     headers: {
-      Authorization: "Bearer " + token,
+      Authorization: "Bearer ",
       "Content-Type": "application/json"
     },
     body: JSON.stringify({ text })
@@ -20,7 +25,27 @@ export const composeEntry = text => (dispatch, getState) => {
       dispatch({
         type: CREATE_ENTRY_SUCCESS
       });
-      const userId = getState().authentication.id;
+      
       // dispatch(getUserInfo(userId)); // get this conencted with the profile getuserinfo
+    });
+    
+};
+
+export const getUserInfo = username => dispatch => {
+  dispatch({ type: GET_USER });
+  fetch(`${URL}/users/${username}/notebook`)
+    .then(response => {
+      if (!response.ok) {
+        response.json().then(err => {
+          throw err;
+        });
+      }
+      return response.json();
+    })
+    .then(data => {
+      dispatch({ type: GET_USER_SUCCESS, data: data.user });
+    })
+    .catch(err => {
+      dispatch({ type: GET_USER_FAILURE, err });
     });
 };
