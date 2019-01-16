@@ -24,47 +24,34 @@ export default class Navbar extends Component {
           <div className="navMenu">
             <div className="stickyMenu">
               <Menu>
-                <Menu.Item
-                  exact
-                  as={NavLink}
-                  to="/"
-                  name="home"
-                >
+                <Menu.Item exact as={NavLink} to="/">
                   <img src={logo} alt="Logo" />
                 </Menu.Item>
-                <Menu.Item
-                  exact
-                  as={NavLink}
-                  to="/birdidex"
-                  name="birdidex"
-                >
+                <Menu.Item exact as={NavLink} to="/birdidex">
                   Birdidex
                 </Menu.Item>
-                <Menu.Item
-                  exact
-                  as={NavLink}
-                  to="/advanced"
-                  name="advanced"
-                >
+                <Menu.Item exact as={NavLink} to="/advanced">
                   Advanced Search
                 </Menu.Item>
                 <Menu.Menu position="right">
-                  <Menu.Item
-                    exact
-                    as={NavLink}
-                    to="/login"
-                    name="login"
-                  >
-                    Login
-                  </Menu.Item>
-                  <Menu.Item
-                    exact
-                    as={NavLink}
-                    to="/register"
-                    name="register"
-                  >
-                    Register
-                  </Menu.Item>
+                  {this.props.isLoggedIn ? (
+                    <Menu.Item exact as={NavLink} to="/profile">
+                      Welcome, {this.props.username}
+                    </Menu.Item>
+                  ) : (
+                    <Menu.Item exact as={NavLink} to="/login">
+                      Login
+                    </Menu.Item>
+                  )}
+                  {this.props.isLoggedIn ? (
+                    <Menu.Item exact as={NavLink} to="/logout">
+                      Logout
+                    </Menu.Item>
+                  ) : (
+                    <Menu.Item exact as={NavLink} to="/register">
+                      Register
+                    </Menu.Item>
+                  )}
                 </Menu.Menu>
               </Menu>
             </div>
@@ -81,7 +68,6 @@ export default class Navbar extends Component {
                 exact
                 as={NavLink}
                 to="/"
-                name="home"
                 style={{ fontSize: "20px", marginBottom: "10px" }}
               >
                 <img src={logo} alt="Logo" /> Home
@@ -90,7 +76,6 @@ export default class Navbar extends Component {
                 exact
                 as={NavLink}
                 to="/birdidex"
-                name="birdidex"
                 style={{ fontSize: "20px", marginBottom: "10px" }}
               >
                 Birdidex
@@ -99,30 +84,49 @@ export default class Navbar extends Component {
                 exact
                 as={NavLink}
                 to="/advanced"
-                name="advanced"
                 style={{ fontSize: "20px" }}
               >
                 Advanced Search
               </Dropdown.Item>
               <Dropdown.Divider />
-              <Dropdown.Item
-                exact
-                as={NavLink}
-                to="/login"
-                name="login"
-                style={{ fontSize: "20px", marginBottom: "10px" }}
-              >
-                Login
-              </Dropdown.Item>
-              <Dropdown.Item
-                exact
-                as={NavLink}
-                to="/register"
-                name="register"
-                style={{ fontSize: "20px" }}
-              >
-                Register
-              </Dropdown.Item>
+              {this.props.isLoggedIn ? (
+                <Dropdown.Item
+                  exact
+                  as={NavLink}
+                  to="/profile"
+                  style={{ fontSize: "20px", marginBottom: "10px" }}
+                >
+                  Welcome, {this.props.username}
+                </Dropdown.Item>
+              ) : (
+                <Dropdown.Item
+                  exact
+                  as={NavLink}
+                  to="/login"
+                  style={{ fontSize: "20px", marginBottom: "10px" }}
+                >
+                  Login
+                </Dropdown.Item>
+              )}
+              {this.props.isLoggedIn ? (
+                <Dropdown.Item
+                  exact
+                  as={NavLink}
+                  to="/logout"
+                  style={{ fontSize: "20px" }}
+                >
+                  Logout
+                </Dropdown.Item>
+              ) : (
+                <Dropdown.Item
+                  exact
+                  as={NavLink}
+                  to="/register"
+                  style={{ fontSize: "20px" }}
+                >
+                  Register
+                </Dropdown.Item>
+              )}
             </Dropdown.Menu>
           </Dropdown>
         </Responsive>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button, Dimmer, Divider, Header, Icon, Menu } from "semantic-ui-react";
-import { logout } from "../Actions/actions";
-import { connect } from "react-redux";
+// import { logout } from "../Actions/actions";
+// import { connect } from "react-redux";
 
 class Logout extends Component {
   state = {};
@@ -38,12 +38,13 @@ class Logout extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    logout: () => dispatch(logout())
-  };
-};
-export default connect(
-  null,
-  mapDispatchToProps
-)(Logout);
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     logout: () => dispatch(logout())
+//   };
+// };
+// export default connect(
+//   null,
+//   mapDispatchToProps
+// )(Logout);
+export default Logout
