@@ -4,7 +4,7 @@ import {
   GET_BIRD_DATA_FAIL
 } from "../Actions/action";
 
-const initialState = { bird: [], error: { message: "" } };
+const initialState = { bird: [], error: { message: "" }, username: [] };
 
 export default (state = initialState, action) => {
   switch (action.type) {

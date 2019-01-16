@@ -6,8 +6,8 @@ import {
   Icon,
   Modal,
   Segment,
-  TextArea
 } from "semantic-ui-react";
+import {connect} from "react-redux"
 import { composeEntry } from "../Actions/composeEntryAction";
 
 class ComposeEntry extends Component {
@@ -106,23 +106,22 @@ class ComposeEntry extends Component {
   }
 }
 
-// const mapStateToProps = state => {
-//   return {
-//     userID: state.userID
-//   };
-// }
+const mapStateToProps = state => {
+  return {
+    userID: state.userID
+  };
+}
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     composeEntry: (birdName, date, theDeets, location) => {
-//       dispatch(composeEntry(birdName, date, theDeets, location));
-//     }
-//   };
-// };
+const mapDispatchToProps = dispatch => {
+  return {
+    composeEntry: (birdName, date, theDeets, location) => {
+      dispatch(composeEntry(birdName, date, theDeets, location));
+    }
+  };
+};
 
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(ComposeEntry);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ComposeEntry);
 
-export default ComposeEntry;
