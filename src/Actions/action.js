@@ -3,6 +3,9 @@ import load from "../Helpers/spreadsheet.js";
 export const GET_BIRD_DATA = "GET_BIRD_DATA";
 export const GET_BIRD_DATA_SUCCESS = "GET_BIRD_DATA_SUCCESS";
 export const GET_BIRD_DATA_FAIL = "GET_BIRD_DATA_FAIL";
+export const EDIT_PROFILE = "EDIT_PROFILE";
+export const EDIT_PROFILE_SUCCESS = "EDIT_PROFILE_SUCCESS";
+export const EDIT_PROFILE_FAIL = "EDIT_PROFILE_FAIL";
 
 export const getBirdData = () => dispatch => {
   dispatch({ type: GET_BIRD_DATA });

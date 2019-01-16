@@ -1,6 +1,9 @@
-export const EDIT_PROFILE = "EDIT_PROFILE";
-export const EDIT_PROFILE_SUCCESS = "EDIT_PROFILE_SUCCESS";
-export const EDIT_PROFILE_FAIL = "EDIT_PROFILE_FAIL";
+import {
+  EDIT_PROFILE,
+  EDIT_PROFILE_SUCCESS,
+  EDIT_PROFILE_FAIL
+} from "./action.js";
+import { store } from "../Redux/store";
 
 export const isEditingProfile = () => {
   return {
@@ -23,5 +26,5 @@ export const editPrifleFailed = () => {
 export const editProfile = (password, about) => dispatch => {
   dispatch(isEditingProfile());
 
-  const token = store.getState();
+  fetch();
 };

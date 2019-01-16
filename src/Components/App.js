@@ -8,8 +8,9 @@ import EditProfile from "./EditProfile";
 import Login from "./Login";
 import Register from "./Register";
 import Birdydex from "./Birdydex";
-import AdvancedSearch from "./AdvancedSearch"
+import AdvancedSearch from "./AdvancedSearch";
 import Homepage from "./Homepage.js";
+import ImageUploader from "./ImageUploader.js";
 
 class App extends Component {
   render() {

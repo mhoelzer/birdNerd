@@ -17,7 +17,11 @@ class DeleteUser extends Component {
     return (
       <Modal
         trigger={
-          <Button onClick={this.handleOpen} color="red" className="cancel-delete">
+          <Button
+            onClick={this.handleOpen}
+            color="red"
+            className="cancel-delete"
+          >
             <Icon name="trash alternate outline" />
             Delete User
           </Button>
@@ -36,11 +40,19 @@ class DeleteUser extends Component {
           <Divider />
           <Modal.Actions>
             <Button.Group>
-              <Button color="green" onClick={this.handleDeleteUser} className="accept-delete-or-update">
+              <Button
+                color="green"
+                onClick={this.handleDeleteUser}
+                className="accept-delete-or-update"
+              >
                 <Icon name="checkmark" /> Indeed!
               </Button>
               <Button.Or />
-              <Button color="red" onClick={this.handleClose} className="cancel-delete">
+              <Button
+                color="red"
+                onClick={this.handleClose}
+                className="cancel-delete"
+              >
                 <Icon name="remove" /> Nope!
               </Button>
             </Button.Group>
