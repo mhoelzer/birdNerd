@@ -67,69 +67,61 @@ class Register extends Component {
     }
   };
 
-  componentWillMount = () => {
-    document.body.classList.add("background");
-  };
-
-  componentWillUnmount = () => {
-    document.body.classList.remove("background");
-  };
-
   render() {
     return (
-      <div className="register">
-        <Header className="header" as="h2">
-          Sign Up
-        </Header>
-        <Form size="large">
-          <Form.Field>
-            <input
-              className="input"
-              placeholder="Username"
-              value={this.state.username}
-              onChange={this.handleChangeUsername}
-              required
-            />
-          </Form.Field>
-          <Form.Field>
-            <input
-              className="input"
-              placeholder="Password"
-              type="password"
-              value={this.state.password}
-              onChange={this.handleChangePassword}
-              required
-            />
-          </Form.Field>
-          <Form.Field>
-            {this.state.passwordMatches ? null : this.noMatch()}
-            <input
-              className="input"
-              placeholder="Re-Enter Password"
-              type="password"
-              value={this.state.passwordRepeat}
-              onChange={this.handleChangeMatch}
-              required
-            />
-          </Form.Field>
-          <Button className="submit-button" onClick={this.handleRegister}>
-            Register
-          </Button>
-        </Form>
-        <div>
-          <h3>{this.props.result}</h3>
-        </div>
-        <Message className="line" style={{ boxShadow: "none" }}>
-          _____________________________________
-        </Message>
-        <div>
-          <Message className="message">
-            Already signed up?
-            <Link className="link" to="/login" onClick={this.handleLoginLink}>
-              {" "}
-              Login
-            </Link>
-          </Message>
+      <div className="register-box">
+        <div className="register">
+          <Header className="header" as="h2">
+            Sign Up
+          </Header>
+          <Form size="large">
+            <Form.Field>
+              <input
+                className="input"
+                placeholder="Username"
+                value={this.state.username}
+                onChange={this.handleChangeUsername}
+                required
+                autoFocus
+              />
+            </Form.Field>
+            <Form.Field>
+              <input
+                className="input"
+                placeholder="Password"
+                type="password"
+                value={this.state.password}
+                onChange={this.handleChangePassword}
+                required
+              />
+            </Form.Field>
+            <Form.Field>
+              {this.state.passwordMatches ? null : this.noMatch()}
+              <input
+                className="input"
+                placeholder="Re-Enter Password"
+                type="password"
+                value={this.state.passwordRepeat}
+                onChange={this.handleChangeMatch}
+                required
+              />
+            </Form.Field>
+            <Button className="submit-button" onClick={this.handleRegister}>
+              Register
+            </Button>
+          </Form>
+          <div>
+            <h3>{this.props.result}</h3>
+          </div>
+          <div>
+            <Message className="message">
+              Already signed up?
+              <Link className="link" to="/login" onClick={this.handleLoginLink}>
+                {" "}
+                Login
+              </Link>
+            </Message>
+          </div>
         </div>
       </div>
     );

@@ -65,64 +65,58 @@ class Login extends Component {
     }
   };
 
-  componentWillMount = () => {
-    document.body.classList.add("background");
-  };
-
-  componentWillUnmount = () => {
-    document.body.classList.remove("background");
-  };
-
   render() {
     const { username, password, error } = this.state;
     if (error) {
       return <div>{this.state.error.message}</div>;
     }
     return (
-      <div
-        className="login"
-        style={{
-          margin: "auto",
-          width: "50%",
-          border: "2px solid lightblue",
-          padding: "20px",
-          marginTop: "50px"
-        }}
-      >
-        <Header className="header" as="h2">
-          Sign In
-        </Header>
-        <Form size="large" onSubmit={this.handleLogin}>
-          <Form.Field>
-            <input
-              className="input"
-              placeholder="Username"
-              required
-              autoFocus
-              onChange={this.handleUsernameChange}
-            />
-          </Form.Field>
-          <Form.Field>
-            <input
-              className="input"
-              placeholder="Password"
-              type="password"
-              required
-              onChange={this.handlePasswordChange}
-            />
-          </Form.Field>
-          <Button className="submit-button" type="submit">
-            Submit
-          </Button>
-        </Form>
+      <div className="login-box">
+        <div
+          className="login"
+          style={{
+            margin: "auto",
+            width: "50%",
+            border: "2px solid lightblue",
+            padding: "20px",
+            marginTop: "50px"
+          }}
+        >
+          <Header className="header" as="h2">
+            Sign In
+          </Header>
+          <Form size="large" onSubmit={this.handleLogin}>
+            <Form.Field>
+              <input
+                className="input"
+                placeholder="Username"
+                required
+                autoFocus
+                onChange={this.handleUsernameChange}
+              />
+            </Form.Field>
+            <Form.Field>
+              <input
+                className="input"
+                placeholder="Password"
+                type="password"
+                required
+                onChange={this.handlePasswordChange}
+              />
+            </Form.Field>
+            <Button className="submit-button" type="submit">
+              Submit
+            </Button>
+          </Form>
 
-        <Message className="message" size="small">
-          Not a member?
-          <Link className="link" to="/register">
-            {" "}
-            Sign up
-          </Link>
-        </Message>
+          <Message className="message" size="small">
+            Not a member?
+            <Link className="link" to="/register">
+              {" "}
+              Sign up
+            </Link>
+          </Message>
+        </div>
       </div>
     );
   }
