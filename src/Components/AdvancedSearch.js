@@ -62,7 +62,7 @@ const stateOptions = [
 
 
 class AdvancedSearch extends Component {
-    state = { activeIndex: 0, filterBirds: this.props.birds || []}
+    state = { activeIndex: 0, filterBirds: this.props.birds && []}
     componentDidMount() {
         this.props.getBirdData();
     }
@@ -103,30 +103,30 @@ class AdvancedSearch extends Component {
         }
         
     }
-    handleFilterCharacteristics= event => {
-        const characteristicToFind = event.currentTarget.getElementsByTagName("input")[0].value
-        const checkedTwo = event.currentTarget.getElementsByTagName("input")[0].checkedTwo
-          if (checkedTwo === true){
-              //filter
-              this.setState({filterBirds: this.props.birds.filter(bird => {
-                  console.log(bird)
-                  const returnCharcteristic = bird.characteristics.split(",").find(characteristics => {
-                      return characteristics === characteristicToFind
-                  })
-                  if (returnCharcteristic){
-                      return true
-                  }
-                  else{
-                      return false
-                  }
-              })})
-          }
-          else{
-              //unfilter
-              this.setState({filterBirds: this.props.birds})
-          }
+    // handleFilterCharacteristics= event => {
+    //     const characteristicToFind = event.currentTarget.getElementsByTagName("input")[0].value
+    //     const checkedTwo = event.currentTarget.getElementsByTagName("input")[0].checkedTwo
+    //       if (checkedTwo === true){
+    //           //filter
+    //           this.setState({filterBirds: this.props.birds.filter(bird => {
+    //               console.log(bird)
+    //               const returnCharcteristic = bird.characteristics.split(",").find(characteristics => {
+    //                   return characteristics === characteristicToFind
+    //               })
+    //               if (returnCharcteristic){
+    //                   return true
+    //               }
+    //               else{
+    //                   return false
+    //               }
+    //           })})
+    //       }
+    //       else{
+    //           //unfilter
+    //           this.setState({filterBirds: this.props.birds})
+    //       }
           
-      }
+    //   }
     render(){
         const { activeIndex } = this.state
         return(
@@ -289,7 +289,6 @@ class AdvancedSearch extends Component {
 
 
 
-    <Birdydex birds = {this.state.filterBirds} />
     <BirdCards birds = {this.state.filterBirds} />
     </React.Fragment>
         )
