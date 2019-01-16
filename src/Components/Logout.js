@@ -21,7 +21,7 @@ class Logout extends Component {
         <Dimmer active={active} page>
           <Header as="h2" icon inverted>
             <Icon name="heart" />
-            <Menu.Item>Thanks for visiting KWITTER! Come back soon!</Menu.Item>
+            <Menu.Item>Thanks for visiting Bird Nerd! Come back soon!</Menu.Item>
             <Divider />
             <Button
               name="logout"
