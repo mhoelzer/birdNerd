@@ -14,22 +14,24 @@ const styles = {
 
 class Birdydex extends Component {
   componentDidMount() {
-    this.props.getBirdData()
+    this.props.getBirdData();
   }
   render() {
     console.log(this.props.bird);
     const { birds, error } = this.props;
+    console.log(birds[1]);
     // if (error) {
     //   return <div>{error.message}</div>;
     // }
     return (
       <div>
         <BirdCards birds={birds} />
-        <ScrollUpButton className="scroll" style={{border: "5px solid #6FB0CE"}} />
+        <ScrollUpButton
+          className="scroll"
+          style={{ border: "5px solid #6FB0CE" }}
+        />
       </div>
-      
-    )
-      
+    );
   }
 }
 
@@ -38,7 +40,7 @@ const mapStateToProps = state => {
     birds: state.bird
   };
 };
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return { getBirdData: () => dispatch(getBirdData()) };
 };
 export default connect(
