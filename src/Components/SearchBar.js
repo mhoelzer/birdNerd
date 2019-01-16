@@ -57,7 +57,7 @@ class SearchBar extends Component {
     return (
       <React.Fragment>
         <Modal
-          size={"tiny"}
+          size={"medium"}
           open={this.state.showModal}
           closeOnDimmerClick={true}
           closeIcon
@@ -65,7 +65,7 @@ class SearchBar extends Component {
         >
           <Modal.Header>{result.species}</Modal.Header>
           <Modal.Content image>
-            <Image wrapped size="medium" src={result.image} />
+            <Image wrapped size="huge" src={result.image} />
             <Modal.Description>
               <Header>{result.species}</Header>
               <p>
