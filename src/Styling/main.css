@@ -138,6 +138,7 @@
 }
 
 /* HOMEPAGE */
+
 .home, .headers, .header, .sub-header, h1 {
     display: flex;
     justify-content: center;
