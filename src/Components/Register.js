@@ -137,22 +137,3 @@ class Register extends Component {
 }
 
 export default Register;
-
-// const mapStateToProps = state => {
-//   return {
-//     result: state.registerResult
-//   };
-// };
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     register: registerData => dispatch(register(registerData))
-//   };
-// };
-
-// export default withRouter(
-//   connect(
-//     mapStateToProps,
-//     mapDispatchToProps
-//   )(Register)
-// );

@@ -240,18 +240,18 @@ class AdvancedSearch extends Component {
                  <Accordion.Content active={activeIndex === 3} content={ <Form>
         <Form.Group grouped>
         <Form.Checkbox label ='Owl' name='Type(specific)' value='Owl' />
-        <Form.Checkbox label = 'Eagle' name='Type(specific)' value='Eagle' />
+        <Form.Checkbox label = 'Eagle' name='Type(specific)' value='Eagle' /> 
         <Form.Checkbox label = 'Hawk' name= 'Type(specific)' value='Hawk' />
         <Form.Checkbox label = 'Kite' name= 'Type(specific)' value='Kite' />
         <Form.Checkbox label = 'Osprey' name= 'Type(specific)' value='Osprey' />
         <Form.Checkbox label = 'New World Vulture' name= 'Type(specific)' value='New World Vulture' />
-        <Form.Checkbox label = 'Falcon' name= 'Type(specific)' value='Falcon' />
+        <Form.Checkbox label = 'Falcon' name= 'Type(specific)' value='Falcon' /> 
         <Form.Checkbox label = 'Woodpecker' name= 'Type(specific)' value='Woodpecker' />
-        <Form.checkbox label = 'Chickadee, Titmouse' name= 'Type(specific)' Value='Chickadee, Titmouse' />
-        <Form.Checkbox  label = 'Bushtit' name='Type(specific)' value='Woodpecker' />
-        <Form.Chekcbox label = 'Verdin' name='Type(specific)' value='Verdin' />
+        <Form.Checkbox label = 'Chickadee, Titmouse' name= 'Type(specific)' value='Chickadee, Titmouse' />
+        <Form.Checkbox  label = 'Bushtit' name='Type(specific)' value='Bushtit' /> 
+        <Form.Checkbox label = 'Verdin' name='Type(specific)' value='Verdin' />
         <Form.Checkbox label = 'Wren or Nuthatch' name='Type(specific)' value='Wren or Nuthatch' />
-        <Form.Checkbox label = 'Dipper' name ='Type(specific)' value='Dipper' value='Dipper' />
+        <Form.Checkbox label = 'Dipper' name ='Type(specific)' value='Dipper'  />
         <Form.Checkbox label = 'Kinglet' name ='Type(specific)' value='Kinglet' />
         <Form.Checkbox label = 'Thrush' name ='Type(specific)' value='Thrush' />
         <Form.Checkbox label = 'Mockingbird or Thrasher' name ='Type(specific)' value='Mockingbird or Thrash' />
