@@ -102,7 +102,6 @@ path {
   width: 100%;
   margin-bottom: 40px;
 }
-
 .navMenu {
   z-index: 10000000;
   top: 0;
@@ -235,18 +234,10 @@ h2 {
 
   /* LOGIN/REGISTER */
 
-<<<<<<< HEAD
-  .register,
-  .login {
-    width: 80% !important;
-    margin-top: 30% !important;
-  }
-=======
     .register, .login {
         width: 90% !important;
         margin-top: 30% !important;
     }
->>>>>>> 28832f3f784feeffe842eb5b5469e637b6527e22
 
   /* HOMEPAGE */
 

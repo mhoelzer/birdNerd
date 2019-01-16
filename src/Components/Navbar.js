@@ -107,9 +107,9 @@ export default class Navbar extends Component {
           </div>
         </Responsive>
         <Responsive maxWidth={767}>
-          <Dropdown icon="sidebar" style={{fontSize: "50px", marginTop: "20px"}}>
-            <Dropdown.Menu >
-              <Dropdown.Item exact as={NavLink} to="/" name="home" className="dropdownItem">
+          <Dropdown icon="sidebar" style={{fontSize: "50px", marginTop: "20px", marginLeft: "30px"}} >
+            <Dropdown.Menu style={{minWidth: "300px"}}  >
+              <Dropdown.Item exact as={NavLink} to="/" name="home" >
                 <img src={logo} alt="Logo" /> Home
               </Dropdown.Item>
               <Dropdown.Item exact as={NavLink} to="/birdidex" name="birdidex" className="dropdownItem">
