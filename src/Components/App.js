@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 import Navbar from "./Navbar.js";
 import SearchBar from "./SearchBar";
 import Profile from "./Profile";
@@ -33,4 +33,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

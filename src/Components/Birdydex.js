@@ -3,6 +3,7 @@ import { Button, Header, Image, Modal, Card } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { getBirdData } from "../Actions/action";
 import BirdCards from "./BirdCards";
+import { CircleArrow as ScrollUpButton } from "react-scroll-up-button";
 
 const styles = {
   cardPosition: {
@@ -21,7 +22,14 @@ class Birdydex extends Component {
     // if (error) {
     //   return <div>{error.message}</div>;
     // }
-    return <BirdCards birds={birds} />;
+    return (
+      <div>
+        <BirdCards birds={birds} />
+        <ScrollUpButton className="scroll" style={{border: "5px solid #6FB0CE"}} />
+      </div>
+      
+    )
+      
   }
 }
 

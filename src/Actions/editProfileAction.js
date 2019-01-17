@@ -1,9 +1,7 @@
-import {
-  EDIT_PROFILE,
-  EDIT_PROFILE_SUCCESS,
-  EDIT_PROFILE_FAIL
-} from "./action.js";
-import { store } from "../Redux/store";
+import { push } from "connected-react-router";
+export const EDIT_PROFILE = "EDIT_PROFILE";
+export const EDIT_PROFILE_SUCCESS = "EDIT_PROFILE_SUCCESS";
+export const EDIT_PROFILE_FAIL = "EDIT_PROFILE_FAIL";
 
 export const isEditingProfile = () => {
   return {

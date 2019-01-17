@@ -19,7 +19,6 @@ import { connect } from "react-redux";
 import "../Styling/main.css";
 import birdShadow from "../Images/birdShadowShape.png";
 import editProfile from "../Actions/editProfileAction";
-import { store } from "../Redux/store";
 
 const ImageExampleCircular = () => (
   <Image
@@ -78,8 +77,6 @@ class EditProfile extends Component {
 
   render() {
     console.log("EDIT PROFILE", this.state);
-    const data = store.getState();
-    console.log("STORE DATA", data);
 
     return (
       <Grid
