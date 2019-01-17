@@ -46,31 +46,32 @@
 }
 
 .scroll {
-    color: #6FB0CE !important;
+  color: #6fb0ce !important;
 }
 
 path {
-    color: #6FB0CE !important;
+  color: #6fb0ce !important;
 }
 
 /* LOGIN/REGISTER */
 
-.register, .login {
-    margin: auto;
-    width: 50%;
-    border: 3px solid #6FB0CE !important;
-    border-radius: 10px;
-    padding: 20px;
-    margin-top: 50px;
-    background-color: white;
-    
+.register,
+.login {
+  margin: auto;
+  width: 50%;
+  border: 3px solid #6fb0ce !important;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 50px;
+  background-color: white;
 }
 
-.register-box, .login-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
+.register-box,
+.login-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
 
 .message {
@@ -83,15 +84,16 @@ path {
   font-size: 18px !important;
 }
 
-.link, .link:hover {
-    font-weight: bold;
-    color: rgb(91, 158, 189);
-    text-decoration: none;
-    background-color: transparent !important;
-    padding-top: 0;
-    padding-bottom: 0;
-    border: solid 1px transparent !important;
-    margin-left: 7px !important;
+.link,
+.link:hover {
+  font-weight: bold;
+  color: rgb(91, 158, 189);
+  text-decoration: none;
+  background-color: transparent !important;
+  padding-top: 0;
+  padding-bottom: 0;
+  border: solid 1px transparent !important;
+  margin-left: 7px !important;
 }
 
 /* PROFILE */
@@ -113,13 +115,13 @@ path {
 }
 .dropdownItem {
   font-size: 50px;
-  border: 20px dotted green
+  border: 20px dotted green;
 }
 
 i.icon.sidebar::before {
   color: white;
   /* color: #6FB0CE; */
-  background-color: #6FB0CE !important;
+  background-color: #6fb0ce !important;
   /* background-color: white !important; */
   padding-left: 6px;
   padding-right: 6px;
@@ -166,6 +168,13 @@ i.icon.sidebar::before {
   max-width: 400px !important;
 }
 
+.birdCount {
+  display: flex;
+  text-align: right;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
 /* HOMEPAGE */
 .home,
 .headers,
@@ -181,7 +190,7 @@ h1 {
 }
 
 .header {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .para {
@@ -194,12 +203,12 @@ h1 {
 }
 
 .about {
-    position: fixed;
-    margin-top: -7%;
-    width: 240px;
-    height: 90px;
-    padding: 20px;
-    color: #fff;
+  position: fixed;
+  margin-top: -7%;
+  width: 240px;
+  height: 90px;
+  padding: 20px;
+  color: #fff;
 }
 
 .info-message {
@@ -209,7 +218,7 @@ h1 {
 
 .info-header {
   font-size: 25px !important;
-  background-color: #6FB0CE !important;
+  background-color: #6fb0ce !important;
   color: white !important;
   box-shadow: none !important;
 }
@@ -225,9 +234,9 @@ h1 {
 }
 
 .background {
-    background: url(../Images/heron-bg.jpg) no-repeat center center fixed;
-    background-size: cover;
-    max-height: 80%;
+  background: url(../Images/heron-bg.jpg) no-repeat center center fixed;
+  background-size: cover;
+  max-height: 80%;
 }
 
 /* .home {
@@ -266,32 +275,34 @@ div.ui.selection.dropdown {
 
   /* LOGIN/REGISTER */
 
-    .register, .login {
-        width: 90% !important;
-    }
+  .register,
+  .login {
+    width: 90% !important;
+  }
 
-    .message {
-      background-color: transparent !important;
-      display: flex;
-      flex-direction: column !important;
-      justify-content: center;
-      flex-direction: row;
-      align-items: center;
-      margin-top: 15px !important;
-      box-shadow: none !important;
-      font-size: 18px !important;
-    }
-      
-    .link, .link:hover {
-      font-weight: bold;
-      color: rgb(91, 158, 189);
-      text-decoration: none;
-      background-color: transparent !important;
-      padding-top: 0;
-      padding-bottom: 0;
-      border: solid 1px transparent !important;
-      margin-left: 0px !important;
-    }
+  .message {
+    background-color: transparent !important;
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 15px !important;
+    box-shadow: none !important;
+    font-size: 18px !important;
+  }
+
+  .link,
+  .link:hover {
+    font-weight: bold;
+    color: rgb(91, 158, 189);
+    text-decoration: none;
+    background-color: transparent !important;
+    padding-top: 0;
+    padding-bottom: 0;
+    border: solid 1px transparent !important;
+    margin-left: 0px !important;
+  }
 
   /* HOMEPAGE */
 
@@ -338,12 +349,17 @@ div.ui.selection.dropdown {
     display: flex;
     flex-direction: column;
   }
-    
+
   .filter-advanced {
     margin: auto;
   }
-    
+
   div.ui.fluid.multiple.selection.dropdown {
     width: 208px;
+  }
+  .birdCount {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
   }
 }
