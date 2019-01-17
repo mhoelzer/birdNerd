@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Divider, Card } from "semantic-ui-react";
+import moment from "moment";
 
 class NotebookEntry extends Component {
   render() {
@@ -15,7 +16,9 @@ class NotebookEntry extends Component {
       >
         <Card.Content>
           <Card.Header>{this.props.birdName}</Card.Header>
-          <Card.Meta>{this.props.date}</Card.Meta>
+          <Card.Meta>
+            {moment(this.props.date).format("MMMM Do YYYY, h:mm:ss a")}
+          </Card.Meta>
           {/* // place props in styling, from fragment section. */}
           <Card.Description>{this.props.details}</Card.Description>
           <Divider />

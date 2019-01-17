@@ -1,14 +1,8 @@
 import React, { Component } from "react";
-import {
-  Button,
-  Form,
-  Header,
-  Icon,
-  Modal,
-  Segment,
-} from "semantic-ui-react";
-import {connect} from "react-redux"
+import { Button, Form, Header, Icon, Modal, Segment } from "semantic-ui-react";
+import { connect } from "react-redux";
 import { composeEntry } from "../Actions/composeEntryAction";
+import moment from "moment";
 
 class ComposeEntry extends Component {
   state = {
@@ -25,13 +19,15 @@ class ComposeEntry extends Component {
   handleChangeComposeEntry = (e, { value }) =>
     this.setState({ [e.target.name]: value });
 
+  handleChangeDate = () => {
+    let formattedDate = moment().format();
+    this.setState({ date: formattedDate });
+  };
+
   handleSubmit = (e, { value }) => {
-    this.props.composeEntry({ ...this.state })
-    .then(data => {
-      this.setState({modalOpen: false})
-      
-  })
-    
+    this.props.composeEntry({ ...this.state }).then(data => {
+      this.setState({ modalOpen: false });
+    });
   };
 
   // modal
@@ -39,38 +35,11 @@ class ComposeEntry extends Component {
     this.setState({ closeOnDimmerClick: false, modalOpen: true });
   handleClose = () => this.setState({ modalOpen: false });
 
-  formatDate = date => {
-    var monthNames = [
-      "",
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December"
-    ];
-
-    var day = date.substring(8, 10);
-    var monthIndex = parseInt(date.substring(5, 7), 10);
-    var year = date.substring(0, 4);
-    var time = "";
-    if (date.substring(11, 13) > 12) {
-      time = date.substring(11, 13) - 12 + date.substring(13, 16) + " PM";
-    } else {
-      time = date.substring(11, 16) + " AM";
-    }
-
-    return day + " " + monthNames[monthIndex] + " " + year + " at " + time;
-  };
-
   render() {
     const { closeOnDimmerClick, modalOpen } = this.state;
+    {
+      console.log("this.state", this.state);
+    }
 
     return (
       <Modal
@@ -97,13 +66,14 @@ class ComposeEntry extends Component {
               placeholder="Bird Name"
             />
             <Form.Input
-              onChange={this.handleChangeComposeEntry}
+              onChange={this.handleChangeDate}
               name="date"
               type="date"
               fluid
               label="Date"
               placeholder="Date of Discovery"
             />
+            {/* <div className="date">{this.formatDate(this.props.date)}</div> */}
             <Form.Input
               onChange={this.handleChangeComposeEntry}
               name="location"
@@ -146,11 +116,11 @@ const mapStateToProps = state => {
   return {
     userID: state.userID
   };
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
-    composeEntry: (entryData) => {
+    composeEntry: entryData => {
       return dispatch(composeEntry(entryData));
     }
   };
@@ -160,4 +130,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(ComposeEntry);
-
