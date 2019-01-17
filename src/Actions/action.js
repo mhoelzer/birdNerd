@@ -42,7 +42,7 @@ export const getBirdData = () => dispatch => {
 export const getNotebookEntries = () => (dispatch, getState) => {
   dispatch({ type: GET_NOTEBOOK_ENTRIES });
   let username = getState().username;
-  fetch(`http://localhost:8000/users/${username}/notebook`)
+  fetch(`${URL}/users/${username}/notebook`)
     .then(res => {
       return res.json();
     })

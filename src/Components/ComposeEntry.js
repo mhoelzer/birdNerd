@@ -13,7 +13,7 @@ import { composeEntry } from "../Actions/composeEntryAction";
 class ComposeEntry extends Component {
   state = {
     // image:
-    birdName: "",
+    birdname: "",
     date: "",
     details: "",
     location: "",
@@ -56,7 +56,7 @@ class ComposeEntry extends Component {
           <Segment color="grey">
             <Form.Input
               onChange={this.handleChangeComposeEntry}
-              name="birdName"
+              name="birdname"
               fluid
               label="Bird Name"
               placeholder="Bird Name"

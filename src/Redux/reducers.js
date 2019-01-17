@@ -12,7 +12,8 @@ const initialState = {
   bird: [],
   error: { message: "" },
   username: "",
-  notebookEntries: []
+  notebookEntries: [],
+  token: ""
 };
 
 export default (state = initialState, action) => {
@@ -30,7 +31,7 @@ export default (state = initialState, action) => {
     case GET_NOTEBOOK_ENTRIES_FAIL:
       return state;
     case LOGIN:
-      return { ...state, username: action.username };
+      return { ...state, token: action.token, username: action.username };
     default:
       return state;
   }

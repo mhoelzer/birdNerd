@@ -23,6 +23,7 @@ export const userLogin = (username, password) => dispatch => {
             password: password,
             id: data.id,
             success: data.success,
+            token: data.token
           });
           alert("Successful Login")
           dispatch(push("/"));
