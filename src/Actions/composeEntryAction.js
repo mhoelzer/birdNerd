@@ -8,17 +8,17 @@ export const GET_USER_FAILURE = "GET_USER_FAILURE";
 const URL = "https://shrouded-tundra-68436.herokuapp.com"
 
 export const composeEntry = (text) => (dispatch, getState) => {
-  // const token = getState().authentication.token;
+  const token = getState().token;
   console.log(getState())
-  const username = getState().bird;
+  let username = getState().username;
   dispatch({ type: CREATE_ENTRY });
-  return fetch(`${URL}/:username/notebook`, {
+  return fetch(`${URL}/users/${username}/notebook`, {
     method: "POST",
     headers: {
-      Authorization: "Bearer ",
+      Authorization: "Bearer " + token,
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({ text })
+    body: JSON.stringify(text)
   })
     .then(res => res.json())
     .then(data => {
