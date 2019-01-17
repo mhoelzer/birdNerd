@@ -31,9 +31,10 @@ export default class BirdCards extends Component {
               <p>Size: {bird.size}</p> */}
               <br />
               <Modal
-                size={"large"}
+                size={"small"}
                 trigger={<Button className="more-info">More Info</Button>}
                 closeIcon
+                style={{marginTop: "20px"}}
               >
                 <Modal.Header>{bird.species}</Modal.Header>
                 <Modal.Content image>
