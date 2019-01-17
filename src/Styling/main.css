@@ -6,7 +6,7 @@
   margin: auto !important;
   text-align: center !important;
   height: 45px;
-  width: 50%;
+  width: 200px !important;
   display: flex !important;
   justify-content: center !important;
 }
@@ -16,6 +16,7 @@
   color: white !important;
   font-size: 18px !important;
   height: 45px;
+  margin-bottom: 5px !important;
 }
 
 .reset {
@@ -23,12 +24,15 @@
   color: white !important;
   font-size: 18px !important;
   height: 45px;
+  width: 200px;
+  margin-bottom: 5px !important;
 }
 
 .cancel-delete {
   color: white !important;
   font-size: 18px !important;
   height: 45px;
+  width: 200px;
 }
 
 .cancel-button {
@@ -112,6 +116,16 @@ path {
   border: 20px dotted green
 }
 
+i.icon.sidebar::before {
+  color: white;
+  /* color: #6FB0CE; */
+  background-color: #6FB0CE !important;
+  /* background-color: white !important; */
+  padding-left: 6px;
+  padding-right: 6px;
+  border-radius: 3px;
+}
+
 /* BIRDIDEX */
 .birdydex {
   display: flex;
@@ -188,14 +202,22 @@ h1 {
     color: #fff;
 }
 
-.info-header,
 .info-message {
   border: solid 3px #6fb0ce !important;
-  /* color: #6FB0CE !important; */
+  box-shadow: none !important;
 }
 
 .info-header {
   font-size: 25px !important;
+  background-color: #6FB0CE !important;
+  color: white !important;
+  box-shadow: none !important;
+}
+
+.close.icon {
+  color: white !important;
+  background-color: #6fb0ce !important;
+  border-radius: 3px !important;
 }
 
 .info-text {
@@ -224,6 +246,16 @@ h2 {
   margin-top: 10px;
 }
 
+/* ADVANCED SEARCH */
+.filter-total {
+  display: flex;
+  flex-direction: row;
+}
+
+div.ui.selection.dropdown {
+  width: 208px;
+}
+
 /* MOBILE */
 @media only screen and (max-width: 500px) {
   /* BUTTONS */
@@ -236,7 +268,29 @@ h2 {
 
     .register, .login {
         width: 90% !important;
-        margin-top: 30% !important;
+    }
+
+    .message {
+      background-color: transparent !important;
+      display: flex;
+      flex-direction: column !important;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 15px !important;
+      box-shadow: none !important;
+      font-size: 18px !important;
+    }
+      
+    .link, .link:hover {
+      font-weight: bold;
+      color: rgb(91, 158, 189);
+      text-decoration: none;
+      background-color: transparent !important;
+      padding-top: 0;
+      padding-bottom: 0;
+      border: solid 1px transparent !important;
+      margin-left: 0px !important;
     }
 
   /* HOMEPAGE */
@@ -251,7 +305,7 @@ h2 {
   }
 
   .about {
-    margin: 109% auto auto 32% !important;
+    margin: 95% auto auto 32% !important;
     display: flex;
     justify-content: flex-end;
     color: white;
@@ -277,5 +331,19 @@ h2 {
 
   h2 {
     margin-top: 10px;
+  }
+
+  /* ADVANCED SEARCH */
+  .filter-total {
+    display: flex;
+    flex-direction: column;
+  }
+    
+  .filter-advanced {
+    margin: auto;
+  }
+    
+  div.ui.fluid.multiple.selection.dropdown {
+    width: 208px;
   }
 }
