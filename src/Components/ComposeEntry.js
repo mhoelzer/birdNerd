@@ -26,7 +26,12 @@ class ComposeEntry extends Component {
     this.setState({ [e.target.name]: value });
 
   handleSubmit = (e, { value }) => {
-    this.props.composeEntry({ ...this.state });
+    this.props.composeEntry({ ...this.state })
+    .then(data => {
+      this.setState({modalOpen: false})
+      
+  })
+    
   };
 
   // modal
@@ -114,8 +119,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    composeEntry: (birdName, date, details, location) => {
-      dispatch(composeEntry(birdName, date, details, location));
+    composeEntry: (entryData) => {
+      return dispatch(composeEntry(entryData));
     }
   };
 };
