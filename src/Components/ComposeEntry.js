@@ -34,6 +34,36 @@ class ComposeEntry extends Component {
     this.setState({ closeOnDimmerClick: false, modalOpen: true });
   handleClose = () => this.setState({ modalOpen: false });
 
+  formatDate = date => {
+    var monthNames = [
+      "",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ];
+
+    var day = date.substring(8, 10);
+    var monthIndex = parseInt(date.substring(5, 7), 10);
+    var year = date.substring(0, 4);
+    var time = "";
+    if (date.substring(11, 13) > 12) {
+      time = date.substring(11, 13) - 12 + date.substring(13, 16) + " PM";
+    } else {
+      time = date.substring(11, 16) + " AM";
+    }
+
+    return day + " " + monthNames[monthIndex] + " " + year + " at " + time;
+  };
+
   render() {
     const { closeOnDimmerClick, modalOpen } = this.state;
 
@@ -64,6 +94,7 @@ class ComposeEntry extends Component {
             <Form.Input
               onChange={this.handleChangeComposeEntry}
               name="date"
+              type="date"
               fluid
               label="Date"
               placeholder="Date of Discovery"
