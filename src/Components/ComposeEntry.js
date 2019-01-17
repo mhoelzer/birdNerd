@@ -68,6 +68,7 @@ class ComposeEntry extends Component {
             <Form.Input
               onChange={this.handleChangeDate}
               name="date"
+              type="date"
               fluid
               label="Date"
               placeholder="Date of Discovery"
