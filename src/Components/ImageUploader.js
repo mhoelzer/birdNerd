@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button, Form, Grid } from "semantic-ui-react";
 import storage from "../Firebase/firebase";
 import { connect } from "react-redux";
-import birdShadow from "../Images/birdShadowShape.png";
+import birdShadow from "../Images/birdSilhoutte.png";
 
 export default class ImageUploader extends Component {
   state = {
@@ -28,14 +28,6 @@ export default class ImageUploader extends Component {
   };
 
   fileUploadHandler = () => {
-    // const newMetadata = {
-    //   cacheControl: "public",
-    //   // NEED TO GRAB USERNAME USING TOKEN OR SOMETHING
-    //   customMetadata: {
-    //     username: this.state.username
-    //   }
-    // };
-
     const file = this.state.selectedFile;
     const profileRef = storage.child(this.state.username);
     // const profileImageRef = profileRef.child(file.name);

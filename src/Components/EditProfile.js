@@ -17,8 +17,9 @@ import DeleteUser from "./DeleteUser";
 import ImageUploader from "./ImageUploader";
 import { connect } from "react-redux";
 import "../Styling/main.css";
-import birdShadow from "../Images/birdShadowShape.png";
+import birdShadow from "../Images/birdSilhoutte.png";
 import editProfile from "../Actions/editProfileAction";
+import store from "../Redux/store";
 
 const ImageExampleCircular = () => (
   <Image
@@ -38,9 +39,19 @@ const ImageExampleCircular = () => (
 class EditProfile extends Component {
   state = {
     password: "",
+    matchpassword: "",
     about: "",
     downloadURL: "",
     username: "Michael"
+  };
+
+  handleSubmitEditProfile = () => {
+    this.props.editProfile(this.state.password, this.state.about);
+    this.setState({
+      password: "",
+      matchPassword: "",
+      about: ""
+    });
   };
 
   handlePasswordChange = event => {
@@ -49,7 +60,7 @@ class EditProfile extends Component {
     });
   };
 
-  handleChangeMatchPassword = event => {
+  handleMatchPasswordChange = event => {
     this.setState({
       matchPassword: event.target.value
     });
@@ -76,6 +87,7 @@ class EditProfile extends Component {
   // };
 
   render() {
+    console.log("STORE.GETSTATE", store.getState());
     console.log("EDIT PROFILE", this.state);
 
     return (
@@ -92,30 +104,6 @@ class EditProfile extends Component {
           <Form size="large">
             <Segment stacked color="grey">
               <ImageExampleCircular />
-              {/* <image
-                className="profilePhoto"
-                src="../Images/birdShadowShape.png"
-                {
-                  this.props.downloadURL === "undefined"
-                    ? "../Images/birdShadowShape.png"
-                    : this.props.downloadURL
-                }
-                size="medium"
-                rounded
-              /> */}
-              {/* <div
-                className={
-                  this.state.uploadProgress === "false" ? "" : "uploader"
-                }
-              >
-                <div class="flower-spinner">
-                  <div class="dots-container">
-                    <div class="bigger-dot">
-                      <div class="smaller-dot" />
-                    </div>
-                  </div>
-                </div>
-              </div> */}
               <Form.TextArea
                 onChange={this.handleChange}
                 name="about"
@@ -130,6 +118,7 @@ class EditProfile extends Component {
               <Form.Input
                 onChange={this.handleChange}
                 name="password"
+                type="password"
                 fluid
                 label="New Password"
                 placeholder="New Password"
@@ -137,6 +126,7 @@ class EditProfile extends Component {
               <Form.Input
                 onChange={this.handleChange}
                 name="password"
+                type="password"
                 fluid
                 label="Re-Enter New Password"
                 placeholder="Re-Enter New Password"
