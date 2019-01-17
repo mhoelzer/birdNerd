@@ -46,11 +46,11 @@ class Navbar extends Component {
                     </Menu.Item>
                   )}
                   {this.props.isLoggedIn ? (
-                      <Logout/>
+                    <Logout />
+                  ) : (
                     // <Menu.Item exact as={NavLink} to="/logout">
                     //   Logout
                     // </Menu.Item>
-                  ) : (
                     <Menu.Item exact as={NavLink} to="/register">
                       Register
                     </Menu.Item>
@@ -112,7 +112,8 @@ class Navbar extends Component {
                 </Dropdown.Item>
               )}
               {this.props.isLoggedIn ? (
-                <Logout/>
+                  <Logout/>
+              ) : (
                 // <Dropdown.Item
                 //   exact
                 //   as={NavLink}
@@ -121,7 +122,6 @@ class Navbar extends Component {
                 // >
                 //   Logout
                 // </Dropdown.Item>
-              ) : (
                 <Dropdown.Item
                   exact
                   as={NavLink}
