@@ -38,22 +38,26 @@ class Profile extends Component {
                 inverted
                 className="usernameBox"
               >
-                <Card.Header as="h2" textAlign="center">
-                  {this.props.username}
-                </Card.Header>
+                {this.props.isLoggedIn ? (
+                  <Card.Header as="h2" textAlign="center">
+                    Happy birding, {this.props.username}!
+                  </Card.Header>
+                ) : (
+                  <Card.Header>beep boop you aren't logged in</Card.Header>
+                )}
               </Segment>
-              <Card.Description>
+              {/* <Card.Description>
                 <Card.Meta as="h2">About Me:</Card.Meta>
                 {this.props.about}
-              </Card.Description>
+              </Card.Description> */}
             </Card.Content>
-            <Card.Content extra>
+            {/* <Card.Content extra>
               <Link to="/editprofile">
                 <Button className="submit-button" size="large" fluid>
                   Edit Profile
                 </Button>
               </Link>
-            </Card.Content>
+            </Card.Content> */}
           </Card>
         </Grid.Column>
         <Grid.Column floated="right" width={10}>
@@ -71,15 +75,15 @@ class Profile extends Component {
   }
 }
 
-// const mapStateToProps = state => {
-//   return {
-//     about: state.loggedInUser.about,
-//     username: state.loggedInUser.username
-//   };
-// };
-// export default connect(
-//   mapStateToProps,
-//   null
-// )(Profile);
+const mapStateToProps = state => {
+  return {
+    isLoggedIn: state.username !== "",
+    username: state.username
+  };
+};
+export default connect(
+  mapStateToProps,
+  null
+)(Profile);
 
-export default Profile;
+// export default Profile;
