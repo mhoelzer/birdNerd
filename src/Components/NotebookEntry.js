@@ -17,7 +17,7 @@ class NotebookEntry extends Component {
           <Card.Header>{this.props.birdName}</Card.Header>
           <Card.Meta>{this.props.date}</Card.Meta>
           {/* // place props in styling, from fragment section. */}
-          <Card.Description>{this.props.theDeets}</Card.Description>
+          <Card.Description>{this.props.details}</Card.Description>
           <Divider />
           <Divider />
           <Card.Content extra>{this.props.location}</Card.Content>

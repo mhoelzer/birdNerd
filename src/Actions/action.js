@@ -3,6 +3,11 @@ import load from "../Helpers/spreadsheet.js";
 export const GET_BIRD_DATA = "GET_BIRD_DATA";
 export const GET_BIRD_DATA_SUCCESS = "GET_BIRD_DATA_SUCCESS";
 export const GET_BIRD_DATA_FAIL = "GET_BIRD_DATA_FAIL";
+export const GET_NOTEBOOK_ENTRIES = "GET_NOTEBOOK_ENTRIES";
+export const GET_NOTEBOOK_ENTRIES_SUCCESS = "GET_NOTEBOOK_ENTRIES_SUCCESS";
+export const GET_NOTEBOOK_ENTRIES_FAIL = "GET_NOTEBOOK_ENTRIES_FAIL";
+
+const URL = "https://shrouded-tundra-68436.herokuapp.com";
 
 export const getBirdData = () => dispatch => {
   dispatch({ type: GET_BIRD_DATA });
@@ -32,4 +37,16 @@ export const getBirdData = () => dispatch => {
   };
 
   window.gapi.load("client", initClient);
+};
+
+export const getNotebookEntries = () => (dispatch, getState) => {
+  dispatch({ type: GET_NOTEBOOK_ENTRIES });
+  let username = getState().username;
+  fetch(`http://localhost:8000/users/${username}/notebook`)
+    .then(res => {
+      return res.json();
+    })
+    .then(data => {
+      dispatch({ type: GET_NOTEBOOK_ENTRIES_SUCCESS, data });
+    });
 };
