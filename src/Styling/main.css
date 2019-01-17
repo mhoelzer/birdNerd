@@ -256,6 +256,10 @@ div.ui.selection.dropdown {
   width: 208px;
 }
 
+div.default.text {
+  color: black !important;
+}
+
 /* MOBILE */
 @media only screen and (max-width: 500px) {
   /* BUTTONS */

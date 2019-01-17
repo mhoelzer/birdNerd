@@ -205,6 +205,12 @@ class AdvancedSearch extends Component {
                         />
                         <Form.Checkbox
                           onChange={this.handleFilter}
+                          label="Blue-gray"
+                          name="color"
+                          value="blue-gray"
+                        />
+                        <Form.Checkbox
+                          onChange={this.handleFilter}
                           label="Brown"
                           name="color"
                           value="brown"
@@ -268,6 +274,12 @@ class AdvancedSearch extends Component {
                           label="White"
                           name="color"
                           value="white"
+                        />
+                        <Form.Checkbox
+                          onChange={this.handleFilter}
+                          label="Yellow"
+                          name="color"
+                          value="yellow"
                         />
                       </Form.Group>
                     </Form>
@@ -476,7 +488,7 @@ class AdvancedSearch extends Component {
               </Menu.Item>
             </Accordion> */}
             <Dropdown
-              placeholder="Pick a state"
+              placeholder="-- U.S. State --"
               selection
               options={stateOptions}
               onChange={this.handleFilter2}
