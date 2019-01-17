@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/birdNerd/precache-manifest.0f4e68084922425a19f89ba65cfe20ee.js"
+  "/birdNerd/precache-manifest.f2bbfc70ee9d79b2966b51ab8b23d412.js"
 );
 
 workbox.clientsClaim();
