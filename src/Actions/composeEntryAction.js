@@ -1,8 +1,12 @@
+import { getNotebookEntries } from "./action"
+
+
 export const CREATE_ENTRY = "CREATE_ENTRY";
 export const CREATE_ENTRY_SUCCESS = "CREATE_ENTRY_SUCCESS";
 export const GET_USER = "GET_USER";
 export const GET_USER_SUCCESS = "GET_USER_SUCCESS";
 export const GET_USER_FAILURE = "GET_USER_FAILURE";
+
 
 // const birdNerdURL = "https://kwitter-api.herokuapp.com";
 const URL = "https://shrouded-tundra-68436.herokuapp.com"
@@ -25,6 +29,7 @@ export const composeEntry = (text) => (dispatch, getState) => {
       dispatch({
         type: CREATE_ENTRY_SUCCESS
       });
+      dispatch(getNotebookEntries())
       
       // dispatch(getUserInfo(userId)); // get this conencted with the profile getuserinfo
     });
