@@ -15,7 +15,7 @@ class NotebookEntry extends Component {
         fluid
       >
         <Card.Content>
-          <Card.Header>{this.props.birdName}</Card.Header>
+          <Card.Header>{this.props.birdname}</Card.Header>
           <Card.Meta>
             {moment(this.props.date).format("MMMM Do YYYY, h:mm:ss a")}
           </Card.Meta>
