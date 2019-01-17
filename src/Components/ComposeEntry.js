@@ -1,14 +1,8 @@
 import React, { Component } from "react";
-import {
-  Button,
-  Form,
-  Header,
-  Icon,
-  Modal,
-  Segment,
-} from "semantic-ui-react";
-import {connect} from "react-redux"
+import { Button, Form, Header, Icon, Modal, Segment } from "semantic-ui-react";
+import { connect } from "react-redux";
 import { composeEntry } from "../Actions/composeEntryAction";
+import moment from "moment";
 
 class ComposeEntry extends Component {
   state = {
@@ -25,13 +19,15 @@ class ComposeEntry extends Component {
   handleChangeComposeEntry = (e, { value }) =>
     this.setState({ [e.target.name]: value });
 
+  handleChangeDate = () => {
+    let formattedDate = moment().format();
+    this.setState({ date: formattedDate });
+  };
+
   handleSubmit = (e, { value }) => {
-    this.props.composeEntry({ ...this.state })
-    .then(data => {
-      this.setState({modalOpen: false})
-      
-  })
-    
+    this.props.composeEntry({ ...this.state }).then(data => {
+      this.setState({ modalOpen: false });
+    });
   };
 
   // modal
@@ -41,6 +37,9 @@ class ComposeEntry extends Component {
 
   render() {
     const { closeOnDimmerClick, modalOpen } = this.state;
+    {
+      console.log("this.state", this.state);
+    }
 
     return (
       <Modal
@@ -67,12 +66,13 @@ class ComposeEntry extends Component {
               placeholder="Bird Name"
             />
             <Form.Input
-              onChange={this.handleChangeComposeEntry}
+              onChange={this.handleChangeDate}
               name="date"
               fluid
               label="Date"
               placeholder="Date of Discovery"
             />
+            {/* <div className="date">{this.formatDate(this.props.date)}</div> */}
             <Form.Input
               onChange={this.handleChangeComposeEntry}
               name="location"
@@ -115,11 +115,11 @@ const mapStateToProps = state => {
   return {
     userID: state.userID
   };
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
-    composeEntry: (entryData) => {
+    composeEntry: entryData => {
       return dispatch(composeEntry(entryData));
     }
   };
@@ -129,4 +129,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(ComposeEntry);
-
