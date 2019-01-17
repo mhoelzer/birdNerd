@@ -22,7 +22,6 @@ class NotebookEntry extends Component {
           {/* // place props in styling, from fragment section. */}
           <Card.Description>{this.props.details}</Card.Description>
           <Divider />
-          <Divider />
           <Card.Content extra>{this.props.location}</Card.Content>
         </Card.Content>
       </Card>

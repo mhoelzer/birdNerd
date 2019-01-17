@@ -4,9 +4,13 @@ import {
   GET_BIRD_DATA_FAIL,
   GET_NOTEBOOK_ENTRIES,
   GET_NOTEBOOK_ENTRIES_SUCCESS,
-  GET_NOTEBOOK_ENTRIES_FAIL
+  GET_NOTEBOOK_ENTRIES_FAIL,
+  LOGOUT,
+  LOGOUT_SUCCESS,
+  LOGOUT_FAILURE
 } from "../Actions/action";
 import { LOGIN } from "../Actions/loginAction";
+import {REGISTER} from "../Actions/registerAction"
 
 const initialState = {
   bird: [],
@@ -32,6 +36,24 @@ export default (state = initialState, action) => {
       return state;
     case LOGIN:
       return { ...state, token: action.token, username: action.username };
+    case LOGOUT:
+      return state;
+    case LOGOUT_SUCCESS:
+      return {
+        ...state,
+        error: initialState.error,
+        token: initialState.token,
+        username: initialState.username,
+        notebookEntries: initialState.notebookEntries
+      };
+    case LOGOUT_FAILURE:
+      return state;
+      case REGISTER:
+      return {
+        ...state,
+        username: action.username,
+        password: action.password
+      };
     default:
       return state;
   }

@@ -14,6 +14,7 @@ import logo from "../Images/birdNerd.jpg";
 import { NavLink } from "react-router-dom";
 import "../Styling/main.css";
 import { connect } from "react-redux";
+import Logout from "./Logout";
 
 class Navbar extends Component {
   state = { menuVisible: false };
@@ -45,9 +46,10 @@ class Navbar extends Component {
                     </Menu.Item>
                   )}
                   {this.props.isLoggedIn ? (
-                    <Menu.Item exact as={NavLink} to="/logout">
-                      Logout
-                    </Menu.Item>
+                      <Logout/>
+                    // <Menu.Item exact as={NavLink} to="/logout">
+                    //   Logout
+                    // </Menu.Item>
                   ) : (
                     <Menu.Item exact as={NavLink} to="/register">
                       Register
@@ -110,14 +112,15 @@ class Navbar extends Component {
                 </Dropdown.Item>
               )}
               {this.props.isLoggedIn ? (
-                <Dropdown.Item
-                  exact
-                  as={NavLink}
-                  to="/logout"
-                  style={{ fontSize: "20px" }}
-                >
-                  Logout
-                </Dropdown.Item>
+                <Logout/>
+                // <Dropdown.Item
+                //   exact
+                //   as={NavLink}
+                //   to="/logout"
+                //   style={{ fontSize: "20px" }}
+                // >
+                //   Logout
+                // </Dropdown.Item>
               ) : (
                 <Dropdown.Item
                   exact

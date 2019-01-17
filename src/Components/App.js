@@ -10,7 +10,7 @@ import Register from "./Register";
 import Birdydex from "./Birdydex";
 import AdvancedSearch from "./AdvancedSearch";
 import Homepage from "./Homepage.js";
-import Logout from "./Logout.js";
+// import Logout from "./Logout.js"
 
 class App extends Component {
   render() {
@@ -26,7 +26,7 @@ class App extends Component {
           <Route path="/login" render={() => <Login />} />
           <Route path="/register" render={() => <Register />} />
           <Route path="/birdidex" render={() => <Birdydex />} />
-          <Route path="/logout" render={() => <Logout />} />
+          {/* <Route path="/logout" render={() => <Logout />} /> */}
           {/* <Route path="/advanced" render={() => <Identifier />} /> */}
         </Switch>
       </div>
