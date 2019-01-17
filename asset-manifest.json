@@ -1,9 +1,9 @@
 {
-  "main.css": "/birdNerd/static/css/main.8313cc41.chunk.css",
-  "main.js": "/birdNerd/static/js/main.0dfad576.chunk.js",
-  "main.js.map": "/birdNerd/static/js/main.0dfad576.chunk.js.map",
-  "static/js/1.529886d5.chunk.js": "/birdNerd/static/js/1.529886d5.chunk.js",
-  "static/js/1.529886d5.chunk.js.map": "/birdNerd/static/js/1.529886d5.chunk.js.map",
+  "main.css": "/birdNerd/static/css/main.d1289370.chunk.css",
+  "main.js": "/birdNerd/static/js/main.9423001d.chunk.js",
+  "main.js.map": "/birdNerd/static/js/main.9423001d.chunk.js.map",
+  "static/js/1.d2519780.chunk.js": "/birdNerd/static/js/1.d2519780.chunk.js",
+  "static/js/1.d2519780.chunk.js.map": "/birdNerd/static/js/1.d2519780.chunk.js.map",
   "runtime~main.js": "/birdNerd/static/js/runtime~main.f1ae7ce2.js",
   "runtime~main.js.map": "/birdNerd/static/js/runtime~main.f1ae7ce2.js.map",
   "static/media/birdNerd.jpg": "/birdNerd/static/media/birdNerd.70a99d8b.jpg",
@@ -13,8 +13,8 @@
   "static/media/3.jpg": "/birdNerd/static/media/3.0e1b961a.jpg",
   "static/media/4.jpg": "/birdNerd/static/media/4.3de04d6d.jpg",
   "static/media/5.jpg": "/birdNerd/static/media/5.c30a0e72.jpg",
-  "static/css/main.8313cc41.chunk.css.map": "/birdNerd/static/css/main.8313cc41.chunk.css.map",
+  "static/css/main.d1289370.chunk.css.map": "/birdNerd/static/css/main.d1289370.chunk.css.map",
   "index.html": "/birdNerd/index.html",
-  "precache-manifest.8ce477d7a546a021645a628222f26a49.js": "/birdNerd/precache-manifest.8ce477d7a546a021645a628222f26a49.js",
+  "precache-manifest.0f4e68084922425a19f89ba65cfe20ee.js": "/birdNerd/precache-manifest.0f4e68084922425a19f89ba65cfe20ee.js",
   "service-worker.js": "/birdNerd/service-worker.js"
 }
