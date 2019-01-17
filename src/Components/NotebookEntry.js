@@ -14,12 +14,12 @@ class NotebookEntry extends Component {
         fluid
       >
         <Card.Content>
-          <Card.Header>{this.props.birdName}</Card.Header>
+          <Card.Header>{this.props.birdname}</Card.Header>
           <Card.Meta>{this.props.date}</Card.Meta>
           {/* // place props in styling, from fragment section. */}
           <Card.Description>{this.props.details}</Card.Description>
           <Divider />
-          <Divider />
+          
           <Card.Content extra>{this.props.location}</Card.Content>
         </Card.Content>
       </Card>

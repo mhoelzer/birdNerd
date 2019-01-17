@@ -14,11 +14,10 @@ class Notebook extends Component {
     return (
       <GridRow>
         <Grid.Column>
-          <div>this is where the NotebookEntry.js will go</div>
           {this.props.notebookEntries.map(notebookEntry => (
             <NotebookEntry
               key={notebookEntry.id}
-              birdName={notebookEntry.birdName}
+              birdname={notebookEntry.birdname}
               details={notebookEntry.details}
               date={notebookEntry.date}
               location={notebookEntry.location}
