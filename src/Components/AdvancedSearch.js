@@ -211,15 +211,9 @@ class AdvancedSearch extends Component {
                         />
                         <Form.Checkbox
                           onChange={this.handleFilter}
-                          label="Brown"
-                          name="color"
-                          value="brown"
-                        />
-                        <Form.Checkbox
-                          onChange={this.handleFilter}
                           label="Dark Brown"
                           name="color"
-                          value="d-brown"
+                          value="dark brown"
                         />
                         <Form.Checkbox
                           onChange={this.handleFilter}
@@ -237,7 +231,7 @@ class AdvancedSearch extends Component {
                           onChange={this.handleFilter}
                           label="Light Brown"
                           name="color"
-                          value="l-brown"
+                          value="light brown"
                         />
                         <Form.Checkbox
                           onChange={this.handleFilter}
