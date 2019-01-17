@@ -71,11 +71,14 @@ class SearchBar extends Component {
               <p>
                 Scientific Name: <i>{result.scientificName}</i>
               </p>
-              <p>State(s): {result.location}</p>
               <p>Type: {result.type}</p>
-              <p>Group: {result.vSType} ({result.sType})</p>
+              <p>
+                Group: {result.vSType} ({result.sType})
+              </p>
               <p>Size: {result.specificSize}</p>
+              <p>Color(s): {result.color}</p>
               <p>Characteristics: {result.characteristics}</p>
+              <p>State(s): {result.location}</p>
 
               <a href={result.site} target="_blank">
                 Click here to research more about {result.species}!
