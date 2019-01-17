@@ -252,6 +252,10 @@ h2 {
   flex-direction: row;
 }
 
+div.ui.selection.dropdown {
+  width: 208px;
+}
+
 /* MOBILE */
 @media only screen and (max-width: 500px) {
   /* BUTTONS */

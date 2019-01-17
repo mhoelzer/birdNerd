@@ -182,7 +182,7 @@ class AdvancedSearch extends Component {
               <Menu.Item>
                 <Accordion.Title
                   active={activeIndex === 0}
-                  content="colors"
+                  content="Colors"
                   index={0}
                   onClick={this.handleClick}
                 />
@@ -193,19 +193,19 @@ class AdvancedSearch extends Component {
                       <Form.Group grouped>
                         <Form.Checkbox
                           onChange={this.handleFilter}
-                          label="black"
+                          label="Black"
                           name="color"
                           value="black"
                         />
                         <Form.Checkbox
                           onChange={this.handleFilter}
-                          label="blue"
+                          label="Blue"
                           name="color"
                           value="blue"
                         />
                         <Form.Checkbox
                           onChange={this.handleFilter}
-                          label="brown"
+                          label="Brown"
                           name="color"
                           value="brown"
                         />
@@ -217,50 +217,55 @@ class AdvancedSearch extends Component {
                         />
                         <Form.Checkbox
                           onChange={this.handleFilter}
-                          label="gray"
+                          label="Gray"
                           name="color"
                           value="gray"
                         />
                         <Form.Checkbox
                           onChange={this.handleFilter}
-                          label="green"
+                          label="Green"
                           name="color"
                           value="green"
                         />
                         <Form.Checkbox
                           onChange={this.handleFilter}
-                          label="light brown"
+                          label="Light Brown"
                           name="color"
                           value="l-brown"
                         />
                         <Form.Checkbox
                           onChange={this.handleFilter}
-                          label="orange"
+                          label="Orange"
                           name="color"
                           value="orange"
                         />
                         <Form.Checkbox
                           onChange={this.handleFilter}
-                          label="red"
+                          label="Pink"
+                          name="color"
+                          value="pink"
+                        />
+                        <Form.Checkbox
+                          onChange={this.handleFilter}
+                          label="Red"
                           name="color"
                           value="red"
                         />
                         <Form.Checkbox
                           onChange={this.handleFilter}
-                          label="red-brown"
+                          label="Red-brown"
                           name="color"
                           value="red-brown"
                         />
                         <Form.Checkbox
                           onChange={this.handleFilter}
-                          label="violet"
+                          label="Violet"
                           name="color"
                           value="violet"
                         />
-
                         <Form.Checkbox
                           onChange={this.handleFilter}
-                          label="white"
+                          label="White"
                           name="color"
                           value="white"
                         />
@@ -270,11 +275,11 @@ class AdvancedSearch extends Component {
                 />
               </Menu.Item>
             </Accordion>
-            <Accordion as={Menu} vertical>
+            {/* <Accordion as={Menu} vertical>
               <Menu.Item>
                 <Accordion.Title
                   active={activeIndex === 1}
-                  content="characteristics"
+                  content="Characteristics"
                   index={1}
                   onClick={this.handleClick}
                 />
@@ -285,7 +290,7 @@ class AdvancedSearch extends Component {
                       <Form.Group grouped>
                         <Form.Checkbox
                           onClick={this.handleFilterCharacteristics}
-                          label="Ears"
+                          label="Ear tufts"
                           name="characteristics"
                           value="ears"
                         />
@@ -407,7 +412,7 @@ class AdvancedSearch extends Component {
                         <Form.Checkbox
                           label="Orange legs"
                           name="characteristics"
-                          value="Orang legs"
+                          value="Orange legs"
                         />
                         <Form.Checkbox
                           label="White eyes"
@@ -469,7 +474,7 @@ class AdvancedSearch extends Component {
                   }
                 />
               </Menu.Item>
-            </Accordion>
+            </Accordion> */}
             <Dropdown
               placeholder="Pick a state"
               selection
@@ -477,7 +482,7 @@ class AdvancedSearch extends Component {
               onChange={this.handleFilter2}
               value={this.state.value}
             />
-            <Accordion as={Menu} vertical>
+            {/* <Accordion as={Menu} vertical>
               <Menu.Item>
                 <Accordion.Title
                   active={activeIndex === 2}
@@ -491,32 +496,32 @@ class AdvancedSearch extends Component {
                     <Form>
                       <Form.Group grouped>
                         <Form.Checkbox
-                          label="tiny"
+                          label="Tiny"
                           name="Size(specific)"
                           value="tiny"
                         />
                         <Form.Checkbox
-                          label="small"
+                          label="Small"
                           name="Size(specific)"
                           value="small"
                         />
                         <Form.Checkbox
-                          label="medium"
+                          label="Medium"
                           name="Size(specific)"
                           value="medium"
                         />
                         <Form.Checkbox
-                          label="medium-large"
+                          label="Medium-large"
                           name="Size(specific)"
                           value="medium-large"
                         />
                         <Form.Checkbox
-                          label="large"
+                          label="Large"
                           name="Size(specific)"
                           value="large"
                         />
                         <Form.Checkbox
-                          label="giant"
+                          label="Giant"
                           name="Size(specific)"
                           value="giant"
                         />
@@ -530,7 +535,7 @@ class AdvancedSearch extends Component {
               <Menu.Item>
                 <Accordion.Title
                   active={activeIndex === 3}
-                  content="Type"
+                  content="Group/Type"
                   index={3}
                   onClick={this.handleClick}
                 />
@@ -540,84 +545,24 @@ class AdvancedSearch extends Component {
                     <Form>
                       <Form.Group grouped>
                         <Form.Checkbox
-                          label="Owl"
+                          label="Albatross"
                           name="Type(specific)"
-                          value="Owl"
+                          value="Albatross"
                         />
                         <Form.Checkbox
-                          label="Eagle"
+                          label="Anhinga"
                           name="Type(specific)"
-                          value="Eagle"
+                          value="Anhinga"
                         />
                         <Form.Checkbox
-                          label="Hawk"
+                          label="Auk, Puffin, or Murre"
                           name="Type(specific)"
-                          value="Hawk"
+                          value="Auk, Puffin, or Murre"
                         />
                         <Form.Checkbox
-                          label="Kite"
+                          label="Blackbird, Oriole, or Meadowlark"
                           name="Type(specific)"
-                          value="Kite"
-                        />
-                        <Form.Checkbox
-                          label="Osprey"
-                          name="Type(specific)"
-                          value="Osprey"
-                        />
-                        <Form.Checkbox
-                          label="New World Vulture"
-                          name="Type(specific)"
-                          value="New World Vulture"
-                        />
-                        <Form.Checkbox
-                          label="Falcon"
-                          name="Type(specific)"
-                          value="Falcon"
-                        />
-                        <Form.Checkbox
-                          label="Woodpecker"
-                          name="Type(specific)"
-                          value="Woodpecker"
-                        />
-                        <Form.Checkbox
-                          label="Chickadee, Titmouse"
-                          name="Type(specific)"
-                          value="Chickadee, Titmouse"
-                        />
-                        <Form.Checkbox
-                          label="Bushtit"
-                          name="Type(specific)"
-                          value="Bushtit"
-                        />
-                        <Form.Checkbox
-                          label="Verdin"
-                          name="Type(specific)"
-                          value="Verdin"
-                        />
-                        <Form.Checkbox
-                          label="Wren or Nuthatch"
-                          name="Type(specific)"
-                          value="Wren or Nuthatch"
-                        />
-                        <Form.Checkbox
-                          label="Dipper"
-                          name="Type(specific)"
-                          value="Dipper"
-                        />
-                        <Form.Checkbox
-                          label="Kinglet"
-                          name="Type(specific)"
-                          value="Kinglet"
-                        />
-                        <Form.Checkbox
-                          label="Thrush"
-                          name="Type(specific)"
-                          value="Thrush"
-                        />
-                        <Form.Checkbox
-                          label="Mockingbird or Thrasher"
-                          name="Type(specific)"
-                          value="Mockingbird or Thrash"
+                          value="Blackbird, Oriole, or Meadowlark"
                         />
                         <Form.Checkbox
                           label="Bulbul"
@@ -625,109 +570,9 @@ class AdvancedSearch extends Component {
                           value="Bulbul"
                         />
                         <Form.Checkbox
-                          label="Starling or Myna"
+                          label="Bushtit"
                           name="Type(specific)"
-                          value="Starling or Myna "
-                        />
-                        <Form.Checkbox
-                          label="Nightjar"
-                          name="Type(specific)"
-                          value="Nightjar"
-                        />
-                        <Form.Checkbox
-                          label="Swift"
-                          name="Type(specific)"
-                          value="Swift"
-                        />
-                        <Form.Checkbox
-                          label="Trogon"
-                          name="Type(specific)"
-                          value="Trogon"
-                        />
-                        <Form.Checkbox
-                          label="Hummingbird"
-                          name="Type(specific)"
-                          value="Hummingbird"
-                        />
-                        <Form.Checkbox
-                          label="Cuckoo, Roadrunner, Ani"
-                          name="Type(specific)"
-                          value="Cuckoo, Roadrunner, Ani"
-                        />
-                        <Form.Checkbox
-                          label="Pigeon or Dove"
-                          name="Type(specific)"
-                          value="Pigeon or Dove"
-                        />
-                        <Form.Checkbox
-                          label="Chachalaca"
-                          name="Type(specific)"
-                          value="Chachalaca"
-                        />
-                        <Form.Checkbox
-                          label="Sandgrouse"
-                          name="Type(specific)"
-                          value="Sangrouse"
-                        />
-                        <Form.Checkbox
-                          label="Quail, Partridge, or Francolin"
-                          name="Type(specific)"
-                          value="Quail, Partridge, or Francolin"
-                        />
-                        <Form.Checkbox
-                          label="Pheasants, Junglefowl, Peafowl"
-                          name="Type(specific)"
-                          value="Pheasants, Junglefowl, Peafowl"
-                        />
-                        <Form.Checkbox
-                          label="Turkey, Grouse, Ptarmigan"
-                          name="Type(specific)"
-                          value="Turkey, Grouse, Ptarmigan"
-                        />
-                        <Form.Checkbox
-                          label="Flycatcher"
-                          name="Type(specific)"
-                          value="Flycatcher"
-                        />
-                        <Form.Checkbox
-                          label="Shrike"
-                          name="Type(specific)"
-                          value="Shrike"
-                        />
-                        <Form.Checkbox
-                          label="Vireo"
-                          name="Type(specific)"
-                          value="Vireo"
-                        />
-                        <Form.Checkbox
-                          label="Crow, Jay, Magpie"
-                          name="Type(specific)"
-                          value="Crow, Jay, Magpie"
-                        />
-                        <Form.Checkbox
-                          label="Horned Lark"
-                          name="Type(specific)"
-                          value="Horned Lark"
-                        />
-                        <Form.Checkbox
-                          label="Swallow"
-                          name="Type(specific)"
-                          value="Swallow"
-                        />
-                        <Form.Checkbox
-                          label="Gnatcatcher"
-                          name="Type(specific)"
-                          value="Gnatcatcher"
-                        />
-                        <Form.Checkbox
-                          label="Pipit or Wagtail"
-                          name="Type(specific)"
-                          value="Pipit or Wagtail"
-                        />
-                        <Form.Checkbox
-                          label="Waxbill"
-                          name="Type(specific)"
-                          value="Waxbill"
+                          value="Bushtit"
                         />
                         <Form.Checkbox
                           label="Canary"
@@ -735,14 +580,144 @@ class AdvancedSearch extends Component {
                           value="Canary"
                         />
                         <Form.Checkbox
+                          label="Cardinal, Grosbeak, or Bunting"
+                          name="Type(specific)"
+                          value="Cardinal, Grosbeak, or Bunting"
+                        />
+                        <Form.Checkbox
+                          label="Chachalaca"
+                          name="Type(specific)"
+                          value="Chachalaca"
+                        />
+                        <Form.Checkbox
+                          label="Chickadee, Titmouse, or Tit"
+                          name="Type(specific)"
+                          value="Chickadee, Titmouse, or Tit"
+                        />
+                        <Form.Checkbox
+                          label="Cormorant"
+                          name="Type(specific)"
+                          value="Cormorant"
+                        />
+                        <Form.Checkbox
+                          label="Crane"
+                          name="Type(specific)"
+                          value="Crane"
+                        />
+                        <Form.Checkbox
+                          label="Crow, Jay, or Magpie"
+                          name="Type(specific)"
+                          value="Crow, Jay, or Magpie"
+                        />
+                        <Form.Checkbox
+                          label="Cuckoo, Roadrunner, or Ani"
+                          name="Type(specific)"
+                          value="Cuckoo, Roadrunner, or Ani"
+                        />
+                        <Form.Checkbox
+                          label="Dipper"
+                          name="Type(specific)"
+                          value="Dipper"
+                        />
+                        <Form.Checkbox
+                          label="Duck"
+                          name="Type(specific)"
+                          value="Duck"
+                        />
+                        <Form.Checkbox
+                          label="Eagle, Hawk, or Kite"
+                          name="Type(specific)"
+                          value="Eagle, Hawk, or Kite"
+                        />
+                        <Form.Checkbox
+                          label="Falcon"
+                          name="Type(specific)"
+                          value="Falcon"
+                        />
+                        <Form.Checkbox
+                          label="Finch or Honeycreeper"
+                          name="Type(specific)"
+                          value="Finch or Honeycreeper"
+                        />
+                        <Form.Checkbox
+                          label="Flamingo"
+                          name="Type(specific)"
+                          value="Flamingo"
+                        />
+                        <Form.Checkbox
+                          label="Flycatcher"
+                          name="Type(specific)"
+                          value="Flycatcher"
+                        />
+                        <Form.Checkbox
+                          label="Frigatebird"
+                          name="Type(specific)"
+                          value="Frigatebird"
+                        />
+                        <Form.Checkbox
+                          label="Gannet or Booby"
+                          name="Type(specific)"
+                          value="Gannet or Booby"
+                        />
+                        <Form.Checkbox
+                          label="Gnatcatcher"
+                          name="Type(specific)"
+                          value="Gnatcatcher"
+                        />
+                        <Form.Checkbox
+                          label="Goose"
+                          name="Type(specific)"
+                          value="Goose"
+                        />
+                        <Form.Checkbox
+                          label="Grebe"
+                          name="Type(specific)"
+                          value="Grebe"
+                        />
+                        <Form.Checkbox
+                          label="Gull"
+                          name="Type(specific)"
+                          value="Gull"
+                        />
+                        <Form.Checkbox
+                          label="Heron, Egret, or Bittern"
+                          name="Type(specific)"
+                          value="Heron, Egret, or Bittern"
+                        />
+                        <Form.Checkbox
+                          label="Horned Lark"
+                          name="Type(specific)"
+                          value="Horned Lark"
+                        />
+                        <Form.Checkbox
+                          label="Hummingbird"
+                          name="Type(specific)"
+                          value="Hummingbird"
+                        />
+                        <Form.Checkbox
+                          label="Ibis"
+                          name="Type(specific)"
+                          value="Ibis"
+                        />
+                        <Form.Checkbox
+                          label="Kingfisher"
+                          name="Type(specific)"
+                          value="Kingfisher"
+                        />
+                        <Form.Checkbox
+                          label="Kinglet"
+                          name="Type(specific)"
+                          value="Kinglet"
+                        />
+                        <Form.Checkbox
                           label="Laughingthrush"
                           name="Type(specific)"
                           value="Laughingthrush"
                         />
                         <Form.Checkbox
-                          label="Waxwing or Phainopela"
+                          label="Limpkin"
                           name="Type(specific)"
-                          value="Waxwing or Phainopela"
+                          value="Limpkin"
                         />
                         <Form.Checkbox
                           label="Longspur or Snow Bunting"
@@ -750,16 +725,221 @@ class AdvancedSearch extends Component {
                           value="Longspur or Snow Bunting"
                         />
                         <Form.Checkbox
+                          label="Loon"
+                          name="Type(specific)"
+                          value="Loon"
+                        />
+                        <Form.Checkbox
+                          label="Mockingbird or Thrasher"
+                          name="Type(specific)"
+                          value="Mockingbird or Thrasher"
+                        />
+                        <Form.Checkbox
+                          label="New World Vulture"
+                          name="Type(specific)"
+                          value="New World Vulture"
+                        />
+                        <Form.Checkbox
+                          label="Nightjar"
+                          name="Type(specific)"
+                          value="Nightjar"
+                        />
+                        <Form.Checkbox
+                          label="Osprey"
+                          name="Type(specific)"
+                          value="Osprey"
+                        />
+                        <Form.Checkbox
+                          label="Owl"
+                          name="Type(specific)"
+                          value="Owl"
+                        />
+                        <Form.Checkbox
+                          label="Oystercatcher"
+                          name="Type(specific)"
+                          value="Oystercatcher"
+                        />
+                        <Form.Checkbox
+                          label="Parrot"
+                          name="Type(specific)"
+                          value="Parrot"
+                        />
+                        <Form.Checkbox
+                          label="Pelican"
+                          name="Type(specific)"
+                          value="Pelican"
+                        />
+                        <Form.Checkbox
+                          label="Petrel or Shearwater"
+                          name="Type(specific)"
+                          value="Petrel or Shearwater"
+                        />
+                        <Form.Checkbox
+                          label="Pheasants, Junglefowl, or Peafowl"
+                          name="Type(specific)"
+                          value="Pheasants, Junglefowl, or Peafowl"
+                        />
+                        <Form.Checkbox
+                          label="Pigeon or Dove"
+                          name="Type(specific)"
+                          value="Pigeon or Dove"
+                        />
+                        <Form.Checkbox
+                          label="Pipit or Wagtail"
+                          name="Type(specific)"
+                          value="Pipit or Wagtail"
+                        />
+                        <Form.Checkbox
+                          label="Plover"
+                          name="Type(specific)"
+                          value="Plover"
+                        />
+                        <Form.Checkbox
+                          label="Quail, Partridge, or Francolin"
+                          name="Type(specific)"
+                          value="Quail, Partridge, or Francolin"
+                        />
+                        <Form.Checkbox
+                          label="Rail, Coot, or Gallinule"
+                          name="Type(specific)"
+                          value="Rail, Coot, or Gallinule"
+                        />
+                        <Form.Checkbox
+                          label="Sandgrouse"
+                          name="Type(specific)"
+                          value="Sandgrouse"
+                        />
+                        <Form.Checkbox
+                          label="Sandpiper"
+                          name="Type(specific)"
+                          value="Sandpiper"
+                        />
+                        <Form.Checkbox
+                          label="Shrike"
+                          name="Type(specific)"
+                          value="Shrike"
+                        />
+                        <Form.Checkbox
+                          label="Skua or Jaeger"
+                          name="Type(specific)"
+                          value="Skua or Jaeger"
+                        />
+                        <Form.Checkbox
+                          label="Sparrow, Junco, or Towhee"
+                          name="Type(specific)"
+                          value="Sparrow, Junco, or Towhee"
+                        />
+                        <Form.Checkbox
+                          label="Starling or Myna"
+                          name="Type(specific)"
+                          value="Starling or Myna"
+                        />
+                        <Form.Checkbox
+                          label="Stilt or Avocet"
+                          name="Type(specific)"
+                          value="Stilt or Avocet"
+                        />
+                        <Form.Checkbox
+                          label="Stork"
+                          name="Type(specific)"
+                          value="Stork"
+                        />
+                        <Form.Checkbox
+                          label="Storm-Petrel"
+                          name="Type(specific)"
+                          value="Storm-Petrel"
+                        />
+                        <Form.Checkbox
+                          label="Swallow"
+                          name="Type(specific)"
+                          value="Swallow"
+                        />
+                        <Form.Checkbox
+                          label="Swan"
+                          name="Type(specific)"
+                          value="Swan"
+                        />
+                        <Form.Checkbox
+                          label="Swift"
+                          name="Type(specific)"
+                          value="Swift"
+                        />
+                        <Form.Checkbox
+                          label="Tanager"
+                          name="Type(specific)"
+                          value="Tanager"
+                        />
+                        <Form.Checkbox
+                          label="Tern"
+                          name="Type(specific)"
+                          value="Tern"
+                        />
+                        <Form.Checkbox
+                          label="Thrush"
+                          name="Type(specific)"
+                          value="Thrush"
+                        />
+                        <Form.Checkbox
+                          label="Trogon"
+                          name="Type(specific)"
+                          value="Trogon"
+                        />
+                        <Form.Checkbox
+                          label="Tropicbird"
+                          name="Type(specific)"
+                          value="Tropicbird"
+                        />
+                        <Form.Checkbox
+                          label="Turkey, Grouse, or Ptarmigan"
+                          name="Type(specific)"
+                          value="Turkey, Grouse, or Ptarmigan"
+                        />
+                        <Form.Checkbox
+                          label="Verdin"
+                          name="Type(specific)"
+                          value="Verdin"
+                        />
+                        <Form.Checkbox
+                          label="Vireo"
+                          name="Type(specific)"
+                          value="Vireo"
+                        />
+                        <Form.Checkbox
                           label="Warbler"
                           name="Type(specific)"
                           value="Warbler"
+                        />
+                        <Form.Checkbox
+                          label="Waxbill"
+                          name="Type(specific)"
+                          value="Waxbill"
+                        />
+                        <Form.Checkbox
+                          label="Waxwing or Phainopepla"
+                          name="Type(specific)"
+                          value="Waxwing or Phainopepla"
+                        />
+                        <Form.Checkbox
+                          label="Weaver"
+                          name="Type(specific)"
+                          value="Weaver"
+                        />
+                        <Form.Checkbox
+                          label="Woodpecker"
+                          name="Type(specific)"
+                          value="Woodpecker"
+                        />
+                        <Form.Checkbox
+                          label="Wren or Nuthatch"
+                          name="Type(specific)"
+                          value="Wren or Nuthatch"
                         />
                       </Form.Group>
                     </Form>
                   }
                 />
               </Menu.Item>
-            </Accordion>
+            </Accordion> */}
           </div>
           <div className="filter-cards">
             <BirdCards birds={this.state.filterBirds} />
