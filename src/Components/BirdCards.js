@@ -21,7 +21,7 @@ export default class BirdCards extends Component {
     return (
       <Card.Group className="birdydex">
         {birds.map((bird, i) => (
-          <Card style={styles.cardPosition} className="bird-card">
+          <Card style={styles.cardPosition} key={bird.scientificName} className="bird-card">
             <Card.Content>
               <h2>{bird.species}</h2>
               <br />
@@ -31,7 +31,7 @@ export default class BirdCards extends Component {
               <p>Size: {bird.size}</p> */}
               <br />
               <Modal
-                size={"medium"}
+                size={"large"}
                 trigger={<Button className="more-info">More Info</Button>}
                 closeIcon
               >

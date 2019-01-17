@@ -13,8 +13,9 @@ import {
 import logo from "../Images/birdNerd.jpg";
 import { NavLink } from "react-router-dom";
 import "../Styling/main.css";
+import { connect } from "react-redux";
 
-export default class Navbar extends Component {
+class Navbar extends Component {
   state = { menuVisible: false };
 
   render() {
@@ -134,3 +135,15 @@ export default class Navbar extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    isLoggedIn: state.username !== "",
+    username: state.username
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(Navbar);

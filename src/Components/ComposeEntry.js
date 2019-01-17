@@ -15,7 +15,7 @@ class ComposeEntry extends Component {
     // image:
     birdName: "",
     date: "",
-    theDeets: "",
+    details: "",
     location: "",
     modalOpen: false,
     closeOnDimmerClick: true
@@ -77,7 +77,7 @@ class ComposeEntry extends Component {
             />
             <Form.TextArea
               onChange={this.handleChangeComposeEntry}
-              name="theDeets"
+              name="details"
               label="Details"
               placeholder="What happened when you met this bird?"
               autoHeight
@@ -114,8 +114,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    composeEntry: (birdName, date, theDeets, location) => {
-      dispatch(composeEntry(birdName, date, theDeets, location));
+    composeEntry: (birdName, date, details, location) => {
+      dispatch(composeEntry(birdName, date, details, location));
     }
   };
 };
