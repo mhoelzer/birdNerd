@@ -27,7 +27,7 @@ const stateOptions = [
   { text: "Georgia", key: "GA", value: "GA" },
   { text: "Hawaii", key: "HI", value: "HI" },
   { text: "Idaho", key: "ID", value: "ID" },
-  { text: "Illnois", key: "IL", value: "IL" },
+  { text: "Illinois", key: "IL", value: "IL" },
   { text: "Indiana", key: "IN", value: "IN" },
   { text: "Iowa", key: "IA", value: "IA" },
   { text: "Kansas", key: "KS", value: "KS" },
@@ -40,7 +40,7 @@ const stateOptions = [
   { text: "Minnesota", key: "MN", value: "MN" },
   { text: "Mississippi", key: "MS", value: "MS" },
   { text: "Missouri", key: "MO", value: "MO" },
-  { text: "Montana", name: "MT", value: "MT" },
+  { text: "Montana", key: "MT", name: "MT", value: "MT" },
   { text: "Nebraska", key: "NE", value: "NE" },
   { text: "Nevada", key: "NV", value: "NV" },
   { text: "New Hampshire", key: "NH", value: "NH" },
@@ -68,7 +68,7 @@ const stateOptions = [
 ];
 
 class AdvancedSearch extends Component {
-  state = { activeIndex: 0, filterBirds: this.props.birds && [] };
+  state = { activeIndex: 0, filterBirds: this.props.birds && [], value: "" };
   componentDidMount() {
     this.props.getBirdData();
   }
@@ -91,11 +91,14 @@ class AdvancedSearch extends Component {
       .value;
     const checked = event.currentTarget.getElementsByTagName("input")[0]
       .checked;
-    if (checked === true) {
+    if (checked !== true) {
       //filter
       this.filters.push(colorToFind);
       this.setState({
-        filterBirds: this.filterColor(this.filters, this.props.birds)
+        filterBirds: this.filterColor(
+          this.filters,
+          this.filterState(this.state.value, this.props.birds)
+        )
       });
     } else {
       //unfilter
@@ -104,14 +107,27 @@ class AdvancedSearch extends Component {
         1
       );
       this.setState({
-        filterBirds: this.filterColor(this.filters, this.props.birds)
+        filterBirds: this.filterColor(
+          this.filters,
+          this.filterState(this.state.value, this.props.birds)
+        )
       });
     }
+  };
+  handleFilter2 = (event, { value }) => {
+    this.setState({
+      filterBirds: this.filterState(
+        value,
+        this.filterColor(this.filters, this.props.birds)
+      ),
+      value
+    });
   };
 
   filters = [];
 
   filterColor(filters, birds) {
+    if (filters.length === 0) return birds;
     return birds.filter(bird => {
       return filters.every(filterColor =>
         bird.color
@@ -119,6 +135,15 @@ class AdvancedSearch extends Component {
           .map(word => word.trim())
           .includes(filterColor)
       );
+    });
+  }
+  filterState(filter, birds) {
+    if (filter === "") return birds;
+    return birds.filter(bird => {
+      return bird.location
+        .split(",")
+        .map(word => word.trim())
+        .includes(filter);
     });
   }
   // handleFilterCharacteristics= event => {
@@ -163,70 +188,77 @@ class AdvancedSearch extends Component {
                 <Form>
                   <Form.Group grouped>
                     <Form.Checkbox
-                      onClick={this.handleFilter}
-                      label="Dark Brown"
-                      name="color"
-                      value="d-brown"
-                    />
-                    <Form.Checkbox
-                      onClick={this.handleFilter}
-                      label="light brown"
-                      name="color"
-                      value="l-brown"
-                    />
-                    <Form.Checkbox
-                      onClick={this.handleFilter}
-                      label="violet"
-                      name="color"
-                      value="violet"
-                    />
-                    <Form.Checkbox
-                      onClick={this.handleFilter}
-                      label="blue"
-                      name="color"
-                      value="blue"
-                    />
-                    <Form.Checkbox
-                      onClick={this.handleFilter}
-                      label="brown"
-                      name="color"
-                      value="brown"
-                    />
-                    <Form.Checkbox
-                      onClick={this.handleFilter}
-                      label="orange"
-                      name="color"
-                      value="orange"
-                    />
-                    <Form.Checkbox
-                      onClick={this.handleFilter}
-                      label="red"
-                      name="color"
-                      value="red"
-                    />
-                    <Form.Checkbox
-                      onClick={this.handleFilter}
-                      label="white"
-                      name="color"
-                      value="white"
-                    />
-                    <Form.Checkbox
-                      onClick={this.handleFilter}
-                      label="red-brown"
-                      name="color"
-                      value="red-brown"
-                    />
-                    <Form.Checkbox
-                      onClick={this.handleFilter}
+                      onChange={this.handleFilter}
                       label="black"
                       name="color"
                       value="black"
                     />
                     <Form.Checkbox
-                      onClick={this.handleFilter}
+                      onChange={this.handleFilter}
+                      label="blue"
+                      name="color"
+                      value="blue"
+                    />
+                    <Form.Checkbox
+                      onChange={this.handleFilter}
+                      label="brown"
+                      name="color"
+                      value="brown"
+                    />
+                    <Form.Checkbox
+                      onChange={this.handleFilter}
+                      label="Dark Brown"
+                      name="color"
+                      value="d-brown"
+                    />
+                    <Form.Checkbox
+                      onChange={this.handleFilter}
                       label="gray"
                       name="color"
                       value="gray"
+                    />
+                    <Form.Checkbox
+                      onChange={this.handleFilter}
+                      label="green"
+                      name="color"
+                      value="green"
+                    />
+                    <Form.Checkbox
+                      onChange={this.handleFilter}
+                      label="light brown"
+                      name="color"
+                      value="l-brown"
+                    />
+                    <Form.Checkbox
+                      onChange={this.handleFilter}
+                      label="orange"
+                      name="color"
+                      value="orange"
+                    />
+                    <Form.Checkbox
+                      onChange={this.handleFilter}
+                      label="red"
+                      name="color"
+                      value="red"
+                    />
+                    <Form.Checkbox
+                      onChange={this.handleFilter}
+                      label="red-brown"
+                      name="color"
+                      value="red-brown"
+                    />
+                    <Form.Checkbox
+                      onChange={this.handleFilter}
+                      label="violet"
+                      name="color"
+                      value="violet"
+                    />
+
+                    <Form.Checkbox
+                      onChange={this.handleFilter}
+                      label="white"
+                      name="color"
+                      value="white"
                     />
                   </Form.Group>
                 </Form>
@@ -435,11 +467,11 @@ class AdvancedSearch extends Component {
           </Menu.Item>
         </Accordion>
         <Dropdown
-          placeholder="stateOptions"
-          fluid
-          multiple
+          placeholder="Pick a state"
           selection
           options={stateOptions}
+          onChange={this.handleFilter2}
+          value={this.state.value}
         />
         <Accordion as={Menu} vertical>
           <Menu.Item>
