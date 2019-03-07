@@ -17,8 +17,11 @@ class NotebookEntry extends Component {
         <Card.Content>
           <Card.Header>{this.props.birdname}</Card.Header>
           <Card.Meta>
-            {moment(this.props.date).format("MMMM Do YYYY, h:mm:ss a")}
+            {/* {moment(this.props.date).format("MMMM Do YYYY, h:mm:ss a")} */}
+            {/* {moment(this.props.date).add(1, "days").format("MMMM Do, YYYY")} */}
+            {moment(this.props.date).utc().format("MMMM Do, YYYY")}
           </Card.Meta>
+          {/* <Card.Meta>{this.props.date}</Card.Meta> */}
           {/* // place props in styling, from fragment section. */}
           <Card.Description>{this.props.details}</Card.Description>
           <Divider />

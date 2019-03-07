@@ -23,7 +23,7 @@ export const userLogin = (username, password) => dispatch => {
           success: data.success,
           token: data.token
         });
-        alert("Successful Login");
+        alert(`Good Day, ${username}, and Welcome to BIRD NERD!`);
         dispatch(push("/"));
       } else {
         alert("Error, log in failed");

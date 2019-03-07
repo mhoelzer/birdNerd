@@ -19,11 +19,6 @@ class ComposeEntry extends Component {
   handleChangeComposeEntry = (e, { value }) =>
     this.setState({ [e.target.name]: value });
 
-  handleChangeDate = () => {
-    let formattedDate = moment().format();
-    this.setState({ date: formattedDate });
-  };
-
   handleSubmit = (e, { value }) => {
     this.props.composeEntry({ ...this.state }).then(data => {
       this.setState({ modalOpen: false });
@@ -66,7 +61,7 @@ class ComposeEntry extends Component {
               placeholder="Bird Name"
             />
             <Form.Input
-              onChange={this.handleChangeDate}
+              onChange={this.handleChangeComposeEntry}
               name="date"
               type="date"
               fluid
