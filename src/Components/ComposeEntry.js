@@ -84,7 +84,7 @@ class ComposeEntry extends Component {
               autoHeight
               rows={5}
             />
-            <div>this si wehere the image uploader will go</div>
+            {/* <div>this si wehere the image uploader will go</div> */}
           </Segment>
         </Form>
         <Modal.Actions>
