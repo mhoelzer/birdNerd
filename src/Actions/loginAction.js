@@ -2,7 +2,7 @@ import { push } from "connected-react-router";
 
 export const LOGIN = "LOGIN";
 
-const URL = "https://shrouded-tundra-68436.herokuapp.com";
+const URL = "https://bird-nerd.herokuapp.com/";
 
 export const userLogin = (username, password) => dispatch => {
   const header = {

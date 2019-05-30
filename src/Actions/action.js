@@ -11,7 +11,7 @@ export const LOGOUT = "LOGOUT";
 export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
 export const LOGOUT_FAILURE = "LOGOUT_FAILURE";
 
-const URL = "https://shrouded-tundra-68436.herokuapp.com";
+const URL = "https://bird-nerd.herokuapp.com/";
 
 export const getBirdData = () => dispatch => {
   dispatch({ type: GET_BIRD_DATA });
