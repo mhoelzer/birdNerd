@@ -7,7 +7,7 @@ export const GET_USER_SUCCESS = "GET_USER_SUCCESS";
 export const GET_USER_FAILURE = "GET_USER_FAILURE";
 
 // const birdNerdURL = "https://kwitter-api.herokuapp.com";
-const URL = "https://shrouded-tundra-68436.herokuapp.com";
+const URL = "https://bird-nerd.herokuapp.com/";
 
 export const composeEntry = text => (dispatch, getState) => {
   const token = getState().token;
