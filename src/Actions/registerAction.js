@@ -13,7 +13,7 @@ export const registerAction = credentials => dispatch => {
         body: JSON.stringify(credentials)
     };
 
-    fetch(URL + "Authorize/register", requestOptions)
+    fetch(URL + "/Authorize/register", requestOptions)
         .then(res => {
             if (res.status === 200) {
                 return res.json();
