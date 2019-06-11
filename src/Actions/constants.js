@@ -1,1 +1,1 @@
-export const url = "https://birdnerdbackend.herokuapp.com/"
+export const url = "https://birdnerdbackend.herokuapp.com"
