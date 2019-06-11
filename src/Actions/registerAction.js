@@ -3,7 +3,7 @@ import { userLogin } from "./loginAction";
 
 export const REGISTER = "REGISTER";
 
-const URL = "https://bird-nerd.herokuapp.com//";
+const URL = "https://bird-nerd.herokuapp.com/";
 
 export const registerAction = credentials => dispatch => {
   const requestOptions = {
