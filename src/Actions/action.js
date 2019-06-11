@@ -1,6 +1,8 @@
 import { push } from "connected-react-router";
 import config from "../Constants/config.js";
 import load from "../Helpers/spreadsheet.js";
+import { url } from "./constants";
+
 export const GET_BIRD_DATA = "GET_BIRD_DATA";
 export const GET_BIRD_DATA_SUCCESS = "GET_BIRD_DATA_SUCCESS";
 export const GET_BIRD_DATA_FAIL = "GET_BIRD_DATA_FAIL";
@@ -11,7 +13,7 @@ export const LOGOUT = "LOGOUT";
 export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
 export const LOGOUT_FAILURE = "LOGOUT_FAILURE";
 
-const URL = "https://bird-nerd.herokuapp.com/"; 
+const URL = url; 
 
 export const getBirdData = () => dispatch => {
   dispatch({ type: GET_BIRD_DATA });
