@@ -1,4 +1,5 @@
 import { push } from "connected-react-router";
+import { store } from "../Redux/store";
 export const EDIT_PROFILE = "EDIT_PROFILE";
 export const EDIT_PROFILE_SUCCESS = "EDIT_PROFILE_SUCCESS";
 export const EDIT_PROFILE_FAIL = "EDIT_PROFILE_FAIL";
@@ -15,7 +16,7 @@ export const editProfileSuccess = () => {
   };
 };
 
-export const editPrifleFailed = () => {
+export const editProfileFailed = () => {
   return {
     type: EDIT_PROFILE_FAIL
   };
