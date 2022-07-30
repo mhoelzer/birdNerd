@@ -6,10 +6,13 @@ import { withRouter } from "react-router-dom";
 import { userLogin } from "../Actions/loginAction";
 
 class Login extends Component {
-  state = {
-    username: "",
-    password: ""
-  };
+	constructor(props) {
+	  super(props); 
+	  this.state = {
+		username: "",
+		password: ""
+	  };
+	}
 
   handleSubmitLogin = () => {
     this.props.userLogin(this.state.username, this.state.password);
